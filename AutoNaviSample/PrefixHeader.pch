@@ -10,9 +10,13 @@
 #define PrefixHeader_pch
 
 #import "constants.h"
+#import "constanscode.h"
 
 #import "Masonry.h"
 #import "AFNetworking.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 
 #endif /* PrefixHeader_pch */

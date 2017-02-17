@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
+		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
 		F3D35D991E5695850055194D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D35D981E5695850055194D /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.release.xcconfig"; sourceTree = "<group>"; };
 		895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
+		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3D35D951E5695850055194D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 		F3D35DC71E56967C0055194D /* BaseUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUser.h; sourceTree = "<group>"; };
 		F3D35DC81E56967C0055194D /* BaseUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUser.m; sourceTree = "<group>"; };
 		F3D35DD51E5699670055194D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F3D35DD61E56C3200055194D /* constanscode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constanscode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D35DC21E56967C0055194D /* constants.h */,
+				F3D35DD61E56C3200055194D /* constanscode.h */,
 				F3D35DC31E56967C0055194D /* noticeConstant.h */,
 			);
 			path = Constant;
@@ -301,6 +306,7 @@
 		F3D35DCA1E56967C0055194D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3D35DD71E56C5CC0055194D /* MapViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -347,6 +353,15 @@
 			name = PchFiles;
 			sourceTree = "<group>";
 		};
+		F3D35DD71E56C5CC0055194D /* MapViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F378081A1E56C83A0057A57A /* AmapViewController.h */,
+				F378081B1E56C83A0057A57A /* AmapViewController.m */,
+			);
+			path = MapViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,6 +398,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = S93X337HM6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -473,6 +493,7 @@
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
+				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 			);

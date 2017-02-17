@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AmapViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    
+    // 高德地图
+    [AMapServices sharedServices].apiKey = KEYAMAPKEY;
+    [[AMapServices sharedServices] setEnableHTTPS:YES];
+    
+    
+    self.window.rootViewController = [[AmapViewController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
