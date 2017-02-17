@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
+		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
 		F3D35D991E5695850055194D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D35D981E5695850055194D /* Assets.xcassets */; };
@@ -25,6 +26,8 @@
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
+		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
+		F378081E1E56D1D10057A57A /* AmapNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapNaviViewController.m; sourceTree = "<group>"; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3D35D951E5695850055194D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 			children = (
 				F378081A1E56C83A0057A57A /* AmapViewController.h */,
 				F378081B1E56C83A0057A57A /* AmapViewController.m */,
+				F378081D1E56D1D10057A57A /* AmapNaviViewController.h */,
+				F378081E1E56D1D10057A57A /* AmapNaviViewController.m */,
 			);
 			path = MapViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
+				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
