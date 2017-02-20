@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define KEYAMAPKEY                   @"6beaea251724607031ac1ff00838d1c7"
+#define KEYAMAPKEY                   @"5d5db779ecb28134133e65b95df785f6"
 #define KEYYOUMENGCHANNELID          @"mobile"
 
 

@@ -10,6 +10,7 @@
 
 @interface LoginUser : BaseUser
 +(LoginUser *)sharedInstance;
+//用户数据
 @property (nonatomic, strong) NSString *uId;//唯一标识
 @property (nonatomic, strong) NSString *telphone;//登录账号--手机号码
 @property (nonatomic, strong) NSString *name;//真实姓名
@@ -27,208 +28,19 @@
 @property (nonatomic, assign) BOOL avoidHighway; //避免高速
 @property (nonatomic, assign) BOOL avoidCost;  // 避免收费
 @property (nonatomic, assign) BOOL prioritiseHighway; //主要高速
-@property (nonatomic, assign) BOOL 车牌号;
-@property (nonatomic, assign) bool bool
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@property (nonatomic, strong) NSString *strategy;
-
-
-
-
-@property (nonatomic, assign) BOOL isLogin;Login;//是否第一次登录  否：正常登录 是:注销登录
-@property (nonatomic, assign) BOOL isAutoLogin;//
-@property (nonatomic, assign) BOOL isNotFirst是否自动登录
+@property (nonatomic, assign) BOOL avoidWeightLimit;//避开限重
+@property (nonatomic, strong) NSString *carNum;//车牌号
+@property (nonatomic, strong) NSString *carMaxHeight;//最大高度
+@property (nonatomic, strong) NSString *carMaxWeight;//货车总重
+@property (nonatomic, strong) NSString *strategy;//路径规划方式
+@property (nonatomic, assign) BOOL setNorthUp;//车头向上 no 北向上 yes
+@property (nonatomic, assign) BOOL set3Dnavi;//3d导航 yes   2d导航 no
+
+
+//登陆
+@property (nonatomic, assign) BOOL isLogin;
+@property (nonatomic, assign) BOOL isNotFirstLogin;//是否第一次登录  否：正常登录 是:注销登录
+@property (nonatomic, assign) BOOL isAutoLogin;//是否自动登录
 
 //系统设置  YES:仅Wi-Fi网络下载  NO:都下载
 @property (nonatomic, assign) BOOL wifiDownloadSet;

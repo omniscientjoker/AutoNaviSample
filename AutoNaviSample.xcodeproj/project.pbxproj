@@ -12,6 +12,7 @@
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
 		F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */; };
 		F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCE1E5A8136006DBC5B /* LoginUser.m */; };
+		F34EEFD21E5AC444006DBC5B /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
@@ -36,6 +37,8 @@
 		F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableOverlay.m; sourceTree = "<group>"; };
 		F34EEFCD1E5A8136006DBC5B /* LoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUser.h; sourceTree = "<group>"; };
 		F34EEFCE1E5A8136006DBC5B /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
+		F34EEFD01E5AC444006DBC5B /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
+		F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				F34EEFC91E5A7CD5006DBC5B /* SelectableOverlay */,
+				F34EEFD01E5AC444006DBC5B /* NaviPointAnnotation.h */,
+				F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -445,7 +450,7 @@
 				TargetAttributes = {
 					F3D35D8E1E5695850055194D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = S93X337HM6;
+						DevelopmentTeam = 7U64SHU6Y6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -548,6 +553,7 @@
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
+				F34EEFD21E5AC444006DBC5B /* NaviPointAnnotation.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 			);
@@ -649,12 +655,12 @@
 			baseConfigurationReference = 895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S93X337HM6;
+				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AutoNaviSample/PrefixHeader.pch;
 				INFOPLIST_FILE = AutoNaviSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiangmiao.AutoNaviSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -664,12 +670,12 @@
 			baseConfigurationReference = 7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S93X337HM6;
+				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AutoNaviSample/PrefixHeader.pch;
 				INFOPLIST_FILE = AutoNaviSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiangmiao.AutoNaviSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
