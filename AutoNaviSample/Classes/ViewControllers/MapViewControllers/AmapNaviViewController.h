@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AMapNaviKit/AMapNaviKit.h>
+@protocol AmapNaviViewControllerDelegate;
 
 @interface AmapNaviViewController : UIViewController
+@property (nonatomic, weak) id <AmapNaviViewControllerDelegate> delegate;
+@property (nonatomic, strong)  AMapNaviDriveView *driveView;
+@end
 
+@protocol AmapNaviViewControllerDelegate <NSObject>
+- (void)driveNaviViewCloseButtonClicked;
 @end

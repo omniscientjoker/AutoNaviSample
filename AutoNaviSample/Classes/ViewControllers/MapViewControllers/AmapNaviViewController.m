@@ -7,31 +7,127 @@
 //
 
 #import "AmapNaviViewController.h"
+#import "NaviMoreView.h"
 
-@interface AmapNaviViewController ()
-
+@interface AmapNaviViewController ()<NaviMoreMenuViewDelegate,AMapNaviDriveViewDelegate>
+@property(nonatomic,strong)NaviMoreView * moreMenu;
 @end
 
 @implementation AmapNaviViewController
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        [self initDriveView];
+        [self initMoreMenu];
+    }
+    return self;
+}
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.driveView setFrame:self.view.bounds];
+    [self.view addSubview:self.driveView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.toolbarHidden = YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initDriveView
+{
+    if (self.driveView == nil)
+    {
+        self.driveView = [[AMapNaviDriveView alloc] init];
+        self.driveView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self.driveView setDelegate:self];
+    }
 }
-*/
 
+- (void)initMoreMenu
+{
+    if (self.moreMenu == nil)
+    {
+        self.moreMenu = [[NaviMoreView alloc] init];
+        self.moreMenu.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self.moreMenu setDelegate:self];
+    }
+}
+
+- (void)viewWillLayoutSubviews
+{
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0){
+        interfaceOrientation = self.interfaceOrientation;
+    }
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+        [self.driveView setIsLandscape:NO];
+    }else if (UIInterfaceOrientationIsLandscape(interfaceOrientation)){
+        [self.driveView setIsLandscape:YES];
+    }
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+#pragma mark - DriveView Delegate
+
+- (void)driveViewCloseButtonClicked:(AMapNaviDriveView *)driveView
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(driveNaviViewCloseButtonClicked)])
+    {       }
+}
+
+- (void)driveViewMoreButtonClicked:(AMapNaviDriveView *)driveView
+{
+    //配置MoreMenu状态
+    [self.moreMenu setTrackingMode:self.driveView.trackingMode];
+    [self.moreMenu setShowNightType:self.driveView.showStandardNightType];
+    [self.moreMenu setFrame:self.view.bounds];
+    [self.view addSubview:self.moreMenu];
+}
+
+- (void)driveViewTrunIndicatorViewTapped:(AMapNaviDriveView *)driveView
+{
+    if (self.driveView.showMode == AMapNaviDriveViewShowModeCarPositionLocked)
+    {
+        [self.driveView setShowMode:AMapNaviDriveViewShowModeNormal];
+    }
+    else if (self.driveView.showMode == AMapNaviDriveViewShowModeNormal)
+    {
+        [self.driveView setShowMode:AMapNaviDriveViewShowModeOverview];
+    }
+    else if (self.driveView.showMode == AMapNaviDriveViewShowModeOverview)
+    {
+        [self.driveView setShowMode:AMapNaviDriveViewShowModeCarPositionLocked];
+    }
+}
+
+- (void)driveView:(AMapNaviDriveView *)driveView didChangeShowMode:(AMapNaviDriveViewShowMode)showMode
+{
+    NSLog(@"didChangeShowMode:%ld", (long)showMode);
+}
+
+#pragma mark - MoreMenu Delegate
+
+- (void)moreMenuViewFinishButtonClicked
+{
+    [self.moreMenu removeFromSuperview];
+}
+
+- (void)moreMenuViewNightTypeChangeTo:(BOOL)isShowNightType
+{
+    [self.driveView setShowStandardNightType:isShowNightType];
+}
+
+- (void)moreMenuViewTrackingModeChangeTo:(AMapNaviViewTrackingMode)trackingMode
+{
+    [self.driveView setTrackingMode:trackingMode];
+}
 @end

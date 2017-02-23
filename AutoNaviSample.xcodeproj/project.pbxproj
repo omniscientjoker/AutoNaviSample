@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
+		F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */; };
 		F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */; };
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
 		F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */; };
@@ -15,6 +16,7 @@
 		F34EEFD21E5AC444006DBC5B /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
+		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
 		F3D35D991E5695850055194D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D35D981E5695850055194D /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.release.xcconfig"; sourceTree = "<group>"; };
 		895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNaviViewController.h; sourceTree = "<group>"; };
+		F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNaviViewController.m; sourceTree = "<group>"; };
 		F34EEFC21E5A78B3006DBC5B /* PreferenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceView.h; sourceTree = "<group>"; };
 		F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceView.m; sourceTree = "<group>"; };
 		F34EEFC61E5A79FD006DBC5B /* RouteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteCollectionViewCell.h; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
 		F378081E1E56D1D10057A57A /* AmapNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapNaviViewController.m; sourceTree = "<group>"; };
+		F38C57071E5BD3CF001382DB /* NaviMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMoreView.h; sourceTree = "<group>"; };
+		F38C57081E5BD3CF001382DB /* NaviMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMoreView.m; sourceTree = "<group>"; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3D35D951E5695850055194D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		F34EEFC11E5A7880006DBC5B /* NaviCusView */ = {
 			isa = PBXGroup;
 			children = (
+				F38C57061E5BD3B1001382DB /* NaviMoreView */,
 				F34EEFC51E5A79BE006DBC5B /* RouteCollectionViewCell */,
 				F34EEFC21E5A78B3006DBC5B /* PreferenceView.h */,
 				F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */,
@@ -120,6 +127,15 @@
 				F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */,
 			);
 			path = SelectableOverlay;
+			sourceTree = "<group>";
+		};
+		F38C57061E5BD3B1001382DB /* NaviMoreView */ = {
+			isa = PBXGroup;
+			children = (
+				F38C57071E5BD3CF001382DB /* NaviMoreView.h */,
+				F38C57081E5BD3CF001382DB /* NaviMoreView.m */,
+			);
+			path = NaviMoreView;
 			sourceTree = "<group>";
 		};
 		F3D35D861E5695840055194D = {
@@ -184,6 +200,8 @@
 				F3D35DAD1E56967C0055194D /* BaseTableView.m */,
 				F3D35DAE1E56967C0055194D /* BaseViewController.h */,
 				F3D35DAF1E56967C0055194D /* BaseViewController.m */,
+				F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */,
+				F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -553,9 +571,11 @@
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
+				F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */,
 				F34EEFD21E5AC444006DBC5B /* NaviPointAnnotation.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
+				F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

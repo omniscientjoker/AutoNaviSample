@@ -11,12 +11,13 @@
 #import "RouteCollectionViewCell.h"
 #import "SelectableOverlay.h"
 #import "NaviPointAnnotation.h"
+#import "AmapNaviViewController.h"
 
 #define kRoutePlanInfoViewHeight    130.f
 #define kRouteIndicatorViewHeight   64.f
 #define kCollectionCellIdentifier   @"kCollectionCellIdentifier"
 
-@interface AmapViewController ()<AMapNaviDriveManagerDelegate,AMapNaviDriveViewDelegate,MAMapViewDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface AmapViewController ()<AMapNaviDriveManagerDelegate,AMapNaviDriveViewDelegate,MAMapViewDelegate,AmapNaviViewControllerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong)MAMapView             *mapView;
 @property (nonatomic,strong)AMapNaviDriveManager  *driveManager;
@@ -46,6 +47,8 @@
     
     [self calculateRoute];
     [self initRouteIndicatorView];
+    
+    [_mapView setZoomLevel:3.5 animated:YES];
 }
 
 //初始化地图页面
@@ -80,14 +83,13 @@
         [self.view addSubview:_mapView];
         _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, SCREENHEIGHT-40);
         _mapView.showsCompass= YES;
-        _mapView.showTraffic = NO;
+        _mapView.showTraffic = YES;
         _mapView.compassOrigin= CGPointMake(_mapView.compassOrigin.x, 22);
-        _mapView.showsUserLocation = YES;
-        _mapView.userTrackingMode = MAUserTrackingModeFollow;
+        _mapView.showsUserLocation = NO;
+        _mapView.userTrackingMode = MAUserTrackingModeNone;
         _mapView.showsScale= YES;
         _mapView.scaleOrigin= CGPointMake(_mapView.scaleOrigin.x, 22);
         _mapView.zoomEnabled = YES;
-        [_mapView setZoomLevel:2.5 animated:YES];
         _mapView.scrollEnabled = YES;
         _mapView.rotateEnabled= NO;
     }
@@ -208,6 +210,12 @@
 
 
 #pragma mark - AMapNaviDriveManager Delegate
+- (void)driveNaviViewCloseButtonClicked
+{
+    //停止导航
+    [self.driveManager stopNavi];
+    [self.navigationController popViewControllerAnimated:NO];
+}
 - (void)driveManager:(AMapNaviDriveManager *)driveManager error:(NSError *)error{
     NSLog(@"error:{%ld - %@}", (long)error.code, error.localizedDescription);
 }
@@ -249,7 +257,18 @@
         [self selectNaviRouteWithID:cell.info.routeID];
     }
 }
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    AmapNaviViewController *driveVC = [[AmapNaviViewController alloc] init];
+    [driveVC setDelegate:self];
+    //将driveView添加为导航数据的Representative，使其可以接收到导航诱导数据
+    [self.driveManager addDataRepresentative:driveVC.driveView];
+    [self.navigationController pushViewController:driveVC animated:NO];
+    [self.driveManager startEmulatorNavi];
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.routeIndicatorInfoArray.count;
@@ -300,7 +319,6 @@
     }
     return nil;
 }
-
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay
 {
     if ([overlay isKindOfClass:[SelectableOverlay class]])
@@ -315,7 +333,6 @@
         
         return polylineRenderer;
     }
-    
     return nil;
 }
 

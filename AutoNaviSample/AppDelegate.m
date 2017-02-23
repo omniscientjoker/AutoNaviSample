@@ -23,8 +23,7 @@
     [AMapServices sharedServices].apiKey = KEYAMAPKEY;
     [[AMapServices sharedServices] setEnableHTTPS:YES];
     
-    
-    self.window.rootViewController = [[AmapViewController alloc] init];
+    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
