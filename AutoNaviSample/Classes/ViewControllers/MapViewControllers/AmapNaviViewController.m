@@ -80,13 +80,13 @@
 
 - (void)driveViewCloseButtonClicked:(AMapNaviDriveView *)driveView
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(driveNaviViewCloseButtonClicked)])
-    {       }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(driveNaviViewCloseButtonClicked)]){
+        [self.delegate driveNaviViewCloseButtonClicked];
+    }
 }
 
 - (void)driveViewMoreButtonClicked:(AMapNaviDriveView *)driveView
 {
-    //配置MoreMenu状态
     [self.moreMenu setTrackingMode:self.driveView.trackingMode];
     [self.moreMenu setShowNightType:self.driveView.showStandardNightType];
     [self.moreMenu setFrame:self.view.bounds];

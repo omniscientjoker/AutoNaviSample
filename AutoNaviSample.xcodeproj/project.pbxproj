@@ -16,6 +16,11 @@
 		F34EEFD21E5AC444006DBC5B /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
+		F37C58AE1E5FC0010098B80E /* AutoNaviSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F37C58AD1E5FC0010098B80E /* AutoNaviSampleTests.m */; };
+		F37C58BC1E5FC01E0098B80E /* AutoNaviSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F37C58BB1E5FC01E0098B80E /* AutoNaviSampleUITests.m */; };
+		F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B041E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m */; };
+		F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */; };
+		F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */; };
 		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
@@ -26,6 +31,23 @@
 		F3D35DCF1E56967C0055194D /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35DC01E56967C0055194D /* common.m */; };
 		F3D35DD01E56967C0055194D /* BaseUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35DC81E56967C0055194D /* BaseUser.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F37C58B01E5FC0010098B80E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3D35D871E5695840055194D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3D35D8E1E5695850055194D;
+			remoteInfo = AutoNaviSample;
+		};
+		F37C58BE1E5FC01E0098B80E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3D35D871E5695840055194D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3D35D8E1E5695850055194D;
+			remoteInfo = AutoNaviSample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +69,18 @@
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
 		F378081E1E56D1D10057A57A /* AmapNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapNaviViewController.m; sourceTree = "<group>"; };
+		F37C58AB1E5FC0010098B80E /* AutoNaviSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoNaviSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37C58AD1E5FC0010098B80E /* AutoNaviSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoNaviSampleTests.m; sourceTree = "<group>"; };
+		F37C58AF1E5FC0010098B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F37C58B91E5FC01E0098B80E /* AutoNaviSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoNaviSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37C58BB1E5FC01E0098B80E /* AutoNaviSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoNaviSampleUITests.m; sourceTree = "<group>"; };
+		F37C58BD1E5FC01E0098B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3894B031E6CF24B00ECB8F1 /* AmapRouteNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapRouteNaviViewController.h; sourceTree = "<group>"; };
+		F3894B041E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapRouteNaviViewController.m; sourceTree = "<group>"; };
+		F3894B071E6CF9E200ECB8F1 /* arriveAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arriveAlertView.h; sourceTree = "<group>"; };
+		F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = arriveAlertView.m; sourceTree = "<group>"; };
+		F3894B0A1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUDExtensions.h"; sourceTree = "<group>"; };
+		F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUDExtensions.m"; sourceTree = "<group>"; };
 		F38C57071E5BD3CF001382DB /* NaviMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMoreView.h; sourceTree = "<group>"; };
 		F38C57081E5BD3CF001382DB /* NaviMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMoreView.m; sourceTree = "<group>"; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +106,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F37C58A81E5FC0010098B80E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37C58B61E5FC01E0098B80E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3D35D8C1E5695850055194D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +177,33 @@
 			path = SelectableOverlay;
 			sourceTree = "<group>";
 		};
+		F37C58AC1E5FC0010098B80E /* AutoNaviSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F37C58AD1E5FC0010098B80E /* AutoNaviSampleTests.m */,
+				F37C58AF1E5FC0010098B80E /* Info.plist */,
+			);
+			path = AutoNaviSampleTests;
+			sourceTree = "<group>";
+		};
+		F37C58BA1E5FC01E0098B80E /* AutoNaviSampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F37C58BB1E5FC01E0098B80E /* AutoNaviSampleUITests.m */,
+				F37C58BD1E5FC01E0098B80E /* Info.plist */,
+			);
+			path = AutoNaviSampleUITests;
+			sourceTree = "<group>";
+		};
+		F3894B061E6CF9A500ECB8F1 /* noticeAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				F3894B071E6CF9E200ECB8F1 /* arriveAlertView.h */,
+				F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */,
+			);
+			path = noticeAlertView;
+			sourceTree = "<group>";
+		};
 		F38C57061E5BD3B1001382DB /* NaviMoreView */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				F3D35D911E5695850055194D /* AutoNaviSample */,
+				F37C58AC1E5FC0010098B80E /* AutoNaviSampleTests */,
+				F37C58BA1E5FC01E0098B80E /* AutoNaviSampleUITests */,
 				F3D35D901E5695850055194D /* Products */,
 				E66CBA06968A6F96318B5BB4 /* Pods */,
 				B3D846F6AE03637C016AEC3A /* Frameworks */,
@@ -152,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				F3D35D8F1E5695850055194D /* AutoNaviSample.app */,
+				F37C58AB1E5FC0010098B80E /* AutoNaviSampleTests.xctest */,
+				F37C58B91E5FC01E0098B80E /* AutoNaviSampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,110 +288,16 @@
 		F3D35DB01E56967C0055194D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				F3D35DB11E56967C0055194D /* NSBundle */,
-				F3D35DB21E56967C0055194D /* NSData */,
-				F3D35DB31E56967C0055194D /* NSDate */,
-				F3D35DB41E56967C0055194D /* NSDictionary */,
-				F3D35DB51E56967C0055194D /* NSString */,
-				F3D35DB61E56967C0055194D /* UIButton */,
-				F3D35DB71E56967C0055194D /* UIColor */,
-				F3D35DB81E56967C0055194D /* UIImage */,
-				F3D35DB91E56967C0055194D /* UIImageView */,
-				F3D35DBA1E56967C0055194D /* UIResponder */,
-				F3D35DBB1E56967C0055194D /* UIScreen */,
-				F3D35DBC1E56967C0055194D /* UITextField */,
 				F3D35DBD1E56967C0055194D /* UIView */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		F3D35DB11E56967C0055194D /* NSBundle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSBundle;
-			sourceTree = "<group>";
-		};
-		F3D35DB21E56967C0055194D /* NSData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSData;
-			sourceTree = "<group>";
-		};
-		F3D35DB31E56967C0055194D /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSDate;
-			sourceTree = "<group>";
-		};
-		F3D35DB41E56967C0055194D /* NSDictionary */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSDictionary;
-			sourceTree = "<group>";
-		};
-		F3D35DB51E56967C0055194D /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSString;
-			sourceTree = "<group>";
-		};
-		F3D35DB61E56967C0055194D /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		F3D35DB71E56967C0055194D /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		F3D35DB81E56967C0055194D /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		F3D35DB91E56967C0055194D /* UIImageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIImageView;
-			sourceTree = "<group>";
-		};
-		F3D35DBA1E56967C0055194D /* UIResponder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIResponder;
-			sourceTree = "<group>";
-		};
-		F3D35DBB1E56967C0055194D /* UIScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIScreen;
-			sourceTree = "<group>";
-		};
-		F3D35DBC1E56967C0055194D /* UITextField */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UITextField;
-			sourceTree = "<group>";
-		};
 		F3D35DBD1E56967C0055194D /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				F3894B0A1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.h */,
+				F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -383,6 +368,7 @@
 		F3D35DCB1E56967C0055194D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3894B061E6CF9A500ECB8F1 /* noticeAlertView */,
 				F34EEFC11E5A7880006DBC5B /* NaviCusView */,
 			);
 			path = Views;
@@ -428,6 +414,8 @@
 			children = (
 				F378081A1E56C83A0057A57A /* AmapViewController.h */,
 				F378081B1E56C83A0057A57A /* AmapViewController.m */,
+				F3894B031E6CF24B00ECB8F1 /* AmapRouteNaviViewController.h */,
+				F3894B041E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m */,
 				F378081D1E56D1D10057A57A /* AmapNaviViewController.h */,
 				F378081E1E56D1D10057A57A /* AmapNaviViewController.m */,
 			);
@@ -437,6 +425,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F37C58AA1E5FC0010098B80E /* AutoNaviSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37C58B21E5FC0010098B80E /* Build configuration list for PBXNativeTarget "AutoNaviSampleTests" */;
+			buildPhases = (
+				F37C58A71E5FC0010098B80E /* Sources */,
+				F37C58A81E5FC0010098B80E /* Frameworks */,
+				F37C58A91E5FC0010098B80E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F37C58B11E5FC0010098B80E /* PBXTargetDependency */,
+			);
+			name = AutoNaviSampleTests;
+			productName = AutoNaviSampleTests;
+			productReference = F37C58AB1E5FC0010098B80E /* AutoNaviSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F37C58B81E5FC01E0098B80E /* AutoNaviSampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37C58C01E5FC01E0098B80E /* Build configuration list for PBXNativeTarget "AutoNaviSampleUITests" */;
+			buildPhases = (
+				F37C58B51E5FC01E0098B80E /* Sources */,
+				F37C58B61E5FC01E0098B80E /* Frameworks */,
+				F37C58B71E5FC01E0098B80E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F37C58BF1E5FC01E0098B80E /* PBXTargetDependency */,
+			);
+			name = AutoNaviSampleUITests;
+			productName = AutoNaviSampleUITests;
+			productReference = F37C58B91E5FC01E0098B80E /* AutoNaviSampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F3D35D8E1E5695850055194D /* AutoNaviSample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3D35DA01E5695850055194D /* Build configuration list for PBXNativeTarget "AutoNaviSample" */;
@@ -466,9 +490,22 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = joker;
 				TargetAttributes = {
+					F37C58AA1E5FC0010098B80E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S93X337HM6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F3D35D8E1E5695850055194D;
+					};
+					F37C58B81E5FC01E0098B80E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S93X337HM6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F3D35D8E1E5695850055194D;
+					};
 					F3D35D8E1E5695850055194D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7U64SHU6Y6;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -492,11 +529,27 @@
 			projectRoot = "";
 			targets = (
 				F3D35D8E1E5695850055194D /* AutoNaviSample */,
+				F37C58AA1E5FC0010098B80E /* AutoNaviSampleTests */,
+				F37C58B81E5FC01E0098B80E /* AutoNaviSampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F37C58A91E5FC0010098B80E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37C58B71E5FC01E0098B80E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3D35D8D1E5695850055194D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,15 +609,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F37C58A71E5FC0010098B80E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37C58AE1E5FC0010098B80E /* AutoNaviSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37C58B51E5FC01E0098B80E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37C58BC1E5FC01E0098B80E /* AutoNaviSampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3D35D8B1E5695850055194D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
+				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
+				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
@@ -581,7 +653,70 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F37C58B11E5FC0010098B80E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3D35D8E1E5695850055194D /* AutoNaviSample */;
+			targetProxy = F37C58B01E5FC0010098B80E /* PBXContainerItemProxy */;
+		};
+		F37C58BF1E5FC01E0098B80E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3D35D8E1E5695850055194D /* AutoNaviSample */;
+			targetProxy = F37C58BE1E5FC01E0098B80E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F37C58B31E5FC0010098B80E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S93X337HM6;
+				INFOPLIST_FILE = AutoNaviSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoNaviSample.app/AutoNaviSample";
+			};
+			name = Debug;
+		};
+		F37C58B41E5FC0010098B80E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S93X337HM6;
+				INFOPLIST_FILE = AutoNaviSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoNaviSample.app/AutoNaviSample";
+			};
+			name = Release;
+		};
+		F37C58C11E5FC01E0098B80E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = S93X337HM6;
+				INFOPLIST_FILE = AutoNaviSampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AutoNaviSample;
+			};
+			name = Debug;
+		};
+		F37C58C21E5FC01E0098B80E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = S93X337HM6;
+				INFOPLIST_FILE = AutoNaviSampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.AutoNaviSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AutoNaviSample;
+			};
+			name = Release;
+		};
 		F3D35D9E1E5695850055194D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -675,6 +810,8 @@
 			baseConfigurationReference = 895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AutoNaviSample/PrefixHeader.pch;
@@ -682,6 +819,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangmiao.AutoNaviSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -690,6 +829,7 @@
 			baseConfigurationReference = 7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AutoNaviSample/PrefixHeader.pch;
@@ -697,12 +837,31 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangmiao.AutoNaviSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F37C58B21E5FC0010098B80E /* Build configuration list for PBXNativeTarget "AutoNaviSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37C58B31E5FC0010098B80E /* Debug */,
+				F37C58B41E5FC0010098B80E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37C58C01E5FC01E0098B80E /* Build configuration list for PBXNativeTarget "AutoNaviSampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37C58C11E5FC01E0098B80E /* Debug */,
+				F37C58C21E5FC01E0098B80E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3D35D8A1E5695840055194D /* Build configuration list for PBXProject "AutoNaviSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

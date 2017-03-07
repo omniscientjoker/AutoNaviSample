@@ -136,12 +136,10 @@
     {
         return [self tableViewCellForViewMode];
     }
-    else if ([optionName isEqualToString:@"昼夜模式"])
+    else
     {
         return [self tableViewCellForNightType];
     }
-    
-    return nil;
 }
 
 #pragma mark - Custom TableView Cell

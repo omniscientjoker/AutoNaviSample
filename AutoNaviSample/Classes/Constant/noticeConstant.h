@@ -9,5 +9,6 @@
 #ifndef noticeConstant_h
 #define noticeConstant_h
 
+#define arriveDefinition          @"arriveDefinition"
 
 #endif /* noticeConstant_h */
