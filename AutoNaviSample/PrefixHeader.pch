@@ -11,6 +11,7 @@
 
 #import "constants.h"
 #import "constanscode.h"
+#import "noticeConstant.h"
 
 #import "Masonry.h"
 #import "AFNetworking.h"

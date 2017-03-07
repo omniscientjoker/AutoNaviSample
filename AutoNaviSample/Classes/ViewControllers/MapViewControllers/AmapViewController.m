@@ -10,6 +10,7 @@
 #import "arriveAlertView.h"
 #import "UIView+HUDExtensions.h"
 #import "MBProgressHUD.h"
+#import "notificationCenter.h"
 
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
 @property (nonatomic,strong)MBProgressHUD         *HUD;
@@ -91,7 +92,7 @@
 }
 - (void)startLocation
 {
-    self.locationManager.distanceFilter = 50;
+    self.locationManager.distanceFilter = 10;
     self.locationManager.allowsBackgroundLocationUpdates = YES;
     self.locationManager.locatingWithReGeocode = YES;
     [self.locationManager startUpdatingLocation];
@@ -130,13 +131,15 @@
         NSLog(@"创建失败 %@",error);
     } else {
         NSLog(@"创建成功");
+        [self setalertview];
+        [notificationCenter setNoticeWithTitile:@"" Subtitle:@"" Body:@""];
     }
 }
 - (void)amapGeoFenceManager:(AMapGeoFenceManager *)manager didGeoFencesStatusChangedForRegion:(AMapGeoFenceRegion *)region customID:(NSString *)customID error:(NSError *)error {
     if (error) {
         NSLog(@"status changed error %@",error);
     }else{
-        [self setalertview];
+        [notificationCenter setNoticeWithTitile:@"" Subtitle:@"" Body:@""];
     }
 }
 -(void)setalertview
@@ -144,7 +147,6 @@
     arriveAlertView *view = [[arriveAlertView alloc]initWithCarID:@"009090"];
     view.frame = self.view.bounds;
     view.backgroundColor = [UIColor clearColor];
-//    UIApplication *ap = [UIApplication sharedApplication];
     [self.view addSubview:view];
 }
 

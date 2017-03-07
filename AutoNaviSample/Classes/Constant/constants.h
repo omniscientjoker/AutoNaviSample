@@ -13,6 +13,7 @@
 #define OBJC_CLASS(_ref) NSClassFromString(NSStringFromClass(_ref))
 
 //app
+#define CurrentSystemVersion                        ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define MainBundle()                                ([NSBundle mainBundle])
 #define PathForBundleResource(resName, resType)     [MainBundle() pathForResource:(resName) ofType:(resType)]
 #define URLForBundleResource(resName, resType)      [MainBundle() URLForResource:(resName) \

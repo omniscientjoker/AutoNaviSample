@@ -29,10 +29,7 @@
 
 - (void)setView
 {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelVerifivationWhenTapInViewEnvironment)];
-    tap.numberOfTapsRequired = 1;
-    tap.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer:tap];
+    self.backgroundColor = [UIColor whiteColor];
     
     UIView * aleart = [[UIView alloc] initWithFrame:CGRectMake(10, SCREENHEIGHT/2-100, SCREENWIDTH-20, 200)];
     [self addSubview:aleart];
@@ -89,22 +86,9 @@
     
     
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch=[[event allTouches] anyObject];
-    if (touch.tapCount >=1)
-    {
-        
-    }
-}
 
 
 #pragma mark button
--(void)cancelVerifivationWhenTapInViewEnvironment
-{
-    [self removeFromSuperview];
-}
-
 -(void)clickCancelButton:(UIButton *)sender
 {
     [self removeFromSuperview];

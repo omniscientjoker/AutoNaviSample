@@ -22,6 +22,9 @@
 		F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */; };
 		F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */; };
 		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
+		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
+		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
+		F3B9387C1E6E7A1D0014A80E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
 		F3D35D991E5695850055194D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D35D981E5695850055194D /* Assets.xcassets */; };
@@ -83,6 +86,10 @@
 		F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUDExtensions.m"; sourceTree = "<group>"; };
 		F38C57071E5BD3CF001382DB /* NaviMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMoreView.h; sourceTree = "<group>"; };
 		F38C57081E5BD3CF001382DB /* NaviMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMoreView.m; sourceTree = "<group>"; };
+		F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationCenter.h; sourceTree = "<group>"; };
+		F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationCenter.m; sourceTree = "<group>"; };
+		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3D35D951E5695850055194D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B9387C1E6E7A1D0014A80E /* UserNotifications.framework in Frameworks */,
+				F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */,
 				658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +143,8 @@
 		B3D846F6AE03637C016AEC3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F39BFD271E6E859F00F4A9B2 /* MapKit.framework */,
+				F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */,
 				DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */,
 			);
 			name = Frameworks;
@@ -211,6 +222,15 @@
 				F38C57081E5BD3CF001382DB /* NaviMoreView.m */,
 			);
 			path = NaviMoreView;
+			sourceTree = "<group>";
+		};
+		F3B9387D1E6E80C70014A80E /* notificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */,
+				F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */,
+			);
+			path = notificationCenter;
 			sourceTree = "<group>";
 		};
 		F3D35D861E5695840055194D = {
@@ -350,6 +370,7 @@
 		F3D35DC91E56967C0055194D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F3B9387D1E6E80C70014A80E /* notificationCenter */,
 				F34EEFC91E5A7CD5006DBC5B /* SelectableOverlay */,
 				F34EEFD01E5AC444006DBC5B /* NaviPointAnnotation.h */,
 				F34EEFD11E5AC444006DBC5B /* NaviPointAnnotation.m */,
@@ -511,6 +532,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -640,6 +664,7 @@
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
+				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
