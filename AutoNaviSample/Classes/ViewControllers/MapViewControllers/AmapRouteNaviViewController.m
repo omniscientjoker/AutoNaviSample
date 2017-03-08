@@ -45,6 +45,8 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self initpoint];
+    [self initAnnotations];
+    
     [self initMapView];
     [self initDriveManager];
     
@@ -57,19 +59,19 @@
     if (self.mapView == nil){
         _mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
         [self.mapView setDelegate:self];
-        [self.view addSubview:_mapView];
         _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, SCREENHEIGHT-40);
-        _mapView.showsCompass= YES;
-        _mapView.showTraffic = YES;
         _mapView.compassOrigin= CGPointMake(_mapView.compassOrigin.x, 22);
-        _mapView.showsUserLocation = NO;
-        _mapView.userTrackingMode = MAUserTrackingModeNone;
-        _mapView.showsScale= YES;
+        _mapView.showsCompass= YES;
+        
         _mapView.scaleOrigin= CGPointMake(_mapView.scaleOrigin.x, 22);
-        _mapView.zoomEnabled = YES;
+        _mapView.showsScale= NO;
+        
+        _mapView.zoomEnabled   = YES;
         _mapView.scrollEnabled = YES;
-        _mapView.rotateEnabled= NO;
-        [_mapView setZoomLevel:16.5 animated:YES];
+        _mapView.rotateEnabled = YES;
+        
+        _mapView.showTraffic   = YES;
+        [_mapView setZoomLevel:15.5 animated:YES];
     }
 }
 - (void)initpoint{
@@ -179,20 +181,15 @@
          if ([overlay isKindOfClass:[SelectableOverlay class]])
          {
              SelectableOverlay *selectableOverlay = overlay;
-             /* 获取overlay对应的renderer. */
              MAPolylineRenderer * overlayRenderer = (MAPolylineRenderer *)[self.mapView rendererForOverlay:selectableOverlay];
              
              if (selectableOverlay.routeID == routeID){
                  selectableOverlay.selected = YES;
-                 /* 修改renderer选中颜色. */
                  overlayRenderer.fillColor   = selectableOverlay.selectedColor;
                  overlayRenderer.strokeColor = selectableOverlay.selectedColor;
-                 /* 修改overlay覆盖的顺序. */
                  [self.mapView exchangeOverlayAtIndex:idx withOverlayAtIndex:self.mapView.overlays.count - 1];
              }else{
-                 /* 设置未选中状态. */
                  selectableOverlay.selected = NO;
-                 /* 修改renderer选中颜色. */
                  overlayRenderer.fillColor   = selectableOverlay.regularColor;
                  overlayRenderer.strokeColor = selectableOverlay.regularColor;
              }
@@ -288,14 +285,12 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(CGRectGetWidth(collectionView.bounds) - 10, CGRectGetHeight(collectionView.bounds) - 5);
 }
-
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 5, 5, 5);
 }
 
 #pragma mark - MAMapView Delegate
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
-    
     if ([annotation isKindOfClass:[NaviPointAnnotation class]])
     {
         static NSString *annotationIdentifier = @"NaviPointAnnotationIdentifier";
@@ -324,12 +319,9 @@
     {
         SelectableOverlay * selectableOverlay = (SelectableOverlay *)overlay;
         id<MAOverlay> actualOverlay = selectableOverlay.overlay;
-        
         MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:actualOverlay];
-        
         polylineRenderer.lineWidth = 8.f;
         polylineRenderer.strokeColor = selectableOverlay.isSelected ? selectableOverlay.selectedColor : selectableOverlay.regularColor;
-        
         return polylineRenderer;
     }
     return nil;
@@ -342,15 +334,11 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //    [self initAnnotations];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    self.mapView.showTraffic = NO;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 @end

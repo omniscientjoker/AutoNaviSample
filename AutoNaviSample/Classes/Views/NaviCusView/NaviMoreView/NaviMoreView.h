@@ -15,6 +15,7 @@
 @property (nonatomic, assign) AMapNaviViewTrackingMode trackingMode;
 @property (nonatomic, assign) BOOL showNightType;
 @end
+
 @protocol NaviMoreMenuViewDelegate <NSObject>
 @optional
 - (void)moreMenuViewFinishButtonClicked;

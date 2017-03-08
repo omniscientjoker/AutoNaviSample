@@ -11,7 +11,7 @@
 #import "UIView+HUDExtensions.h"
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
-
+#import "AmapRouteNaviViewController.h"
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
 @property (nonatomic,strong)MBProgressHUD         *HUD;
 @property (nonatomic,strong)MAMapView             *mapView;
@@ -27,9 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    self.title = @"地图";
+    
     [self initMapView];
     [self setlocation];
     [self firstlocation];
+    
 }
 
 #pragma mark - 创建地图页面
@@ -71,7 +75,9 @@
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     self.locationManager.locationTimeout =8;
     self.locationManager.reGeocodeTimeout = 8;
+    
     [self HUDshow];
+    
     __weak __typeof(&*self) weakSelf = self;
     [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         [weakSelf HUDhide];
@@ -131,8 +137,6 @@
         NSLog(@"创建失败 %@",error);
     } else {
         NSLog(@"创建成功");
-        [self setalertview];
-        [notificationCenter setNoticeWithTitile:@"" Subtitle:@"" Body:@""];
     }
 }
 - (void)amapGeoFenceManager:(AMapGeoFenceManager *)manager didGeoFencesStatusChangedForRegion:(AMapGeoFenceRegion *)region customID:(NSString *)customID error:(NSError *)error {
@@ -168,7 +172,6 @@
 }
 - (UIView *)hudContentView
 {
-    
     if (_hudContentView) {
         
         return _hudContentView;
@@ -188,7 +191,6 @@
     if ([overlay isKindOfClass:[MACircle class]])
     {
         MACircleRenderer *circleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
-        
         circleRenderer.lineWidth    = 1.f;
         circleRenderer.strokeColor  = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.8];
         circleRenderer.fillColor    = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:0.8];
@@ -197,6 +199,14 @@
     return nil;
 }
 
+
+#pragma mark - btnclick
+-(void)clicktonav:(UIButton *)btn
+{
+    [self.hudContentView removeFromSuperview];
+    AmapRouteNaviViewController * nav  =[[AmapRouteNaviViewController alloc] init];
+    [self.navigationController pushViewController:nav animated:YES];
+}
 
 //页面周期
 -(void)viewWillAppear:(BOOL)animated{
@@ -207,6 +217,14 @@
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.mapView.showsUserLocation = NO;
+    self.mapView.delegate=nil;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

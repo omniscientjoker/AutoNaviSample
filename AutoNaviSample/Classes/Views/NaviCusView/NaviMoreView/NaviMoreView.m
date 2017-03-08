@@ -25,27 +25,21 @@
     
     UIButton *_finishButton;
 }
-
 @end
 
 @implementation NaviMoreView
-
 @synthesize trackingMode = _trackingMode;
 @synthesize showNightType = _showNightType;
 
 #pragma mark - Initialization
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame])
     {
         self.backgroundColor = [UIColor clearColor];
-        
         [self initProperties];
-        
         [self createMoreMenuView];
     }
-    
     return self;
 }
 
