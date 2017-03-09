@@ -14,18 +14,14 @@ static MAMapView *_mapView = nil;
 
 + (MAMapView *)shareMAMapView {
     @synchronized(self) {
-        [AMapServices sharedServices].apiKey = KEYAMAPKEY;
         if (_mapView == nil) {
-            CGRect frame = [[UIScreen mainScreen] bounds];
-            _mapView = [[MAMapView alloc] initWithFrame:frame];
+            _mapView = [[MAMapView alloc] init];
             _mapView.autoresizingMask =
             UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            _mapView.showsUserLocation = YES;
             _mapView.rotateEnabled = YES;
             _mapView.rotateCameraEnabled = YES;
             _mapView.zoomEnabled = YES;
         }
-        _mapView.frame = [UIScreen mainScreen].bounds;
         return _mapView;
     }
 }
@@ -43,5 +39,4 @@ static MAMapView *_mapView = nil;
 + (id)copyWithZone:(NSZone *)zone {
     return _mapView;
 }
-
 @end

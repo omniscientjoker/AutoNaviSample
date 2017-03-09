@@ -23,8 +23,8 @@
 		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
 		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
-		F39BFD2C1E6FA77100F4A9B2 /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2B1E6FA77100F4A9B2 /* NaviPointAnnotation.m */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
+		F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */; };
 		F3B9387C1E6E7A1D0014A80E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
@@ -88,10 +88,10 @@
 		F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationCenter.h; sourceTree = "<group>"; };
 		F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationCenter.m; sourceTree = "<group>"; };
 		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		F39BFD2A1E6FA77100F4A9B2 /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
-		F39BFD2B1E6FA77100F4A9B2 /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
 		F39BFD2D1E6FA7CF00F4A9B2 /* NaviMapHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMapHelp.h; sourceTree = "<group>"; };
 		F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMapHelp.m; sourceTree = "<group>"; };
+		F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
+		F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
 		F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -232,8 +232,8 @@
 			children = (
 				F39BFD2D1E6FA7CF00F4A9B2 /* NaviMapHelp.h */,
 				F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */,
-				F39BFD2A1E6FA77100F4A9B2 /* NaviPointAnnotation.h */,
-				F39BFD2B1E6FA77100F4A9B2 /* NaviPointAnnotation.m */,
+				F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */,
+				F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */,
 			);
 			path = NaviMapHelp;
 			sourceTree = "<group>";
@@ -669,7 +669,6 @@
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
-				F39BFD2C1E6FA77100F4A9B2 /* NaviPointAnnotation.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
@@ -678,6 +677,7 @@
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
+				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,

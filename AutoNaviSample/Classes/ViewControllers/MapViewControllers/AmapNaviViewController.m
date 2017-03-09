@@ -43,6 +43,7 @@
     if (self.driveView == nil)
     {
         self.driveView = [[AMapNaviDriveView alloc] init];
+        self.driveView.trackingMode = AMapNaviViewTrackingModeCarNorth;
         self.driveView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self.driveView setDelegate:self];
     }
@@ -61,9 +62,6 @@
 - (void)viewWillLayoutSubviews
 {
     UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0){
-        interfaceOrientation = self.interfaceOrientation;
-    }
     if (UIInterfaceOrientationIsPortrait(interfaceOrientation)){
         [self.driveView setIsLandscape:NO];
     }else if (UIInterfaceOrientationIsLandscape(interfaceOrientation)){

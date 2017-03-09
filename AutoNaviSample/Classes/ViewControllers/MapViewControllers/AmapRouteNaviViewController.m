@@ -7,6 +7,7 @@
 //
 
 #import "AmapRouteNaviViewController.h"
+#import "NaviMapHelp.h"
 #import "PreferenceView.h"
 #import "RouteCollectionViewCell.h"
 #import "SelectableOverlay.h"
@@ -18,6 +19,9 @@
 #define kCollectionCellIdentifier   @"kCollectionCellIdentifier"
 
 @interface AmapRouteNaviViewController ()<AMapNaviDriveManagerDelegate,AMapNaviDriveViewDelegate,MAMapViewDelegate,AmapNaviViewControllerDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+{
+    BOOL issuccessed;
+}
 
 @property (nonatomic,strong)MAMapView             *mapView;
 @property (nonatomic,strong)AMapNaviDriveManager  *driveManager;
@@ -44,11 +48,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self initpoint];
-    [self initAnnotations];
+    
+    
     
     [self initMapView];
     [self initDriveManager];
+    [self setPoint];
     
     [self calculateRoute];
     [self initRouteIndicatorView];
@@ -57,29 +62,32 @@
 #pragma mark - 创建地图页面
 - (void)initMapView{
     if (self.mapView == nil){
-        _mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
+        _mapView = [NaviMapHelp shareMAMapView];
+        _mapView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
         [self.mapView setDelegate:self];
         _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, SCREENHEIGHT-40);
         _mapView.compassOrigin= CGPointMake(_mapView.compassOrigin.x, 22);
         _mapView.showsCompass= YES;
-        
         _mapView.scaleOrigin= CGPointMake(_mapView.scaleOrigin.x, 22);
         _mapView.showsScale= NO;
         
-        _mapView.zoomEnabled   = YES;
-        _mapView.scrollEnabled = YES;
-        _mapView.rotateEnabled = YES;
-        
         _mapView.showTraffic   = YES;
         [_mapView setZoomLevel:15.5 animated:YES];
+        
+        [self.view addSubview:_mapView];
     }
 }
-- (void)initpoint{
+- (void)setPoint{
     AMapNaviPoint * start =  [AMapNaviPoint locationWithLatitude:39.993135 longitude:116.474175];
     AMapNaviPoint * end   =  [AMapNaviPoint locationWithLatitude:39.908791 longitude:116.321257];
     self.startPoints = [NSArray arrayWithObjects:start, nil];
     self.endPoints   = [NSArray arrayWithObjects:end, nil];
     self.routeIndicatorInfoArray = [NSMutableArray array];
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake((start.latitude + end.latitude)/2, (start.longitude + end.longitude)/2);
+    MACoordinateSpan  span = MACoordinateSpanMake( fabs(start.latitude - end.latitude)+0.01, fabs(start.longitude - end.longitude)+0.01);
+    MACoordinateRegion Region = MACoordinateRegionMake(center, span);
+    [_mapView setRegion:Region animated:YES];
 }
 - (void)initAnnotations
 {
@@ -100,32 +108,16 @@
 }
 
 #pragma mark - 路径规划
-//创建路径页面
-- (void)initRouteIndicatorView
-{
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _routeIndicatorView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - kRouteIndicatorViewHeight, CGRectGetWidth(self.view.bounds), kRouteIndicatorViewHeight) collectionViewLayout:layout];
-    _routeIndicatorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    _routeIndicatorView.backgroundColor = [UIColor clearColor];
-    _routeIndicatorView.pagingEnabled = YES;
-    _routeIndicatorView.showsVerticalScrollIndicator = NO;
-    _routeIndicatorView.showsHorizontalScrollIndicator = NO;
-    _routeIndicatorView.delegate = self;
-    _routeIndicatorView.dataSource = self;
-    [_routeIndicatorView registerClass:[RouteCollectionViewCell class] forCellWithReuseIdentifier:kCollectionCellIdentifier];
-    [self.view addSubview:_routeIndicatorView];
-}
 //路径规划
 - (void)calculateRoute
 {
     self.isMultipleRoutePlan = YES;
-    [self.driveManager calculateDriveRouteWithStartPoints:self.startPoints
+    
+    issuccessed = [self.driveManager calculateDriveRouteWithStartPoints:self.startPoints
                                                 endPoints:self.endPoints
                                                 wayPoints:nil
                                           drivingStrategy:AMapNaviDrivingStrategyMultiplePrioritiseHighwayAvoidCongestion];
 }
-
 //处理返回数据显示路径
 - (void)showNaviRoutes
 {
@@ -152,7 +144,6 @@
         [selectablePolyline setRouteID:[aRouteID integerValue]];
         [self.mapView addOverlay:selectablePolyline];
         free(coords);
-        //更新CollectonView的信息
         RouteCollectionViewInfo *info = [[RouteCollectionViewInfo alloc] init];
         info.routeID = [aRouteID integerValue];
         info.title = [NSString stringWithFormat:@"路径ID:%ld | 路径计算策略:%ld", (long)[aRouteID integerValue], (long)[self.preferenceView strategyWithIsMultiple:self.isMultipleRoutePlan]];
@@ -165,15 +156,7 @@
     [self.routeIndicatorView reloadData];
     [self selectNaviRouteWithID:[[self.routeIndicatorInfoArray firstObject] routeID]];
 }
-//选择路径
-- (void)selectNaviRouteWithID:(NSInteger)routeID
-{
-    if ([self.driveManager selectNaviRouteWithRouteID:routeID]){
-        [self selecteOverlayWithRouteID:routeID];
-    }else{
-        NSLog(@"路径选择失败!");
-    }
-}
+
 - (void)selecteOverlayWithRouteID:(NSInteger)routeID
 {
     [self.mapView.overlays enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id<MAOverlay> overlay, NSUInteger idx, BOOL *stop)
@@ -206,6 +189,9 @@
     {
         self.driveManager = [[AMapNaviDriveManager alloc] init];
         [self.driveManager setDelegate:self];
+        
+        [self.driveManager setAllowsBackgroundLocationUpdates:YES];
+        [self.driveManager setPausesLocationUpdatesAutomatically:NO];
     }
 }
 - (void)driveNaviViewCloseButtonClicked
@@ -219,6 +205,7 @@
 - (void)driveManager:(AMapNaviDriveManager *)driveManager didStartNavi:(AMapNaviMode)naviMode{
     NSLog(@"开始导航");
 }
+
 //出错提示信息
 - (void)driveManager:(AMapNaviDriveManager *)driveManager error:(NSError *)error{
     NSLog(@"error:{%ld - %@}", (long)error.code, error.localizedDescription);
@@ -247,10 +234,35 @@
 
 
 #pragma mark - 导航路径选择
+//创建路径页面
+- (void)initRouteIndicatorView
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    _routeIndicatorView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - kRouteIndicatorViewHeight, CGRectGetWidth(self.view.bounds), kRouteIndicatorViewHeight) collectionViewLayout:layout];
+    _routeIndicatorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    _routeIndicatorView.backgroundColor = [UIColor clearColor];
+    _routeIndicatorView.pagingEnabled = YES;
+    _routeIndicatorView.showsVerticalScrollIndicator = NO;
+    _routeIndicatorView.showsHorizontalScrollIndicator = NO;
+    _routeIndicatorView.delegate = self;
+    _routeIndicatorView.dataSource = self;
+    [_routeIndicatorView registerClass:[RouteCollectionViewCell class] forCellWithReuseIdentifier:kCollectionCellIdentifier];
+    [self.view addSubview:_routeIndicatorView];
+}
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     RouteCollectionViewCell *cell = [[self.routeIndicatorView visibleCells] firstObject];
     if (cell.info){
         [self selectNaviRouteWithID:cell.info.routeID];
+    }
+}
+//选择路径
+- (void)selectNaviRouteWithID:(NSInteger)routeID
+{
+    if ([self.driveManager selectNaviRouteWithRouteID:routeID]){
+        [self selecteOverlayWithRouteID:routeID];
+    }else{
+        NSLog(@"路径选择失败!");
     }
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -334,6 +346,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self initAnnotations];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];

@@ -8,17 +8,21 @@
 
 #import "AmapViewController.h"
 #import "arriveAlertView.h"
-#import "UIView+HUDExtensions.h"
+#import "NaviMapHelp.h"
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
 #import "AmapRouteNaviViewController.h"
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
+{
+    BOOL  showCurrentLocation;
+}
 @property (nonatomic,strong)MBProgressHUD         *HUD;
 @property (nonatomic,strong)MAMapView             *mapView;
+@property (nonatomic,strong)MACircle              *geoFenceCircle;
 @property (nonatomic,strong)AMapLocationManager   *locationManager;
 @property (nonatomic,strong)AMapGeoFenceManager   *geoFenceManager;
-@property(nonatomic, strong)UIView                *hudContentView;
 @property (nonatomic,assign)CLLocationCoordinate2D nowPoint;
+@property (nonatomic,strong)MAPointAnnotation     *destinationPoint;
 
 @end
 
@@ -28,37 +32,67 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+    showCurrentLocation = YES;
     self.title = @"地图";
-    
-    [self initMapView];
-    [self setlocation];
-    [self firstlocation];
-    
 }
-
+-(void)setButton{
+    UIButton * locationBtn = [[UIButton alloc] initWithFrame:CGRectMake(26, SCREENHEIGHT-90, 24, 24)];
+    [locationBtn setImage:[UIImage imageNamed:@"icon_location"] forState:UIControlStateNormal];
+    [locationBtn addTarget:self action:@selector(setlocationBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:locationBtn];
+    
+    UIButton * destinationBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH-50, SCREENHEIGHT-90, 24, 24)];
+    [destinationBtn setImage:[UIImage imageNamed:@"icon_destination"] forState:UIControlStateNormal];
+    [destinationBtn addTarget:self action:@selector(setdestinationBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:destinationBtn];
+    
+    UIButton * clickBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, SCREENHEIGHT-38, SCREENWIDTH-4, 36)];
+    clickBtn.titleLabel.font = [UIFont systemFontOfSize:18.0f];
+    clickBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    clickBtn.backgroundColor =COMMON_COLOR_BUTTON_BG;
+    clickBtn.layer.masksToBounds = YES;
+    clickBtn.layer.cornerRadius  = 4.0f;
+    [clickBtn setTitle:@"规划路径" forState:UIControlStateNormal];
+    [clickBtn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:clickBtn];
+}
 #pragma mark - 创建地图页面
 - (void)initMapView{
     if (self.mapView == nil){
-        _mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
+        _mapView = [NaviMapHelp shareMAMapView];
+        
+        _mapView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT-40);
+        
         [self.mapView setDelegate:self];
         
-        _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, SCREENHEIGHT-40);
+        _mapView.scrollEnabled = YES;
+        _mapView.showTraffic   = YES;
+        
+        _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.frame)-55, 0);
         _mapView.compassOrigin= CGPointMake(_mapView.compassOrigin.x, 22);
         _mapView.showsCompass= YES;
         
         _mapView.scaleOrigin= CGPointMake(_mapView.scaleOrigin.x, 22);
         _mapView.showsScale= NO;
         
-        _mapView.zoomEnabled   = YES;
-        _mapView.scrollEnabled = YES;
-        _mapView.rotateEnabled = YES;
-        
-        _mapView.showTraffic   = YES;
-        
         _mapView.userTrackingMode = MAUserTrackingModeFollow;
         _mapView.showsUserLocation = YES;
         [_mapView setZoomLevel:15.5 animated:YES];
+        _mapView.pausesLocationUpdatesAutomatically = NO;
+        _mapView.allowsBackgroundLocationUpdates = YES;
         [self.view addSubview:_mapView];
+    }
+    [self setButton];
+}
+
+-(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
+{
+    if(updatingLocation){
+        self.nowPoint = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+        if (showCurrentLocation == YES) {
+            [_mapView setCenterCoordinate:self.nowPoint animated:YES];
+        }
+        [self initgeoFence];
     }
 }
 
@@ -69,55 +103,24 @@
         self.locationManager = [[AMapLocationManager alloc] init];
         self.locationManager.delegate = self;
     }
-}
-- (void)firstlocation
-{
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    self.locationManager.locationTimeout =8;
-    self.locationManager.reGeocodeTimeout = 8;
-    
-    [self HUDshow];
-    
+    self.locationManager.locationTimeout  = 6;
+    self.locationManager.reGeocodeTimeout = 6;
     __weak __typeof(&*self) weakSelf = self;
     [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
-        [weakSelf HUDhide];
+        showCurrentLocation = YES;
         if (error){
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             if (error.code == AMapLocationErrorLocateFailed){
                 return;
             }
         }
         weakSelf.nowPoint = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
         [_mapView setCenterCoordinate:weakSelf.nowPoint animated:YES];
-        [weakSelf initgeoFence];
-        [weakSelf startLocation];
         if (regeocode){
             NSLog(@"reGeocode:%@", regeocode);
         }
     }];
 }
-- (void)startLocation
-{
-    self.locationManager.distanceFilter = 10;
-    self.locationManager.allowsBackgroundLocationUpdates = YES;
-    self.locationManager.locatingWithReGeocode = YES;
-    [self.locationManager startUpdatingLocation];
-}
-- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
-{
-    if (location.horizontalAccuracy > 200  || location.horizontalAccuracy == -1 ) {
-        NSLog(@"定位不准");
-    }else{
-        self.nowPoint = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-        [_mapView setCenterCoordinate:self.nowPoint animated:YES];
-    }
-    if (reGeocode)
-    {
-        NSLog(@"reGeocode:%@", reGeocode);
-    }
-}
-
-
 
 #pragma mark - 电子围栏
 - (void)initgeoFence
@@ -128,15 +131,14 @@
         self.geoFenceManager.activeAction = AMapGeoFenceActiveActionOutside;
         self.geoFenceManager.allowsBackgroundLocationUpdates = YES;
         [self.geoFenceManager addCircleRegionForMonitoringWithCenter:self.nowPoint radius:150 customID:@"destination"];
-        MACircle *circle = [MACircle circleWithCenterCoordinate:self.nowPoint radius:150];
-        [_mapView addOverlay: circle];
     }
 }
 - (void)amapGeoFenceManager:(AMapGeoFenceManager *)manager didAddRegionForMonitoringFinished:(NSArray<AMapGeoFenceRegion *> *)regions customID:(NSString *)customID error:(NSError *)error {
     if (error) {
-        NSLog(@"创建失败 %@",error);
+        self.geoFenceManager = nil;
     } else {
-        NSLog(@"创建成功");
+        _geoFenceCircle = [MACircle circleWithCenterCoordinate:self.nowPoint radius:150];
+        [_mapView addOverlay: _geoFenceCircle];
     }
 }
 - (void)amapGeoFenceManager:(AMapGeoFenceManager *)manager didGeoFencesStatusChangedForRegion:(AMapGeoFenceRegion *)region customID:(NSString *)customID error:(NSError *)error {
@@ -154,36 +156,24 @@
     [self.view addSubview:view];
 }
 
-#pragma mark - view
-- (void)HUDshow{
-    [self.view addSubview:self.hudContentView];
-    self.HUD = [MBProgressHUD showHUDAddedTo:self.hudContentView animated:YES];
-    self.HUD.mode = MBProgressHUDModeIndeterminate;
-    self.HUD.margin = 15.f;
-    self.HUD.removeFromSuperViewOnHide = YES;
-    self.HUD.delegate = self;
-    [self.HUD showAnimated:YES];
-}
-- (void)HUDhide{
-    if (self.HUD != nil) {
-        [self.hudContentView removeFromSuperview];
-        [self.HUD hideAnimated:YES];
-    }
-}
-- (UIView *)hudContentView
-{
-    if (_hudContentView) {
-        
-        return _hudContentView;
-    }
-    _hudContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT - 64)];
-    _hudContentView.backgroundColor = [UIColor clearColor];
-    return _hudContentView;
-}
+
 
 #pragma mark - MAMapView Delegate
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
-    
+    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+    {
+        static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
+        MAPinAnnotationView*annotationView = (MAPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
+        }
+        annotationView.canShowCallout= YES;
+        annotationView.animatesDrop = YES;
+        annotationView.draggable = NO;
+        annotationView.pinColor = MAPinAnnotationColorPurple;
+        return annotationView;
+    }
     return nil;
 }
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay
@@ -196,24 +186,46 @@
         circleRenderer.fillColor    = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:0.8];
         return circleRenderer;
     }
+    
     return nil;
 }
 
 
 #pragma mark - btnclick
--(void)clicktonav:(UIButton *)btn
+-(void)clickBtn:(UIButton *)btn
 {
-    [self.hudContentView removeFromSuperview];
     AmapRouteNaviViewController * nav  =[[AmapRouteNaviViewController alloc] init];
     [self.navigationController pushViewController:nav animated:YES];
+}
+-(void)setlocationBtn:(UIButton *)btn
+{
+    [_mapView setZoomLevel:15.5 animated:YES];
+    showCurrentLocation = YES;
+    [self setlocation];
+}
+-(void)setdestinationBtn:(UIButton *)btn
+{
+    [_mapView setZoomLevel:15.5 animated:YES];
+    showCurrentLocation = NO;
+    [_mapView setCenterCoordinate:self.destinationPoint.coordinate animated:YES];
+    
 }
 
 //页面周期
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self initMapView];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    self.destinationPoint = [[MAPointAnnotation alloc] init];
+    self.destinationPoint.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
+    self.destinationPoint.title = @"方恒国际";
+    self.destinationPoint.subtitle = @"阜通东大街6号";
+    [_mapView addAnnotation:self.destinationPoint];
+    if (_geoFenceCircle) {
+        [_mapView addOverlay: _geoFenceCircle];
+    }
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -223,8 +235,16 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    if (self.locationManager) {
+        [self.locationManager stopUpdatingLocation];
+        self.locationManager = nil;
+    }
+    [_mapView removeOverlay:_geoFenceCircle];
+    [_mapView removeAnnotation:self.destinationPoint];
     self.mapView.showsUserLocation = NO;
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.mapView.delegate=nil;
+    self.mapView = nil;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
