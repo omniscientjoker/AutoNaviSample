@@ -13,12 +13,12 @@
 #import "SelectableOverlay.h"
 #import "NaviPointAnnotation.h"
 #import "AmapNaviViewController.h"
-
+#import "NaviSpeechHelp.h"
 #define kRoutePlanInfoViewHeight    130.f
 #define kRouteIndicatorViewHeight   64.f
 #define kCollectionCellIdentifier   @"kCollectionCellIdentifier"
 
-@interface AmapRouteNaviViewController ()<AMapNaviDriveManagerDelegate,AMapNaviDriveViewDelegate,MAMapViewDelegate,AmapNaviViewControllerDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface AmapRouteNaviViewController ()<AMapNaviDriveManagerDelegate,AMapNaviDriveViewDelegate,MAMapViewDelegate,AmapNaviViewControllerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     BOOL issuccessed;
 }
@@ -26,8 +26,9 @@
 @property (nonatomic,strong)MAMapView             *mapView;
 @property (nonatomic,strong)AMapNaviDriveManager  *driveManager;
 @property (nonatomic,strong)AMapNaviDriveView     *driveView;
-@property (nonatomic,strong)AMapLocationManager   *locationManager;
-@property (nonatomic,strong)AMapGeoFenceManager   *geoFenceManager;
+
+@property (nonatomic,strong)AMapNaviPoint         *startPoint;
+@property (nonatomic,strong)AMapNaviPoint         *endPoint;
 
 
 @property (nonatomic,assign)BOOL                   trafficON;
@@ -44,13 +45,18 @@
 @end
 
 @implementation AmapRouteNaviViewController
-
+-(instancetype)initWithStartPoint:(CLLocationCoordinate2D)start EndPoint:(CLLocationCoordinate2D)end{
+    self = [super init];
+    if (self) {
+        self.startPoint =  [AMapNaviPoint locationWithLatitude:start.latitude longitude:start.longitude];
+        self.endPoint   =  [AMapNaviPoint locationWithLatitude:end.latitude longitude:end.longitude];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-    
-    
+
     [self initMapView];
     [self initDriveManager];
     [self setPoint];
@@ -78,14 +84,12 @@
     }
 }
 - (void)setPoint{
-    AMapNaviPoint * start =  [AMapNaviPoint locationWithLatitude:39.993135 longitude:116.474175];
-    AMapNaviPoint * end   =  [AMapNaviPoint locationWithLatitude:39.908791 longitude:116.321257];
-    self.startPoints = [NSArray arrayWithObjects:start, nil];
-    self.endPoints   = [NSArray arrayWithObjects:end, nil];
+    self.startPoints = [NSArray arrayWithObjects:self.startPoint, nil];
+    self.endPoints   = [NSArray arrayWithObjects:self.endPoint, nil];
     self.routeIndicatorInfoArray = [NSMutableArray array];
     
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake((start.latitude + end.latitude)/2, (start.longitude + end.longitude)/2);
-    MACoordinateSpan  span = MACoordinateSpanMake( fabs(start.latitude - end.latitude)+0.01, fabs(start.longitude - end.longitude)+0.01);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake((self.startPoint.latitude + self.endPoint.latitude)/2, (self.startPoint.longitude + self.endPoint.longitude)/2);
+    MACoordinateSpan  span = MACoordinateSpanMake( fabs(self.startPoint.latitude - self.endPoint.latitude)+0.01, fabs(self.startPoint.longitude - self.endPoint.longitude)+0.01);
     MACoordinateRegion Region = MACoordinateRegionMake(center, span);
     [_mapView setRegion:Region animated:YES];
 }
@@ -189,13 +193,15 @@
     {
         self.driveManager = [[AMapNaviDriveManager alloc] init];
         [self.driveManager setDelegate:self];
-        
+        self.driveManager.updateTrafficInfo = YES;
+        self.driveManager.isRecalculateRouteForYaw = YES;
         [self.driveManager setAllowsBackgroundLocationUpdates:YES];
         [self.driveManager setPausesLocationUpdatesAutomatically:NO];
     }
 }
 - (void)driveNaviViewCloseButtonClicked
 {
+    [[NaviSpeechHelp sharedNaviSpeechHelp] stopSpeak];
     [self.driveManager stopNavi];
     [self.navigationController popViewControllerAnimated:NO];
 }
@@ -223,6 +229,7 @@
     NSLog(@"onArrivedWayPoint:%d", wayPointIndex);
 }
 - (void)driveManager:(AMapNaviDriveManager *)driveManager playNaviSoundString:(NSString *)soundString soundStringType:(AMapNaviSoundType)soundStringType{
+    [[NaviSpeechHelp sharedNaviSpeechHelp] speakString:soundString];
     NSLog(@"playNaviSoundString:{%ld:%@}", (long)soundStringType, soundString);
 }
 - (void)driveManagerDidEndEmulatorNavi:(AMapNaviDriveManager *)driveManager{
@@ -343,6 +350,7 @@
 //页面周期
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

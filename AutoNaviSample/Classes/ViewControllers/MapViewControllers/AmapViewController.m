@@ -8,6 +8,7 @@
 
 #import "AmapViewController.h"
 #import "arriveAlertView.h"
+#include <objc/runtime.h>
 #import "NaviMapHelp.h"
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
@@ -34,6 +35,9 @@
     
     showCurrentLocation = YES;
     self.title = @"地图";
+//    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+//    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+//    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
 }
 -(void)setButton{
     UIButton * locationBtn = [[UIButton alloc] initWithFrame:CGRectMake(26, SCREENHEIGHT-90, 24, 24)];
@@ -194,7 +198,7 @@
 #pragma mark - btnclick
 -(void)clickBtn:(UIButton *)btn
 {
-    AmapRouteNaviViewController * nav  =[[AmapRouteNaviViewController alloc] init];
+    AmapRouteNaviViewController * nav  =[[AmapRouteNaviViewController alloc] initWithStartPoint:self.nowPoint EndPoint:self.destinationPoint.coordinate];
     [self.navigationController pushViewController:nav animated:YES];
 }
 -(void)setlocationBtn:(UIButton *)btn
@@ -215,6 +219,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self initMapView];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self.mapView removeAnnotations:self.mapView.annotations];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

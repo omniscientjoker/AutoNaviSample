@@ -15,6 +15,7 @@
 		F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCE1E5A8136006DBC5B /* LoginUser.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
+		F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */; };
 		F37C58AE1E5FC0010098B80E /* AutoNaviSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F37C58AD1E5FC0010098B80E /* AutoNaviSampleTests.m */; };
 		F37C58BC1E5FC01E0098B80E /* AutoNaviSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F37C58BB1E5FC01E0098B80E /* AutoNaviSampleUITests.m */; };
 		F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B041E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m */; };
@@ -71,6 +72,8 @@
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
 		F378081E1E56D1D10057A57A /* AmapNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapNaviViewController.m; sourceTree = "<group>"; };
+		F37AF43F1E727E9E00161008 /* NaviSpeechHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviSpeechHelp.h; sourceTree = "<group>"; };
+		F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviSpeechHelp.m; sourceTree = "<group>"; };
 		F37C58AB1E5FC0010098B80E /* AutoNaviSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoNaviSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37C58AD1E5FC0010098B80E /* AutoNaviSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoNaviSampleTests.m; sourceTree = "<group>"; };
 		F37C58AF1E5FC0010098B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 			children = (
 				F39BFD2D1E6FA7CF00F4A9B2 /* NaviMapHelp.h */,
 				F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */,
+				F37AF43F1E727E9E00161008 /* NaviSpeechHelp.h */,
+				F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */,
 				F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */,
 				F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */,
 			);
@@ -666,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,

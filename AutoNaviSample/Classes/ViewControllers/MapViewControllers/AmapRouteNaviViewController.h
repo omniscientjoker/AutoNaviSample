@@ -10,4 +10,6 @@
 
 @interface AmapRouteNaviViewController : UIViewController
 
+-(instancetype)initWithStartPoint:(CLLocationCoordinate2D)start EndPoint:(CLLocationCoordinate2D)end;
+
 @end
