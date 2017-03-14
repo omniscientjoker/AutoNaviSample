@@ -10,7 +10,7 @@
 #import <AMapNaviKit/AMapNaviKit.h>
 @protocol AmapNaviViewControllerDelegate;
 
-@interface AmapNaviViewController : UIViewController
+@interface AmapNaviViewController : BaseViewController
 @property (nonatomic, weak) id <AmapNaviViewControllerDelegate> delegate;
 @property (nonatomic, strong)  AMapNaviDriveView *driveView;
 @end

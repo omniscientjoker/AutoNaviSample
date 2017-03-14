@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "AppDelegate.h"
 @interface BaseViewController ()
 
 @end
@@ -88,5 +88,20 @@
         frame.origin.y -= yPosition;
     }
     self.view.frame = frame;
+}
+
+#pragma mark - view
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [tempAppDelegate.SlidebarVC setPanEnabled:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [tempAppDelegate.SlidebarVC setPanEnabled:YES];
 }
 @end

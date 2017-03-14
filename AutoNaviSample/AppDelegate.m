@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AmapViewController.h"
+#import "SlidebarMainViewController.h"
 #import <UserNotifications/UserNotifications.h>
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -38,7 +38,16 @@
         }];
     }
     
-    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
+    
+//    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
+    
+    self.mainNaviController = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
+    
+    SlidebarMainViewController *slideMainView = [[SlidebarMainViewController alloc] init];
+    self.SlidebarVC = [[SlidebarViewController alloc] initWithLeftView:slideMainView andMainView:self.mainNaviController];
+    
+    self.window.rootViewController = self.SlidebarVC;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

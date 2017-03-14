@@ -10,6 +10,7 @@
 
 @interface LoginUser : BaseUser
 +(LoginUser *)sharedInstance;
+
 //用户数据
 @property (nonatomic, strong) NSString *uId;//唯一标识
 @property (nonatomic, strong) NSString *telphone;//登录账号--手机号码

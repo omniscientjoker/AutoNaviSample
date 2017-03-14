@@ -26,6 +26,10 @@
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
 		F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */; };
+		F3AA4C181E77B47D00D20214 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C171E77B47D00D20214 /* MineViewController.m */; };
+		F3AA4C1F1E77B7B400D20214 /* UIView+Slidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C1E1E77B7B400D20214 /* UIView+Slidebar.m */; };
+		F3AA4C221E77C21400D20214 /* SlidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C211E77C21400D20214 /* SlidebarViewController.m */; };
+		F3AA4C251E77C32C00D20214 /* SlidebarMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C241E77C32C00D20214 /* SlidebarMainViewController.m */; };
 		F3B9387C1E6E7A1D0014A80E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
@@ -95,6 +99,14 @@
 		F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMapHelp.m; sourceTree = "<group>"; };
 		F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
 		F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
+		F3AA4C161E77B47D00D20214 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		F3AA4C171E77B47D00D20214 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		F3AA4C1D1E77B7B400D20214 /* UIView+Slidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Slidebar.h"; sourceTree = "<group>"; };
+		F3AA4C1E1E77B7B400D20214 /* UIView+Slidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Slidebar.m"; sourceTree = "<group>"; };
+		F3AA4C201E77C21400D20214 /* SlidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidebarViewController.h; sourceTree = "<group>"; };
+		F3AA4C211E77C21400D20214 /* SlidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidebarViewController.m; sourceTree = "<group>"; };
+		F3AA4C231E77C32C00D20214 /* SlidebarMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidebarMainViewController.h; sourceTree = "<group>"; };
+		F3AA4C241E77C32C00D20214 /* SlidebarMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidebarMainViewController.m; sourceTree = "<group>"; };
 		F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -243,6 +255,24 @@
 			path = NaviMapHelp;
 			sourceTree = "<group>";
 		};
+		F3AA4C151E77B46400D20214 /* MineViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C161E77B47D00D20214 /* MineViewController.h */,
+				F3AA4C171E77B47D00D20214 /* MineViewController.m */,
+			);
+			path = MineViewControllers;
+			sourceTree = "<group>";
+		};
+		F3AA4C191E77B74000D20214 /* SidebarViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C231E77C32C00D20214 /* SlidebarMainViewController.h */,
+				F3AA4C241E77C32C00D20214 /* SlidebarMainViewController.m */,
+			);
+			path = SidebarViewControllers;
+			sourceTree = "<group>";
+		};
 		F3B9387D1E6E80C70014A80E /* notificationCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +350,8 @@
 				F3D35DAF1E56967C0055194D /* BaseViewController.m */,
 				F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */,
 				F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */,
+				F3AA4C201E77C21400D20214 /* SlidebarViewController.h */,
+				F3AA4C211E77C21400D20214 /* SlidebarViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -337,6 +369,8 @@
 			children = (
 				F3894B0A1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.h */,
 				F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */,
+				F3AA4C1D1E77B7B400D20214 /* UIView+Slidebar.h */,
+				F3AA4C1E1E77B7B400D20214 /* UIView+Slidebar.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -399,6 +433,8 @@
 		F3D35DCA1E56967C0055194D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3AA4C191E77B74000D20214 /* SidebarViewControllers */,
+				F3AA4C151E77B46400D20214 /* MineViewControllers */,
 				F3D35DD71E56C5CC0055194D /* MapViewControllers */,
 			);
 			path = ViewControllers;
@@ -671,6 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AA4C1F1E77B7B400D20214 /* UIView+Slidebar.m in Sources */,
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
@@ -679,9 +716,12 @@
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
 				F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */,
+				F3AA4C251E77C32C00D20214 /* SlidebarMainViewController.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
+				F3AA4C181E77B47D00D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
+				F3AA4C221E77C21400D20214 /* SlidebarViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,

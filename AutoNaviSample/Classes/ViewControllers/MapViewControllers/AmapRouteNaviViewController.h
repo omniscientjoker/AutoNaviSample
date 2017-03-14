@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AmapRouteNaviViewController : UIViewController
+@interface AmapRouteNaviViewController : BaseViewController
 
 -(instancetype)initWithStartPoint:(CLLocationCoordinate2D)start EndPoint:(CLLocationCoordinate2D)end;
 
