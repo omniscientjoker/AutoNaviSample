@@ -31,42 +31,4 @@
     }
     return nil;
 }
-
-+ (void)showSlidebarView:(NSString*)title Message:(NSString *)message
-{
-    dispatch_async(dispatch_get_main_queue() , ^{
-        UIAlertView *alert = [[UIAlertView alloc] init];
-        alert.title = title;
-        alert.message = message;
-        [alert addButtonWithTitle:@"确定"];
-        [alert show];
-        alert = nil;
-    });
-}
-
-+ (void)showSlidebarView:(NSString*)title
-                 Message:(NSString *)message
-                Delegate:(UIViewController<UIAlertViewDelegate> *)delegate
-{
-    dispatch_async(dispatch_get_main_queue() , ^{
-        UIAlertView *alert = [[UIAlertView alloc] init];
-        alert.title = title;
-        alert.message = message;
-        alert.delegate = delegate;
-        alert.tag = 100001012;
-        [alert addButtonWithTitle:@"确定"];
-        [alert show];
-        alert = nil;
-    });
-}
-
--(UIAlertController *)setAlertViewWithTitle:(NSString *)title Message:(NSString *)message{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-
-    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"点击确认");
-    }]];
-    return alertController;
-}
-
 @end

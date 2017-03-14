@@ -11,26 +11,43 @@
 #import "MineViewController.h"
 #import "AmapViewController.h"
 @interface SlidebarMainViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+{
+    NSInteger selectSlidebarNum;
+}
+@property (nonatomic, strong) NSArray *sections;
+@property (nonatomic, strong) NSArray *classNames;
 @end
 
 @implementation SlidebarMainViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    selectSlidebarNum = 0;
+    
+    
+    [self initClassNames];
+    [self initTitles];
+    
     self.view.backgroundColor = [UIColor blackColor];
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageview.image = [UIImage imageNamed:@"leftbackiamge"];
-    [self.view addSubview:imageview];
+    
     UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableview.dataSource = self;
     tableview.delegate  = self;
     tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableview];
 }
+- (void)initClassNames
+{
+    self.classNames = [NSArray arrayWithObjects:@"AmapViewController",@"MineViewController",nil];
+}
+- (void)initTitles
+{
+    self.sections = [NSArray arrayWithObjects:@"地图",@"我的",nil];
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.classNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,22 +60,22 @@
     cell.textLabel.font = [UIFont systemFontOfSize:20.0f];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
-    
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"地图";
-    }
+    cell.textLabel.text = self.sections[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [tempAppDelegate.SlidebarVC closeLeftView];
+    if (indexPath.row != selectSlidebarNum) {
+        selectSlidebarNum = indexPath.row;
+        NSString *className = self.classNames[indexPath.row];
+        UIViewController *subViewController = [[NSClassFromString(className) alloc] init];
+        subViewController.title = self.sections[indexPath.row];
+        [tempAppDelegate.mainNaviController pushViewController:subViewController animated:NO];
+    }
     
-    AmapViewController *vc = [[AmapViewController alloc] init];
-    vc.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    vc.hidesBottomBarWhenPushed = YES;
-    [tempAppDelegate.SlidebarVC closeLeftView];//关闭左侧抽屉
-    [tempAppDelegate.mainNaviController pushViewController:vc animated:NO];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

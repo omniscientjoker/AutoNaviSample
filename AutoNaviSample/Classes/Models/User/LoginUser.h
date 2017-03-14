@@ -37,6 +37,9 @@
 @property (nonatomic, assign) BOOL setNorthUp;//车头向上 no 北向上 yes
 @property (nonatomic, assign) BOOL set3Dnavi;//3d导航 yes   2d导航 no
 
+//选中
+@property (nonatomic, assign) NSInteger  selectSlidebarNum;
+
 
 //登陆
 @property (nonatomic, assign) BOOL isLogin;

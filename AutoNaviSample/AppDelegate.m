@@ -41,11 +41,9 @@
     
 //    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
     
-    self.mainNaviController = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
-    
     SlidebarMainViewController *slideMainView = [[SlidebarMainViewController alloc] init];
     self.SlidebarVC = [[SlidebarViewController alloc] initWithLeftView:slideMainView andMainView:self.mainNaviController];
-    
+    self.mainNaviController = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
     self.window.rootViewController = self.SlidebarVC;
     
     self.window.backgroundColor = [UIColor whiteColor];

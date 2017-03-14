@@ -92,14 +92,12 @@
 
 #pragma mark - view
 - (void)viewWillDisappear:(BOOL)animated {
-    
     [super viewWillDisappear:animated];
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [tempAppDelegate.SlidebarVC setPanEnabled:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
     [super viewDidAppear:animated];
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [tempAppDelegate.SlidebarVC setPanEnabled:YES];

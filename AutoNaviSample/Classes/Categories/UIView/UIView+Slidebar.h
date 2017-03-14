@@ -11,9 +11,4 @@
 @interface UIView (Slidebar)
 @property (nonatomic, strong, readonly) UIView *lastSubviewOnX;
 @property (nonatomic, strong, readonly) UIView *lastSubviewOnY;
-
-+ (void)showSlidebarView:(NSString*)title Message:(NSString *)message;
-+ (void)showSlidebarView:(NSString*) title
-                 Message:(NSString *) message
-                Delegate:(UIViewController<UIAlertViewDelegate> *)delegate;
 @end
