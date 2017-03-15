@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString *password;//用户密码 MD5
 @property (nonatomic, strong) NSString *loginTime;//登录时间  yyyy-MM-dd hh:mm:ss
 @property (nonatomic, strong) NSString *headerImageUrl;//头像url
+@property (nonatomic, assign) NSInteger setSlidebarIndex;
 
 //导航数据相关
 @property (nonatomic, assign) BOOL avoidCongestion; //避免拥堵
@@ -42,11 +43,15 @@
 @property (nonatomic, assign) BOOL isNotFirstLogin;//是否第一次登录  否：正常登录 是:注销登录
 @property (nonatomic, assign) BOOL isAutoLogin;//是否自动登录
 
+
+
 //系统设置  YES:仅Wi-Fi网络下载  NO:都下载
 @property (nonatomic, assign) BOOL wifiDownloadSet;
 //推送设置  YES:允许  NO:不允许
-@property (nonatomic, strong) NSString * pushSet;
+@property (nonatomic, strong) NSString *pushSet;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *deviceToken;
+
++ (void)parseLoginUserInfoFromUserDefaults;
 
 @end

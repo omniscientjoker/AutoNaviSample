@@ -13,6 +13,10 @@
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
 #import "AmapRouteNaviViewController.h"
+#import "UIViewController+SlidebarMenu.h"
+#import "LoginUser.h"
+
+
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
 {
     BOOL  showCurrentLocation;
@@ -33,13 +37,26 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    showCurrentLocation = YES;
+    [LoginUser parseLoginUserInfoFromUserDefaults];
+    
+    [LoginUser sharedInstance].setSlidebarIndex = 1;
+    [LoginUser sharedInstance].uId = @"000";
+    if (showCurrentLocation) {
+        showCurrentLocation = YES;
+    }
+
     self.title = @"地图";
 //    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
 //    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
 //    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
 }
+
+
 -(void)setButton{
+    
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_btn_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
+    self.navigationItem.leftBarButtonItem = leftBar;
+    
     UIButton * locationBtn = [[UIButton alloc] initWithFrame:CGRectMake(26, SCREENHEIGHT-90, 24, 24)];
     [locationBtn setImage:[UIImage imageNamed:@"icon_location"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(setlocationBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -218,6 +235,7 @@
 //页面周期
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     [self initMapView];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView removeAnnotations:self.mapView.annotations];
