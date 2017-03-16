@@ -5,4 +5,5 @@ pod 'Masonry'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'AMapNavi-NO-IDFA'
 pod 'AMapLocation-NO-IDFA'
+pod 'MLeaksFinder'
 end

@@ -22,8 +22,11 @@ PODS:
   - AMapNavi-NO-IDFA (2.3.0):
     - AMap3DMap-NO-IDFA (~> 4.2)
     - AMapFoundation-NO-IDFA (~> 1.2)
+  - FBRetainCycleDetector (0.1.3)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MLeaksFinder (0.2.1):
+    - FBRetainCycleDetector
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - AMapNavi-NO-IDFA
   - Masonry
   - MBProgressHUD (~> 1.0.0)
+  - MLeaksFinder
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -38,9 +42,11 @@ SPEC CHECKSUMS:
   AMapFoundation-NO-IDFA: 1c79258b0a2c2539a8e6809174c06c55340129a7
   AMapLocation-NO-IDFA: c458bd5f15d1243381274508f029960ae48b2801
   AMapNavi-NO-IDFA: a54f35c1c1e3e0ba14cf1139a7c7a6e8ff832fae
+  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MLeaksFinder: '0850e2f2abc7227adc4d4e2d1992b431264eb4d5'
 
-PODFILE CHECKSUM: d1772f6629455799da3f0238cc5e3265bb4ac8b6
+PODFILE CHECKSUM: b15bbf4bab7822a20a511097810558b6a56be4d0
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1.beta.1

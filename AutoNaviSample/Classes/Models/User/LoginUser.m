@@ -20,13 +20,14 @@
 }
 //本地存储开启
 - (void)localSaveInit{
-    unsigned int propertyCount = 0;
+    unsigned int propertyCount, i;
     objc_property_t *propertyties = class_copyPropertyList([LoginUser class], &propertyCount);
-    for (unsigned int i = 0; i < propertyCount; i++ ) {
+    for (i = 0; i < propertyCount; i++ ) {
         objc_property_t property = propertyties[i];
         const char * name = property_getName(property);
         [self addObserver:self forKeyPath:[NSString stringWithUTF8String:name] options:NSKeyValueObservingOptionNew context:NULL];
     }
+    free(propertyties);
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     

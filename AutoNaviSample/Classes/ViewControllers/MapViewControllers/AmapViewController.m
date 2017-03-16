@@ -180,6 +180,13 @@
 
 
 #pragma mark - MAMapView Delegate
+- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view didChangeDragState:(MAAnnotationViewDragState)newState
+   fromOldState:(MAAnnotationViewDragState)oldState
+{
+    if (oldState == MAAnnotationViewDragStateStarting) {
+        showCurrentLocation = NO;
+    }
+}
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
     if ([annotation isKindOfClass:[MAPointAnnotation class]])
     {

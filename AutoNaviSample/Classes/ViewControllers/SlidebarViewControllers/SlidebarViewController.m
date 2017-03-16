@@ -14,7 +14,7 @@
 #import "AmapViewController.h"
 #import "MineViewController.h"
 
-@interface SlidebarViewController()
+@interface SlidebarViewController()<UIGestureRecognizerDelegate>
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 @property (strong, nonatomic)NSArray                 *classNames;
 @property (strong, nonatomic)NSArray                 *viewTitles;
@@ -50,7 +50,14 @@
     self.titleImgs  = [NSArray arrayWithObjects:@"head_portrait_icon",@"map_portrait_icon",nil];
     self.classNames = [NSArray arrayWithObjects:@"MineViewController", @"AmapViewController",nil];
     self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    self.tapGesture.delegate = self;
     [self.view addGestureRecognizer:self.tapGesture];
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    if([NSStringFromClass([touch.view class])isEqualToString:@"UITableViewCellContentView"]) {
+        return NO;
+    }
+    return YES;
 }
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
     CGPoint location = [recognizer locationInView:self.view];
@@ -122,12 +129,14 @@
     cell.imageView.image = [UIImage imageNamed:self.titleImgs[indexPath.row]];
     return cell;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.view removeGestureRecognizer:self.tapGesture];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
