@@ -62,8 +62,6 @@
     sideMenuViewController.contentViewShadowEnabled = YES;
     self.window.rootViewController = sideMenuViewController;
  
-    
-//    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

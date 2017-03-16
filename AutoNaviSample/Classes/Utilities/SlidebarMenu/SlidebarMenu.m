@@ -71,15 +71,15 @@
     _panFromEdge = YES;
     _panMinimumOpenThreshold = 60.0;
     
-    _contentViewShadowEnabled = NO;
+    _contentViewShadowEnabled = YES;
     _contentViewShadowColor = [UIColor blackColor];
     _contentViewShadowOffset = CGSizeZero;
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
-    _contentViewFadeOutAlpha = 1.0f;
-    _contentViewInLandscapeOffsetCenterX = 30.f;
-    _contentViewInPortraitOffsetCenterX  = 30.f;
-    _contentViewScaleValue = 0.7f;
+    _contentViewFadeOutAlpha = 0.0f;
+    _contentViewInLandscapeOffsetCenterX = 0.f;
+    _contentViewInPortraitOffsetCenterX  = -SCREENWIDTH/2;
+    _contentViewScaleValue = 1.0f;
 }
 
 #pragma mark Public methods
@@ -94,8 +94,9 @@
     return self;
 }
 
-- (void)presentLeftMenuViewController
+- (void)presentLeftMenuViewControllerWithBackgroundImg:(UIImage *)image
 {
+    [self setBackgroundImage:image];
     [self presentMenuViewContainerWithMenuViewController:self.leftMenuViewController];
     [self showLeftMenuViewController];
 }

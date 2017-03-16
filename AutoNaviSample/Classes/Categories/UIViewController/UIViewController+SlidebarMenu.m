@@ -7,6 +7,8 @@
 //
 
 #import "UIViewController+SlidebarMenu.h"
+#import "UIView+instrument.h"
+#import "UIImage+blur.h"
 #import "SlidebarMenu.h"
 @implementation UIViewController (SlidebarMenu)
 
@@ -26,6 +28,7 @@
 }
 - (void)presentLeftMenuViewController:(id)sender
 {
-    [self.sideMenuViewController presentLeftMenuViewController];
+    UIImage * image = [[self.view screenshot] applyBlurWithRadius:5 tintColor:[UIColor clearColor] saturationDeltaFactor:1.8 maskImage:nil];
+    [self.sideMenuViewController presentLeftMenuViewControllerWithBackgroundImg:image];
 }
 @end
