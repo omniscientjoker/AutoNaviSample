@@ -7,7 +7,6 @@
 //
 
 #import "MineViewController.h"
-#import "UIViewController+SlidebarMenu.h"
 
 @interface MineViewController ()
 
@@ -17,13 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_btn_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    self.navigationItem.leftBarButtonItem = leftBar;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"我的";
     
-}
-- (void)backAction {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

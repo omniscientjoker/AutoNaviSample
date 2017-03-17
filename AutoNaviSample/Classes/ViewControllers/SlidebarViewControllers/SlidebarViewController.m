@@ -14,6 +14,8 @@
 #import "AmapViewController.h"
 #import "MineViewController.h"
 
+#define kSlideBarCellHeight             64
+
 @interface SlidebarViewController()<UIGestureRecognizerDelegate>
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 @property (strong, nonatomic)NSArray                 *classNames;
@@ -82,24 +84,24 @@
 }
 #pragma mark UITableView Datasource
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return (SCREENHEIGHT-54*self.classNames.count)/2;
+    return (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return (SCREENHEIGHT-54*self.classNames.count)/2;
+    return (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UITableViewHeaderFooterView * headView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-54*self.classNames.count)/2)];
+    UITableViewHeaderFooterView * headView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2)];
     headView.contentView.backgroundColor = [UIColor clearColor];
     return headView;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UITableViewHeaderFooterView * footView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-54*self.classNames.count)/2)];
+    UITableViewHeaderFooterView * footView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2)];
     footView.contentView.backgroundColor = [UIColor clearColor];
     return footView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 54;
+    return kSlideBarCellHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -121,8 +123,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:23];
+        cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
     }
     cell.textLabel.text = self.viewTitles[indexPath.row];

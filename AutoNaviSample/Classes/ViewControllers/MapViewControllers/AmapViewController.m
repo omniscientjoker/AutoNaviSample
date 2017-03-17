@@ -13,13 +13,14 @@
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
 #import "AmapRouteNaviViewController.h"
-#import "UIViewController+SlidebarMenu.h"
 #import "LoginUser.h"
 
 
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
 {
+    BOOL  mapBennDrag;
     BOOL  showCurrentLocation;
+    CLLocationCoordinate2D  tagPoint;
 }
 @property (nonatomic,strong)MBProgressHUD         *HUD;
 @property (nonatomic,strong)MAMapView             *mapView;
@@ -41,7 +42,9 @@
     
     [LoginUser sharedInstance].setSlidebarIndex = 1;
     [LoginUser sharedInstance].uId = @"000";
-    if (showCurrentLocation) {
+    if (mapBennDrag == YES) {
+        showCurrentLocation = NO;
+    }else{
         showCurrentLocation = YES;
     }
 
@@ -53,9 +56,6 @@
 
 
 -(void)setButton{
-    
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_btn_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    self.navigationItem.leftBarButtonItem = leftBar;
     
     UIButton * locationBtn = [[UIButton alloc] initWithFrame:CGRectMake(26, SCREENHEIGHT-90, 24, 24)];
     [locationBtn setImage:[UIImage imageNamed:@"icon_location"] forState:UIControlStateNormal];
@@ -82,7 +82,7 @@
     if (self.mapView == nil){
         _mapView = [NaviMapHelp shareMAMapView];
         
-        _mapView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT-40);
+        _mapView.frame = CGRectMake(0, SCREENDEFAULTHEIGHT, SCREENWIDTH, SCREENRESULTHEIGHT);
         
         [self.mapView setDelegate:self];
         
@@ -130,6 +130,7 @@
     __weak __typeof(&*self) weakSelf = self;
     [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         showCurrentLocation = YES;
+        mapBennDrag = NO;
         if (error){
             if (error.code == AMapLocationErrorLocateFailed){
                 return;
@@ -185,6 +186,7 @@
 {
     if (oldState == MAAnnotationViewDragStateStarting) {
         showCurrentLocation = NO;
+        mapBennDrag = YES;
     }
 }
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
@@ -229,12 +231,14 @@
 {
     [_mapView setZoomLevel:15.5 animated:YES];
     showCurrentLocation = YES;
+    mapBennDrag = NO;
     [self setlocation];
 }
 -(void)setdestinationBtn:(UIButton *)btn
 {
     [_mapView setZoomLevel:15.5 animated:YES];
     showCurrentLocation = NO;
+    mapBennDrag = YES;
     [_mapView setCenterCoordinate:self.destinationPoint.coordinate animated:YES];
     
 }
