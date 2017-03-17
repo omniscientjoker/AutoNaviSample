@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,SideMenuDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (readonly, strong, nonatomic) UINavigationController *rootNaviController;
+
++ (AppDelegate *)sharedInstance;
 @end
 

@@ -10,8 +10,11 @@
 #import "UIImage+blur.h"
 #import "UIView+instrument.h"
 #import "LoginUser.h"
+#import "LoginViewController.h"
 
+#import "OrderViewController.h"
 #import "AmapViewController.h"
+#import "OptionsViewController.h"
 #import "MineViewController.h"
 
 #define kSlideBarCellHeight             64
@@ -22,6 +25,7 @@
 @property (strong, nonatomic)NSArray                 *viewTitles;
 @property (strong, nonatomic)NSArray                 *titleImgs;
 @property (strong, nonatomic)UITapGestureRecognizer  *tapGesture;
+@property (strong, nonatomic)UIButton                *headPhotoBtn;
 @end
 
 @implementation SlidebarViewController
@@ -48,9 +52,9 @@
 }
 - (void)initTitles
 {
-    self.viewTitles = [NSArray arrayWithObjects:@"我的",@"地图",nil];
-    self.titleImgs  = [NSArray arrayWithObjects:@"head_portrait_icon",@"map_portrait_icon",nil];
-    self.classNames = [NSArray arrayWithObjects:@"MineViewController", @"AmapViewController",nil];
+    self.viewTitles = [NSArray arrayWithObjects:@"订单",@"地图",@"设置",nil];
+    self.titleImgs  = [NSArray arrayWithObjects:@"order_portrait_icon",@"map_portrait_icon",@"options_portrait_icon",nil];
+    self.classNames = [NSArray arrayWithObjects:@"OrderViewController", @"AmapViewController",@"OptionsViewController",nil];
     self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     self.tapGesture.delegate = self;
     [self.view addGestureRecognizer:self.tapGesture];
@@ -92,11 +96,28 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UITableViewHeaderFooterView * headView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2)];
     headView.contentView.backgroundColor = [UIColor clearColor];
+    
+    self.headPhotoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.headPhotoBtn.frame = CGRectMake(0, 0, SCREENWIDTH/14*3, SCREENWIDTH/14*3);
+    self.headPhotoBtn.center = headView.center;
+    [self.headPhotoBtn setImage:[UIImage imageNamed:@"head_portrait_icon"] forState:UIControlStateNormal];
+    [self.headPhotoBtn addTarget:self action:@selector(cleckHeadPhotoBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [headView addSubview:self.headPhotoBtn];
     return headView;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UITableViewHeaderFooterView * footView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/7*3, (SCREENHEIGHT-kSlideBarCellHeight*self.classNames.count)/2)];
     footView.contentView.backgroundColor = [UIColor clearColor];
+    UIButton * shutDownBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [shutDownBtn setImage:[UIImage imageNamed:@"shutdown_portrait_icon"] forState:UIControlStateNormal];
+    [shutDownBtn addTarget:self action:@selector(clickShotDownBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [footView addSubview:shutDownBtn];
+    [shutDownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(footView.mas_centerX);
+        make.height.mas_equalTo(@60);
+        make.width.mas_equalTo(@60);
+        make.bottom.equalTo(footView.mas_bottom).with.offset(-10);
+    }];
     return footView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -130,6 +151,21 @@
     cell.textLabel.text = self.viewTitles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:self.titleImgs[indexPath.row]];
     return cell;
+}
+
+#pragma mark animated
+-(void)clickShotDownBtn:(id)sender
+{
+    LoginViewController *subViewController = [[LoginViewController alloc] init];
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:subViewController] animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
+}
+-(void)cleckHeadPhotoBtn:(id)sender
+{
+    [LoginUser sharedInstance].setSlidebarIndex = 10;
+    UIViewController *subViewController = [[MineViewController alloc] init];
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:subViewController] animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
 }
 -(void)viewWillAppear:(BOOL)animated
 {

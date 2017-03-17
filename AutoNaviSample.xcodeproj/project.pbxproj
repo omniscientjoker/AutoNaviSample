@@ -13,6 +13,14 @@
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
 		F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */; };
 		F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCE1E5A8136006DBC5B /* LoginUser.m */; };
+		F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1EA1E7BA96600E8C138 /* OrderViewController.m */; };
+		F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */; };
+		F369E1F61E7BB4D500E8C138 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1F51E7BB4D500E8C138 /* LoginViewController.m */; };
+		F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1FB1E7BB63600E8C138 /* UIView+additions.m */; };
+		F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */; };
+		F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2031E7BC6F000E8C138 /* LoginView.m */; };
+		F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2061E7BC70A00E8C138 /* VerifyView.m */; };
+		F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
 		F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */; };
@@ -75,6 +83,22 @@
 		F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableOverlay.m; sourceTree = "<group>"; };
 		F34EEFCD1E5A8136006DBC5B /* LoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUser.h; sourceTree = "<group>"; };
 		F34EEFCE1E5A8136006DBC5B /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
+		F369E1E91E7BA96600E8C138 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		F369E1EA1E7BA96600E8C138 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		F369E1ED1E7BA9F900E8C138 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		F369E1F41E7BB4D500E8C138 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F369E1F51E7BB4D500E8C138 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F369E1FA1E7BB63600E8C138 /* UIView+additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+additions.h"; sourceTree = "<group>"; };
+		F369E1FB1E7BB63600E8C138 /* UIView+additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+additions.m"; sourceTree = "<group>"; };
+		F369E1FE1E7BBD4500E8C138 /* UIToolViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIToolViewTextField.h; sourceTree = "<group>"; };
+		F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIToolViewTextField.m; sourceTree = "<group>"; };
+		F369E2021E7BC6F000E8C138 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		F369E2031E7BC6F000E8C138 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		F369E2051E7BC70A00E8C138 /* VerifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyView.h; sourceTree = "<group>"; };
+		F369E2061E7BC70A00E8C138 /* VerifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyView.m; sourceTree = "<group>"; };
+		F369E2091E7BCA8B00E8C138 /* LoginHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHandle.h; sourceTree = "<group>"; };
+		F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHandle.m; sourceTree = "<group>"; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
@@ -213,6 +237,64 @@
 				F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */,
 			);
 			path = SelectableOverlay;
+			sourceTree = "<group>";
+		};
+		F369E1E81E7BA94900E8C138 /* OrderViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1E91E7BA96600E8C138 /* OrderViewController.h */,
+				F369E1EA1E7BA96600E8C138 /* OrderViewController.m */,
+			);
+			path = OrderViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1EC1E7BA9D800E8C138 /* OptionsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1ED1E7BA9F900E8C138 /* OptionsViewController.h */,
+				F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */,
+			);
+			path = OptionsViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1F01E7BB2FF00E8C138 /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1F41E7BB4D500E8C138 /* LoginViewController.h */,
+				F369E1F51E7BB4D500E8C138 /* LoginViewController.m */,
+				F369E2081E7BCA6E00E8C138 /* model */,
+				F369E2011E7BC6A000E8C138 /* subViews */,
+			);
+			path = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1FD1E7BBD2600E8C138 /* UIToolViewTextField */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1FE1E7BBD4500E8C138 /* UIToolViewTextField.h */,
+				F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */,
+			);
+			path = UIToolViewTextField;
+			sourceTree = "<group>";
+		};
+		F369E2011E7BC6A000E8C138 /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2021E7BC6F000E8C138 /* LoginView.h */,
+				F369E2031E7BC6F000E8C138 /* LoginView.m */,
+				F369E2051E7BC70A00E8C138 /* VerifyView.h */,
+				F369E2061E7BC70A00E8C138 /* VerifyView.m */,
+			);
+			path = subViews;
+			sourceTree = "<group>";
+		};
+		F369E2081E7BCA6E00E8C138 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2091E7BCA8B00E8C138 /* LoginHandle.h */,
+				F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		F37C58AC1E5FC0010098B80E /* AutoNaviSampleTests */ = {
@@ -380,10 +462,10 @@
 		F3D35DA91E56967C0055194D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F3D35DAA1E56967C0055194D /* BaesTableViewCell.h */,
-				F3D35DAB1E56967C0055194D /* BaesTableViewCell.m */,
 				F3D35DAC1E56967C0055194D /* BaseTableView.h */,
 				F3D35DAD1E56967C0055194D /* BaseTableView.m */,
+				F3D35DAA1E56967C0055194D /* BaesTableViewCell.h */,
+				F3D35DAB1E56967C0055194D /* BaesTableViewCell.m */,
 				F3D35DAE1E56967C0055194D /* BaseViewController.h */,
 				F3D35DAF1E56967C0055194D /* BaseViewController.m */,
 				F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */,
@@ -409,6 +491,8 @@
 				F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */,
 				F3AA4C321E78E21900D20214 /* UIView+instrument.h */,
 				F3AA4C331E78E21900D20214 /* UIView+instrument.m */,
+				F369E1FA1E7BB63600E8C138 /* UIView+additions.h */,
+				F369E1FB1E7BB63600E8C138 /* UIView+additions.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -473,8 +557,11 @@
 			isa = PBXGroup;
 			children = (
 				F3AA4C351E79143500D20214 /* SlidebarViewControllers */,
-				F3AA4C261E77F22900D20214 /* MineViewControllers */,
+				F369E1F01E7BB2FF00E8C138 /* LoginViewControllers */,
+				F369E1E81E7BA94900E8C138 /* OrderViewControllers */,
 				F3D35DD71E56C5CC0055194D /* MapViewControllers */,
+				F369E1EC1E7BA9D800E8C138 /* OptionsViewControllers */,
+				F3AA4C261E77F22900D20214 /* MineViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -482,6 +569,7 @@
 		F3D35DCB1E56967C0055194D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F369E1FD1E7BBD2600E8C138 /* UIToolViewTextField */,
 				F3894B061E6CF9A500ECB8F1 /* noticeAlertView */,
 				F34EEFC11E5A7880006DBC5B /* NaviCusView */,
 			);
@@ -747,30 +835,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
+				F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
 				F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */,
+				F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */,
 				F3AA4C4D1E79230600D20214 /* SlidebarFunctions.m in Sources */,
+				F369E1F61E7BB4D500E8C138 /* LoginViewController.m in Sources */,
+				F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
 				F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
+				F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */,
 				F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */,
+				F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
+				F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */,
 				F3AA4C3C1E791F7200D20214 /* SlidebarMenu.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
+				F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */,
 				F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 				F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */,
