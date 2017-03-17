@@ -21,4 +21,5 @@
 @interface LoginView : UIView
 @property (weak, readwrite, nonatomic) id<LoginViewDelegate> delegate;
 -(instancetype)initWithUser:(NSString *)user Pass:(NSString *)pass;
+-(void)setfiledresignFirstResponder;
 @end

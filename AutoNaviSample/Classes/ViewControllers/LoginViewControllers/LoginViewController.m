@@ -13,43 +13,31 @@
 #import "AmapViewController.h"
 #import "LoginView.h"
 #import "VerifyView.h"
+#import "LoginHandle.h"
 
 #define kLoginLogoTopHeight   80
 #define kLoginLogoHeight ([Common getResolutionType]*10+60)
 #define kLoginViewHeight ([Common getResolutionType]*10+20)
 #define kLoginMessageHeight 60
 
-#define max_get_code_times  3
-#define max_get_next_code_duration 60
-
-@interface LoginViewController ()<UITextFieldDelegate,LoginViewDelegate,VerifyViewDelegate>
+@interface LoginViewController ()<UITextFieldDelegate,LoginViewDelegate,VerifyViewDelegate,LoginHandleDelegate>
 {
     CGFloat VerifyViewHeight;
     CGFloat LoginViewHeight;
-    BOOL    show;
-    NSString * verifyCode;
-    BOOL    firstVerify;
 }
 
 @property(nonatomic,strong)UIView          * backView;
-
 @property(nonatomic,strong)UIButton        * showLogin;
-@property(nonatomic,strong)UIButton        * veriBtn;
 @property(nonatomic,strong)UIButton        * closeBtn;
 
-@property (nonatomic, strong) LoginView           * Login;
-
-@property (nonatomic, strong) VerifyView          * verifyView;
-@property (nonatomic, strong) UILabel             * VerifyLab;
-@property (nonatomic, assign) int                   getCodeTimes;//获取验证码次数
-@property (nonatomic, strong) NSTimer             * timer;
-@property (nonatomic, assign) NSInteger             seconds;
-@property (nonatomic, assign) CGFloat               shifting;
-@property (nonatomic, strong) UIImageView         * launchImageView;
+@property(nonatomic,strong)LoginView           * Login;
+@property(nonatomic,strong)VerifyView          * verifyView;
+@property(nonatomic,assign)CGFloat               shifting;
+@property(nonatomic,strong)UIImageView         * launchImageView;
 @end
 
 @implementation LoginViewController
-@synthesize veriBtn,Login,verifyView,showLogin,closeBtn,backView;
+@synthesize Login,verifyView,showLogin,closeBtn,backView;
 
 
 - (void)viewDidLoad {
@@ -162,38 +150,29 @@
 }
 
 #pragma mark - 登录验证
--(void) loginHandle{
-    //进行数据验证
-    self.Login.hidden = YES;
-    self.closeBtn.hidden  = YES;
-    if (Login) {
+-(void) autoLoginHandle{
+    LoginHandle * handle = [[LoginHandle alloc] init];
+    handle.delegate = self;
+    [handle autoLoginHandleWithUserName:@"" PassWord:@""];
+}
+#pragma mark handle
+//auto
+-(void)autoLoginSuccessed
+{
+    [UIView animateWithDuration:0.1 animations:^{
+        self.view.alpha = 0.8;
+    } completion:^(BOOL finished) {
         AmapViewController *subViewController = [[AmapViewController alloc] init];
         [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:subViewController] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
-    }else{
-        self.Login.hidden = NO;
-        self.closeBtn.hidden  = NO;
-    }
+    }];
 }
--(void) autoLoginHandle{
-    if (![@"" isEqualToString:[LoginUser sharedInstance].telphone]&&![@"" isEqualToString:[LoginUser sharedInstance].token]) {
-        [LoginUser sharedInstance].isLogin=YES;
-        [LoginUser sharedInstance].isAutoLogin=YES;
-        [LoginUser sharedInstance].isNotFirstLogin=NO;
-        [UIView animateWithDuration:0.1 animations:^{
-            self.view.alpha = 0.8;
-        } completion:^(BOOL finished) {
-            AmapViewController *subViewController = [[AmapViewController alloc] init];
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:subViewController] animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-        }];
-    }else{
-        [LoginUser sharedInstance].isAutoLogin=NO;
-        [self initLoginUI];
-        return;
-    }
+-(void)autoLoginFailed
+{
+    [LoginUser sharedInstance].isAutoLogin=NO;
+    [self initLoginUI];
 }
-#pragma mark handle 
+//login
 -(void)loginViewWillStarted{
     Login.hidden = YES;
     closeBtn.hidden = YES;
@@ -211,7 +190,7 @@
     Login.hidden = NO;
     closeBtn.hidden = NO;
 }
-
+//verify
 -(void)VerifyViewWillStarted{
     verifyView.hidden = YES;
     closeBtn.hidden = YES;
@@ -271,6 +250,14 @@
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         [UIView setAnimationTransition:transition forView:view cache:YES];
     }];
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch=[[event allTouches] anyObject];
+    if (touch.tapCount >=1)
+    {
+        [Login setfiledresignFirstResponder];
+    }
 }
 
 

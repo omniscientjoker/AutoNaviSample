@@ -13,6 +13,8 @@
 
 @protocol LoginHandleDelegate <NSObject>
 @optional
+- (void)autoLoginSuccessed;
+- (void)autoLoginFailed;
 - (void)loginSuccessed;
 - (void)loginFailed;
 - (void)VerifySuccessed;
@@ -22,6 +24,7 @@
 
 @interface LoginHandle : NSObject
 @property (weak, readwrite, nonatomic) id<LoginHandleDelegate> delegate;
+-(void)autoLoginHandleWithUserName:(NSString *)name PassWord:(NSString *)pass;
 -(void)loginHandleWithUserName:(NSString *)name PassWord:(NSString *)pass;
 -(void)VerifyHandleWithUserName:(NSString *)name VerifyCode:(NSString *)code;
 @end

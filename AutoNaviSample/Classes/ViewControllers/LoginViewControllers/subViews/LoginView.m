@@ -12,14 +12,14 @@
 @interface LoginView()<UITextFieldDelegate,LoginHandleDelegate>{
     NSString * password;
     NSString * username;
-    UIToolViewTextField * PassFiled;
-    UIToolViewTextField * UserFiled;
     LoginHandle         * handle;
 }
+@property(nonatomic,strong)UIToolViewTextField * PassFiled;
+@property(nonatomic,strong)UIToolViewTextField * UserFiled;
 @end
 
 @implementation LoginView
-
+@synthesize UserFiled,PassFiled;
 -(instancetype)initWithUser:(NSString *)user Pass:(NSString *)pass
 {
     self = [super init];
@@ -140,6 +140,10 @@
     [handle loginHandleWithUserName:UserFiled.text PassWord:PassFiled.text];
 }
 #pragma mark handele
+-(void)setfiledresignFirstResponder{
+    [UserFiled resignFirstResponder];
+    [PassFiled resignFirstResponder];
+}
 -(void)loginSuccessed{
     if ([self.delegate conformsToProtocol:@protocol(LoginViewDelegate)] && [self.delegate respondsToSelector:@selector(loginViewSuccessed)]) {
         [self.delegate loginViewSuccessed];
