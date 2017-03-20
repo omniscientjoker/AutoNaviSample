@@ -14,8 +14,6 @@
 - (void)loginViewWillStarted;
 - (void)loginViewSuccessed;
 - (void)loginViewFailed;
-
-
 @end
 
 @interface LoginView : UIView

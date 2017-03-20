@@ -10,6 +10,8 @@
 #import "LoginHandle.h"
 #import "UIToolViewTextField.h"
 
+#import "UIView+HUDExtensions.h"
+
 #define max_get_code_times  3
 #define max_get_next_code_duration 60
 
@@ -35,6 +37,8 @@
 -(void)drawUI{
     handle = [[LoginHandle alloc] init];
     handle.delegate = self;
+    
+    getCodeTimes = 1;
     
     NSMutableString * str = [[NSMutableString alloc] initWithString:@"13389897897"];
     [str replaceCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
@@ -122,18 +126,17 @@
          make.height.mas_equalTo(@40);
      }];
 }
+
 #pragma mark - 验证码
--(void)clickVerifyLoginButton:(UIButton *)btn{
-    [VerifyCodeField resignFirstResponder];
-    if ([self.delegate conformsToProtocol:@protocol(VerifyViewDelegate)] && [self.delegate respondsToSelector:@selector(VerifyViewWillStarted)]) {
-        [self.delegate VerifyViewWillStarted];
-    }
-    [handle VerifyHandleWithUserName:@"" VerifyCode:VerifyCodeField.text];
-   
-}
 -(void)clickSendButton:(UIButton*)sender
 {
-    [self startTiming];
+    if (getCodeTimes > max_get_code_times) {
+        if ([self.delegate conformsToProtocol:@protocol(VerifyViewDelegate)] && [self.delegate respondsToSelector:@selector(VerifyViewSendCodeIsMax)]) {
+            [self.delegate VerifyViewSendCodeIsMax];
+        }
+    }else{
+       [self startTiming];
+    }
 }
 - (void)startTiming
 {
@@ -163,7 +166,21 @@
         [veriBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
 }
+
+-(void)clickVerifyLoginButton:(UIButton *)btn{
+    [VerifyCodeField resignFirstResponder];
+    if ([self.delegate conformsToProtocol:@protocol(VerifyViewDelegate)] && [self.delegate respondsToSelector:@selector(VerifyViewWillStarted)]) {
+        [self.delegate VerifyViewWillStarted];
+    }
+    [handle VerifyHandleWithUserName:@"" VerifyCode:VerifyCodeField.text];
+   
+}
+
+
 #pragma mark handele
+-(void)setfiledresignFirstResponder{
+    [VerifyCodeField resignFirstResponder];
+}
 -(void)VerifySuccessed{
     if ([self.delegate conformsToProtocol:@protocol(VerifyViewDelegate)] && [self.delegate respondsToSelector:@selector(VerifyViewSuccessed)]) {
         [self.delegate VerifyViewSuccessed];

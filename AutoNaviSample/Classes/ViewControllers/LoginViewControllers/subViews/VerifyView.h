@@ -14,9 +14,10 @@
 - (void)VerifyViewWillStarted;
 - (void)VerifyViewSuccessed;
 - (void)VerifyViewFailed;
-
-
+- (void)VerifyViewSendCodeIsMax;
 @end
+
 @interface VerifyView : UIView
 @property (weak, readwrite, nonatomic) id<VerifyViewDelegate> delegate;
+-(void)setfiledresignFirstResponder;
 @end

@@ -99,6 +99,7 @@
 		F369E2061E7BC70A00E8C138 /* VerifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyView.m; sourceTree = "<group>"; };
 		F369E2091E7BCA8B00E8C138 /* LoginHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHandle.h; sourceTree = "<group>"; };
 		F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHandle.m; sourceTree = "<group>"; };
+		F369E20F1E7F795700E8C138 /* BlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockDefine.h; sourceTree = "<group>"; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
@@ -511,6 +512,7 @@
 			children = (
 				F3D35DC21E56967C0055194D /* constants.h */,
 				F3D35DD61E56C3200055194D /* constanscode.h */,
+				F369E20F1E7F795700E8C138 /* BlockDefine.h */,
 				F3D35DC31E56967C0055194D /* noticeConstant.h */,
 			);
 			path = Constant;

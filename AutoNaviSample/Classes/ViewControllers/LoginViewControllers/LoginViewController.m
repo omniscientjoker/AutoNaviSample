@@ -174,10 +174,12 @@
 }
 //login
 -(void)loginViewWillStarted{
+    [self loading];
     Login.hidden = YES;
     closeBtn.hidden = YES;
 }
 -(void)loginViewSuccessed{
+    [self closeLoading];
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
@@ -187,15 +189,22 @@
     }];
 }
 -(void)loginViewFailed{
+    [self closeLoading];
+    [self showErrorAlertWithMessage:@"登录失败，请确认账号密码是否正确"];
     Login.hidden = NO;
     closeBtn.hidden = NO;
 }
 //verify
 -(void)VerifyViewWillStarted{
+    [self loading];
     verifyView.hidden = YES;
     closeBtn.hidden = YES;
 }
+-(void)VerifyViewSendCodeIsMax{
+    [self showAlertWithMessage:@"本日获取验证码次数已达到上限" hideAfterDelay:2.0];
+}
 -(void)VerifyViewSuccessed{
+    [self closeLoading];
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
@@ -205,6 +214,8 @@
     }];
 }
 -(void)VerifyViewFailed{
+    [self closeLoading];
+    [self showErrorAlertWithMessage:@"登录失败，请确认账号密码是否正确"];
     verifyView.hidden = NO;
     closeBtn.hidden = NO;
 }
@@ -257,6 +268,7 @@
     if (touch.tapCount >=1)
     {
         [Login setfiledresignFirstResponder];
+        [verifyView setfiledresignFirstResponder];
     }
 }
 

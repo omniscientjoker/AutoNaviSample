@@ -9,6 +9,7 @@
 #import "LoginView.h"
 #import "UIToolViewTextField.h"
 #import "LoginHandle.h"
+#import "UIView+HUDExtensions.h"
 @interface LoginView()<UITextFieldDelegate,LoginHandleDelegate>{
     NSString * password;
     NSString * username;

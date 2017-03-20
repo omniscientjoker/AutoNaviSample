@@ -156,6 +156,8 @@
 #pragma mark animated
 -(void)clickShotDownBtn:(id)sender
 {
+    [LoginUser sharedInstance].isAutoLogin = NO;
+    [LoginUser sharedInstance].isLogin     = NO;
     LoginViewController *subViewController = [[LoginViewController alloc] init];
     [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:subViewController] animated:YES];
     [self.sideMenuViewController hideMenuViewController];
