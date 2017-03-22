@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
+		F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78271E8109880078F7BB /* OptionsListCell.m */; };
+		F33E782B1E810B230078F7BB /* offlineMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E782A1E810B230078F7BB /* offlineMapViewController.m */; };
+		F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E782D1E810B8D0078F7BB /* carInfoViewController.m */; };
+		F33E78311E810CC60078F7BB /* offlineMapHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78301E810CC60078F7BB /* offlineMapHeadView.m */; };
+		F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78341E8113940078F7BB /* offlineMapHandle.m */; };
+		F33E78381E8119550078F7BB /* OffLineItemHandelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */; };
 		F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */; };
 		F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */; };
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
@@ -21,6 +27,9 @@
 		F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2031E7BC6F000E8C138 /* LoginView.m */; };
 		F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2061E7BC70A00E8C138 /* VerifyView.m */; };
 		F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */; };
+		F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2161E80F62700E8C138 /* OrderListCell.m */; };
+		F369E21D1E80F91B00E8C138 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E21C1E80F91B00E8C138 /* BaseModel.m */; };
+		F369E2201E80F97F00E8C138 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E21F1E80F97F00E8C138 /* OrderListModel.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
 		F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */; };
@@ -73,6 +82,18 @@
 		7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.release.xcconfig"; sourceTree = "<group>"; };
 		895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33E78261E8109880078F7BB /* OptionsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListCell.h; sourceTree = "<group>"; };
+		F33E78271E8109880078F7BB /* OptionsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListCell.m; sourceTree = "<group>"; };
+		F33E78291E810B230078F7BB /* offlineMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapViewController.h; sourceTree = "<group>"; };
+		F33E782A1E810B230078F7BB /* offlineMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapViewController.m; sourceTree = "<group>"; };
+		F33E782C1E810B8D0078F7BB /* carInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carInfoViewController.h; sourceTree = "<group>"; };
+		F33E782D1E810B8D0078F7BB /* carInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carInfoViewController.m; sourceTree = "<group>"; };
+		F33E782F1E810CC60078F7BB /* offlineMapHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHeadView.h; sourceTree = "<group>"; };
+		F33E78301E810CC60078F7BB /* offlineMapHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHeadView.m; sourceTree = "<group>"; };
+		F33E78331E8113940078F7BB /* offlineMapHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHandle.h; sourceTree = "<group>"; };
+		F33E78341E8113940078F7BB /* offlineMapHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHandle.m; sourceTree = "<group>"; };
+		F33E78361E8119550078F7BB /* OffLineItemHandelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffLineItemHandelModel.h; sourceTree = "<group>"; };
+		F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffLineItemHandelModel.m; sourceTree = "<group>"; };
 		F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNaviViewController.h; sourceTree = "<group>"; };
 		F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNaviViewController.m; sourceTree = "<group>"; };
 		F34EEFC21E5A78B3006DBC5B /* PreferenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceView.h; sourceTree = "<group>"; };
@@ -100,6 +121,12 @@
 		F369E2091E7BCA8B00E8C138 /* LoginHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHandle.h; sourceTree = "<group>"; };
 		F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHandle.m; sourceTree = "<group>"; };
 		F369E20F1E7F795700E8C138 /* BlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockDefine.h; sourceTree = "<group>"; };
+		F369E2151E80F62700E8C138 /* OrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		F369E2161E80F62700E8C138 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		F369E21B1E80F91B00E8C138 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		F369E21C1E80F91B00E8C138 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		F369E21E1E80F97F00E8C138 /* OrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		F369E21F1E80F97F00E8C138 /* OrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
@@ -211,6 +238,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F33E78201E8109270078F7BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78321E81135D0078F7BB /* offlineMapHandleModel */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F33E78211E8109270078F7BB /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78291E810B230078F7BB /* offlineMapViewController.h */,
+				F33E782A1E810B230078F7BB /* offlineMapViewController.m */,
+				F33E782C1E810B8D0078F7BB /* carInfoViewController.h */,
+				F33E782D1E810B8D0078F7BB /* carInfoViewController.m */,
+				F33E78251E8109880078F7BB /* cusCell */,
+			);
+			path = subViews;
+			sourceTree = "<group>";
+		};
+		F33E78251E8109880078F7BB /* cusCell */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78261E8109880078F7BB /* OptionsListCell.h */,
+				F33E78271E8109880078F7BB /* OptionsListCell.m */,
+				F33E782F1E810CC60078F7BB /* offlineMapHeadView.h */,
+				F33E78301E810CC60078F7BB /* offlineMapHeadView.m */,
+			);
+			path = cusCell;
+			sourceTree = "<group>";
+		};
+		F33E78321E81135D0078F7BB /* offlineMapHandleModel */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78331E8113940078F7BB /* offlineMapHandle.h */,
+				F33E78341E8113940078F7BB /* offlineMapHandle.m */,
+				F33E78361E8119550078F7BB /* OffLineItemHandelModel.h */,
+				F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */,
+			);
+			path = offlineMapHandleModel;
+			sourceTree = "<group>";
+		};
 		F34EEFC11E5A7880006DBC5B /* NaviCusView */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +314,8 @@
 			children = (
 				F369E1E91E7BA96600E8C138 /* OrderViewController.h */,
 				F369E1EA1E7BA96600E8C138 /* OrderViewController.m */,
+				F369E2101E80F57500E8C138 /* models */,
+				F369E2111E80F57500E8C138 /* subViews */,
 			);
 			path = OrderViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +325,8 @@
 			children = (
 				F369E1ED1E7BA9F900E8C138 /* OptionsViewController.h */,
 				F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */,
+				F33E78201E8109270078F7BB /* models */,
+				F33E78211E8109270078F7BB /* subViews */,
 			);
 			path = OptionsViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +369,24 @@
 				F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		F369E2101E80F57500E8C138 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F369E21E1E80F97F00E8C138 /* OrderListModel.h */,
+				F369E21F1E80F97F00E8C138 /* OrderListModel.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F369E2111E80F57500E8C138 /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2151E80F62700E8C138 /* OrderListCell.h */,
+				F369E2161E80F62700E8C138 /* OrderListCell.m */,
+			);
+			path = subViews;
 			sourceTree = "<group>";
 		};
 		F37C58AC1E5FC0010098B80E /* AutoNaviSampleTests */ = {
@@ -528,6 +619,8 @@
 		F3D35DC51E56967C0055194D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F369E21B1E80F91B00E8C138 /* BaseModel.h */,
+				F369E21C1E80F91B00E8C138 /* BaseModel.m */,
 				F3D35DC61E56967C0055194D /* User */,
 			);
 			path = Models;
@@ -837,10 +930,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
+				F33E78311E810CC60078F7BB /* offlineMapHeadView.m in Sources */,
 				F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
+				F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
 				F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */,
 				F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */,
@@ -849,29 +944,36 @@
 				F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
+				F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */,
 				F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
 				F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */,
 				F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
+				F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */,
 				F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */,
+				F33E782B1E810B230078F7BB /* offlineMapViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
 				F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */,
 				F3AA4C3C1E791F7200D20214 /* SlidebarMenu.m in Sources */,
+				F369E2201E80F97F00E8C138 /* OrderListModel.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
+				F369E21D1E80F91B00E8C138 /* BaseModel.m in Sources */,
 				F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */,
 				F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */,
+				F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 				F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */,
+				F33E78381E8119550078F7BB /* OffLineItemHandelModel.m in Sources */,
 				F3AA4C381E79144A00D20214 /* SlidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,7 @@
 #define max_get_next_code_duration 60
 
 @interface VerifyView()<UITextFieldDelegate,LoginHandleDelegate>{
+    UIToolViewTextField * UserFiled;
     UIToolViewTextField * VerifyCodeField;
     LoginHandle         * handle;
     UIButton            * veriBtn;
@@ -40,21 +41,35 @@
     
     getCodeTimes = 1;
     
-    NSMutableString * str = [[NSMutableString alloc] initWithString:@"13389897897"];
-    [str replaceCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-    UILabel * VerifyLab = [[UILabel alloc] init];
-    VerifyLab.text = [NSString stringWithFormat:@"验证码已经发送到%@",str];
-    VerifyLab.textAlignment =NSTextAlignmentCenter;
-    VerifyLab.backgroundColor = [UIColor clearColor];
-    VerifyLab.textColor       = [UIColor blackColor];
-    VerifyLab.font            = [UIFont systemFontOfSize:13.0f];
-    [self addSubview:VerifyLab];
-    [VerifyLab mas_makeConstraints:^(MASConstraintMaker *make)
+//    NSMutableString * str = [[NSMutableString alloc] initWithString:@"13389897897"];
+//    [str replaceCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+//    UILabel * VerifyLab = [[UILabel alloc] init];
+//    VerifyLab.text = [NSString stringWithFormat:@"验证码已经发送到%@",str];
+//    VerifyLab.textAlignment =NSTextAlignmentCenter;
+//    VerifyLab.backgroundColor = [UIColor clearColor];
+//    VerifyLab.textColor       = [UIColor blackColor];
+//    VerifyLab.font            = [UIFont systemFontOfSize:13.0f];
+//    [self addSubview:VerifyLab];
+//    [VerifyLab mas_makeConstraints:^(MASConstraintMaker *make)
+//     {
+//         make.top.equalTo(self.mas_top).with.offset(13);
+//         make.centerX.equalTo(self.mas_centerX);
+//         make.height.mas_equalTo(@15);
+//     }];
+    
+    UserFiled = [self filedState];
+    UserFiled.placeholder = @"  手机号码";
+    UserFiled.secureTextEntry = NO;
+    UserFiled.keyboardType = UIKeyboardTypeNumberPad;
+    [self addSubview:UserFiled];
+    [UserFiled mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.top.equalTo(self.mas_top).with.offset(13);
-         make.centerX.equalTo(self.mas_centerX);
-         make.height.mas_equalTo(@15);
+         make.top.equalTo(self.mas_top).with.offset(10);
+         make.left.equalTo(self.mas_left).with.offset(10);
+         make.right.equalTo(self.mas_right).with.offset(-10);
+         make.height.mas_equalTo(@44);
      }];
+    
     
     VerifyCodeField = [self filedState];
     VerifyCodeField.placeholder = @"  请输入验证码";
@@ -92,7 +107,7 @@
     [self addSubview:VerifyCodeField];
     [VerifyCodeField mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.top.equalTo(VerifyLab.mas_bottom).with.offset(13);
+         make.top.equalTo(UserFiled.mas_bottom).with.offset(10);
          make.left.equalTo(self.mas_left).with.offset(10);
          make.right.equalTo(self.mas_right).with.offset(-10);
          make.height.mas_equalTo(@44);

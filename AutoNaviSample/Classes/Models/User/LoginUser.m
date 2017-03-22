@@ -70,6 +70,7 @@
                     [[LoginUser sharedInstance] setValue:obj forKey:propertyName];
                 }
             }
+             free(propertyties);
         }
     }
 }

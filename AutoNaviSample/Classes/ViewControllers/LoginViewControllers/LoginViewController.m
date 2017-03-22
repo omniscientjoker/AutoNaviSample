@@ -28,16 +28,16 @@
 
 @property(nonatomic,strong)UIView          * backView;
 @property(nonatomic,strong)UIButton        * showLogin;
+@property(nonatomic,strong)UIButton        * showVerify;
 @property(nonatomic,strong)UIButton        * closeBtn;
 
 @property(nonatomic,strong)LoginView           * Login;
 @property(nonatomic,strong)VerifyView          * verifyView;
-@property(nonatomic,assign)CGFloat               shifting;
 @property(nonatomic,strong)UIImageView         * launchImageView;
 @end
 
 @implementation LoginViewController
-@synthesize Login,verifyView,showLogin,closeBtn,backView;
+@synthesize Login,verifyView,showLogin,showVerify,closeBtn,backView;
 
 
 - (void)viewDidLoad {
@@ -113,13 +113,22 @@
     Login.layer.masksToBounds = NO;
     Login.delegate = self;
     [self.view addSubview:Login];
+    
+    showVerify = [[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH, 150+LoginViewHeight, 140, 40)];
+    showVerify.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+    showVerify.titleLabel.textAlignment = NSTextAlignmentRight;
+    showVerify.backgroundColor = [UIColor clearColor];
+    [showVerify setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [showVerify setTitle:@"短信码登录" forState:UIControlStateNormal];
+    [showVerify addTarget:self action:@selector(clickButtonToVerify) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:showVerify];
 }
 //短信码登录
 -(void)initVerifyCodeView
 {
-    VerifyViewHeight = 137.0f;
-    
-    verifyView = [[VerifyView alloc] initWithFrame:CGRectMake(30, -VerifyViewHeight, SCREENWIDTH-60, VerifyViewHeight)];
+    VerifyViewHeight = 158.0f;
+    verifyView = [[VerifyView alloc] init];
+    verifyView.frame = CGRectMake(30, -VerifyViewHeight, SCREENWIDTH-60, VerifyViewHeight);
     verifyView.delegate = self;
     verifyView.backgroundColor = [UIColor whiteColor];
     verifyView.layer.cornerRadius  = 10.0f;
@@ -138,11 +147,25 @@
     CGPoint btnPoint  = CGPointMake(30, 140);
     [self positionAnimationLableView:Login Point:ViewPoint];
     [self positionAnimationLableView:closeBtn Point:btnPoint];
+    [self positionAnimationLableView:showVerify Point:CGPointMake(SCREENWIDTH-80, 160+LoginViewHeight)];
+    backView.hidden = NO;
+}
+-(void)clickButtonToVerify{
+    if (!verifyView) {
+        [self verifyView];
+    }
+    self.Login.hidden = YES;
+    self.showLogin.hidden = YES;
+    closeBtn.center = CGPointMake(30, -VerifyViewHeight);
+    CGPoint ViewPoint = CGPointMake(SCREENWIDTH/2, 140+VerifyViewHeight/2);
+    CGPoint btnPoint  = CGPointMake(30, 140);
+    [self positionAnimationLableView:verifyView Point:ViewPoint];
+    [self positionAnimationLableView:closeBtn Point:btnPoint];
+    [self positionAnimationLableView:showVerify Point:CGPointMake(SCREENWIDTH+80, 160+LoginViewHeight)];
     backView.hidden = NO;
 }
 -(void)clickCloseButton:(id)sender
 {
-    self.showLogin.hidden = NO;
     [self removeViewFromWindow];
 }
 -(void)Actiondo{
@@ -231,18 +254,27 @@
             CGPoint btnPoint  = CGPointMake(30, -LoginViewHeight);
             [self positionAnimationLableView:closeBtn Point:btnPoint];
             backView.hidden = YES;
+            self.showLogin.hidden  = NO;
+            [self positionAnimationLableView:showVerify Point:CGPointMake(SCREENWIDTH+80, 160+LoginViewHeight)];
         }
     }
     if (verifyView){
         if (verifyView.frame.origin.y>0){
+            
             CGPoint ViewPoint = CGPointMake(SCREENWIDTH/2, -VerifyViewHeight/2);
             [self positionAnimationLableView:verifyView Point:ViewPoint];
             CGPoint btnPoint  = CGPointMake(30, -VerifyViewHeight);
             [self positionAnimationLableView:closeBtn Point:btnPoint];
+            backView.hidden = NO;
+            self.showLogin.hidden  = YES;
+            
+            self.Login.hidden = NO;
+            
             CGPoint ViewPointOr = CGPointMake(SCREENWIDTH/2, 140+LoginViewHeight/2);
             CGPoint btnPointOr  = CGPointMake(30, 140);
             [self positionAnimationLableView:Login Point:ViewPointOr];
             [self positionAnimationLableView:closeBtn Point:btnPointOr];
+            [self positionAnimationLableView:showVerify Point:CGPointMake(SCREENWIDTH-80, 160+LoginViewHeight)];
         }
     }
 }
