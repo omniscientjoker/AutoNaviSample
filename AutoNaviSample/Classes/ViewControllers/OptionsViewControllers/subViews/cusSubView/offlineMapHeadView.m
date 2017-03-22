@@ -55,7 +55,7 @@
 #pragma mark - Initialization
 - (void)setupExpandImageView
 {
-    self.expandImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow_right"]
+    self.expandImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_arrow_right"]
                                              highlightedImage:[UIImage imageNamed:@"arrow_down"]];
     self.expandImageView.center = CGPointMake(MAHeaderViewMargin + CGRectGetWidth(self.expandImageView.bounds) / 2.f, CGRectGetMidY(self.bounds));
     self.expandImageView.highlighted = self.expanded;

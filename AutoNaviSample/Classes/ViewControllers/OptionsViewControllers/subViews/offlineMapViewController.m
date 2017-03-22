@@ -21,10 +21,6 @@
 #define kButtonSize             30.f
 #define kButtonCount            3
 
-NSString const *DownloadStageIsRunningKey = @"DownloadStageIsRunningKey";
-NSString const *DownloadStageStatusKey    = @"DownloadStageStatusKey";
-NSString const *DownloadStageInfoKey      = @"DownloadStageInfoKey";
-
 @interface offlineMapViewController ()<UITableViewDataSource, UITableViewDelegate, offlineMapHeadViewDelegate,offlineMapHandleDelegate>
 {
     char    *_expandedSections;
@@ -268,21 +264,21 @@ NSString const *DownloadStageInfoKey      = @"DownloadStageInfoKey";
 }
 - (UIImage *)downloadImage{
     if (_download == nil){
-        _download = [UIImage imageNamed:@"download"];
+        _download = [UIImage imageNamed:@"icon_download_img"];
     }
     return _download;
 }
 
 - (UIImage *)pauseImage{
     if (_pause == nil){
-        _pause = [UIImage imageNamed:@"pause"];
+        _pause = [UIImage imageNamed:@"icon_pause_img"];
     }
     return _pause;
 }
 
 - (UIImage *)deleteImage{
     if (_delete == nil){
-        _delete = [UIImage imageNamed:@"delete"];
+        _delete = [UIImage imageNamed:@"icon_delete_img"];
     }
     return _delete;
 }

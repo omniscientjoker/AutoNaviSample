@@ -25,11 +25,15 @@
 @property (nonatomic, assign) NSInteger setSlidebarIndex;
 
 //导航数据相关
-@property (nonatomic, assign) BOOL avoidCongestion; //避免拥堵
-@property (nonatomic, assign) BOOL avoidHighway; //避免高速
-@property (nonatomic, assign) BOOL avoidCost;  // 避免收费
-@property (nonatomic, assign) BOOL prioritiseHighway; //主要高速
+@property (nonatomic, assign) BOOL speedPriority;    //速度优先
+@property (nonatomic, assign) BOOL costPriority;     //费用优先
+@property (nonatomic, assign) BOOL journeyPriority;  //路途优先
+@property (nonatomic, assign) BOOL avoidCongestion;  //避免拥堵
+@property (nonatomic, assign) BOOL avoidExpressway;  //避免快速路
+@property (nonatomic, assign) BOOL avoidHighway;     //避免高速
+
 @property (nonatomic, assign) BOOL avoidWeightLimit;//避开限重
+
 @property (nonatomic, strong) NSString *carNum;//车牌号
 @property (nonatomic, strong) NSString *carMaxHeight;//最大高度
 @property (nonatomic, strong) NSString *carMaxWeight;//货车总重

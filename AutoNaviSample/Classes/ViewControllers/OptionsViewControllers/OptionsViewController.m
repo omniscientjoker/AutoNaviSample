@@ -29,13 +29,13 @@ static NSString *const kOptionsCellIdentifier = @"settingCellIndentifier";
 }
 - (void)initDataSoure
 {
-    _titleArray = @[@[@"离线地图管理",@"车辆信息"],
+    _titleArray = @[@[@"离线地图管理",@"车辆信息",@"路线偏好设置"],
                     @[@"常见问题",@"功能介绍",@"去评分",@"关于"]];
 }
 
 - (void)initTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, SCREENDEFAULTHEIGHT, SCREENWIDTH, SCREENRESULTHEIGHT) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStyleGrouped];
     _tableView.backgroundColor = RGB(245, 245, 245);
     [self.view addSubview:_tableView];
     [_tableView registerClass:[OptionsListCell class] forCellReuseIdentifier:kOptionsCellIdentifier];

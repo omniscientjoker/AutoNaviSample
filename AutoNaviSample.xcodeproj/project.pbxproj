@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
 		F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78271E8109880078F7BB /* OptionsListCell.m */; };
-		F33E782B1E810B230078F7BB /* offlineMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E782A1E810B230078F7BB /* offlineMapViewController.m */; };
 		F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E782D1E810B8D0078F7BB /* carInfoViewController.m */; };
-		F33E78311E810CC60078F7BB /* offlineMapHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78301E810CC60078F7BB /* offlineMapHeadView.m */; };
 		F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78341E8113940078F7BB /* offlineMapHandle.m */; };
 		F33E78381E8119550078F7BB /* OffLineItemHandelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */; };
+		F33E783B1E8243F20078F7BB /* CarInfoEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */; };
+		F33E78451E8250970078F7BB /* RoutePreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */; };
+		F33E784B1E825AC20078F7BB /* offlineMapHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78481E825AC20078F7BB /* offlineMapHeadView.m */; };
+		F33E784C1E825AC20078F7BB /* offlineMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E784A1E825AC20078F7BB /* offlineMapViewController.m */; };
+		F33E784F1E825B0F0078F7BB /* attributionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E784E1E825B0F0078F7BB /* attributionView.m */; };
 		F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */; };
 		F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */; };
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
@@ -84,16 +87,22 @@
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33E78261E8109880078F7BB /* OptionsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListCell.h; sourceTree = "<group>"; };
 		F33E78271E8109880078F7BB /* OptionsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListCell.m; sourceTree = "<group>"; };
-		F33E78291E810B230078F7BB /* offlineMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapViewController.h; sourceTree = "<group>"; };
-		F33E782A1E810B230078F7BB /* offlineMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapViewController.m; sourceTree = "<group>"; };
 		F33E782C1E810B8D0078F7BB /* carInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carInfoViewController.h; sourceTree = "<group>"; };
 		F33E782D1E810B8D0078F7BB /* carInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carInfoViewController.m; sourceTree = "<group>"; };
-		F33E782F1E810CC60078F7BB /* offlineMapHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHeadView.h; sourceTree = "<group>"; };
-		F33E78301E810CC60078F7BB /* offlineMapHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHeadView.m; sourceTree = "<group>"; };
 		F33E78331E8113940078F7BB /* offlineMapHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHandle.h; sourceTree = "<group>"; };
 		F33E78341E8113940078F7BB /* offlineMapHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHandle.m; sourceTree = "<group>"; };
 		F33E78361E8119550078F7BB /* OffLineItemHandelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffLineItemHandelModel.h; sourceTree = "<group>"; };
 		F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffLineItemHandelModel.m; sourceTree = "<group>"; };
+		F33E78391E8243F20078F7BB /* CarInfoEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoEditCell.h; sourceTree = "<group>"; };
+		F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoEditCell.m; sourceTree = "<group>"; };
+		F33E78431E8250970078F7BB /* RoutePreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePreferencesViewController.h; sourceTree = "<group>"; };
+		F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePreferencesViewController.m; sourceTree = "<group>"; };
+		F33E78471E825AC20078F7BB /* offlineMapHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHeadView.h; sourceTree = "<group>"; };
+		F33E78481E825AC20078F7BB /* offlineMapHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHeadView.m; sourceTree = "<group>"; };
+		F33E78491E825AC20078F7BB /* offlineMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapViewController.h; sourceTree = "<group>"; };
+		F33E784A1E825AC20078F7BB /* offlineMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapViewController.m; sourceTree = "<group>"; };
+		F33E784D1E825B0F0078F7BB /* attributionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attributionView.h; sourceTree = "<group>"; };
+		F33E784E1E825B0F0078F7BB /* attributionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attributionView.m; sourceTree = "<group>"; };
 		F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNaviViewController.h; sourceTree = "<group>"; };
 		F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNaviViewController.m; sourceTree = "<group>"; };
 		F34EEFC21E5A78B3006DBC5B /* PreferenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceView.h; sourceTree = "<group>"; };
@@ -249,10 +258,13 @@
 		F33E78211E8109270078F7BB /* subViews */ = {
 			isa = PBXGroup;
 			children = (
-				F33E78291E810B230078F7BB /* offlineMapViewController.h */,
-				F33E782A1E810B230078F7BB /* offlineMapViewController.m */,
+				F33E78491E825AC20078F7BB /* offlineMapViewController.h */,
+				F33E784A1E825AC20078F7BB /* offlineMapViewController.m */,
 				F33E782C1E810B8D0078F7BB /* carInfoViewController.h */,
 				F33E782D1E810B8D0078F7BB /* carInfoViewController.m */,
+				F33E78431E8250970078F7BB /* RoutePreferencesViewController.h */,
+				F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */,
+				F33E78461E825AC20078F7BB /* cusSubView */,
 				F33E78251E8109880078F7BB /* cusCell */,
 			);
 			path = subViews;
@@ -263,8 +275,8 @@
 			children = (
 				F33E78261E8109880078F7BB /* OptionsListCell.h */,
 				F33E78271E8109880078F7BB /* OptionsListCell.m */,
-				F33E782F1E810CC60078F7BB /* offlineMapHeadView.h */,
-				F33E78301E810CC60078F7BB /* offlineMapHeadView.m */,
+				F33E78391E8243F20078F7BB /* CarInfoEditCell.h */,
+				F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */,
 			);
 			path = cusCell;
 			sourceTree = "<group>";
@@ -278,6 +290,17 @@
 				F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */,
 			);
 			path = offlineMapHandleModel;
+			sourceTree = "<group>";
+		};
+		F33E78461E825AC20078F7BB /* cusSubView */ = {
+			isa = PBXGroup;
+			children = (
+				F33E784D1E825B0F0078F7BB /* attributionView.h */,
+				F33E784E1E825B0F0078F7BB /* attributionView.m */,
+				F33E78471E825AC20078F7BB /* offlineMapHeadView.h */,
+				F33E78481E825AC20078F7BB /* offlineMapHeadView.m */,
+			);
+			path = cusSubView;
 			sourceTree = "<group>";
 		};
 		F34EEFC11E5A7880006DBC5B /* NaviCusView */ = {
@@ -930,11 +953,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
-				F33E78311E810CC60078F7BB /* offlineMapHeadView.m in Sources */,
 				F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
+				F33E784F1E825B0F0078F7BB /* attributionView.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
+				F33E784C1E825AC20078F7BB /* offlineMapViewController.m in Sources */,
+				F33E783B1E8243F20078F7BB /* CarInfoEditCell.m in Sources */,
 				F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
 				F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */,
@@ -954,7 +979,6 @@
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */,
 				F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */,
-				F33E782B1E810B230078F7BB /* offlineMapViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
@@ -966,10 +990,12 @@
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */,
+				F33E78451E8250970078F7BB /* RoutePreferencesViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
 				F369E21D1E80F91B00E8C138 /* BaseModel.m in Sources */,
 				F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */,
 				F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */,
+				F33E784B1E825AC20078F7BB /* offlineMapHeadView.m in Sources */,
 				F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 				F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */,
