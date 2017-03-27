@@ -344,9 +344,6 @@
 #pragma mark - Initialization
 - (void)initNavigationBar
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                          target:self
-                                                                                          action:@selector(backAction)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消全部"
                                                                               style:UIBarButtonItemStylePlain
@@ -406,11 +403,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barStyle    = UIBarStyleBlack;
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.toolbar.barStyle          = UIBarStyleBlack;
-    self.navigationController.toolbar.translucent       = NO;
-    [self.navigationController setToolbarHidden:NO animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

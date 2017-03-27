@@ -99,13 +99,11 @@ static NSString *const kOptionsCellIdentifier = @"settingCellIndentifier";
         if(indexPath.row==0){
             offlineMapViewController *detailViewController = [[offlineMapViewController alloc] init];
             detailViewController.mapView = [NaviMapHelp shareMAMapView];
-            detailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-            
-            UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-            
-            [self presentViewController:navi animated:YES completion:nil];
+            [self.navigationController pushViewController:detailViewController animated:YES];
         }
         if(indexPath.row==1){
+            carInfoViewController * carInfo = [[carInfoViewController alloc] init];
+            [self.navigationController pushViewController:carInfo animated:YES];
         }
     }else if(indexPath.section==1){
         NSLog(@"%ld==%ld",indexPath.section,indexPath.row);

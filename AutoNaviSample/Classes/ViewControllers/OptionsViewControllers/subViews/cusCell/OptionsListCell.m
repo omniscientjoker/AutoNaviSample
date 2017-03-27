@@ -32,22 +32,19 @@
     
     _cusSwitch = [[UISwitch alloc] init];
     _cusSwitch.onTintColor=COMMON_COLOR_BUTTON_BG;
-    [self addSubview:_cusSwitch];
-    
-    _arrowImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"right_arrow"]];
-    [self addSubview:_arrowImg];
-    [_arrowImg mas_makeConstraints:^(MASConstraintMaker *make)
+    [self.contentView addSubview:_cusSwitch];
+    [_cusSwitch mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.centerY.equalTo(self.mas_centerY);
-         make.right.equalTo(self.mas_right).with.offset(-15);
+         make.centerY.equalTo(self.contentView.mas_centerY);
+         make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+         make.width.mas_equalTo(@60);
+         make.height.mas_equalTo(@28);
      }];
-    
 }
 
 - (void)setUpCellWithModels:(NSString *) content section:(NSInteger) section row:(NSInteger ) row{
     if(section==0&&row==0){
         _arrowImg.hidden=YES;
-        _cusSwitch.frame=CGRectMake(SCREENWIDTH-68, kOptionsListCellHeight/2-14, 60, 28);
     }else{
         _arrowImg.hidden=NO;
     }

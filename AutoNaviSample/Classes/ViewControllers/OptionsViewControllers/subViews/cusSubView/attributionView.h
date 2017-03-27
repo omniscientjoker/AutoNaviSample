@@ -17,5 +17,5 @@
 @interface attributionView : UIView
 @property(nonatomic,strong)NSArray  *attributionArr;
 @property(weak, readwrite, nonatomic) id <attributionViewDelegate>  delegate;
--(instancetype)initWithCarID:(NSString *)CarId;
+-(instancetype)initWithAttName:(NSString *)name;
 @end

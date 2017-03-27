@@ -13,6 +13,35 @@ NSString const *DownloadStageStatusKey    = @"DownloadStageStatusKey";
 NSString const *DownloadStageInfoKey      = @"DownloadStageInfoKey";
 
 @implementation offlineMapHandle
++(offlineMapHandle *)sharedInstance{
+    static offlineMapHandle *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(& onceToken,^{
+        sharedInstance = [[self alloc]init];
+        [sharedInstance updateDateSourcesForOffLineMap];
+    });
+    return sharedInstance;
+}
+-(void)updateDateSourcesForOffLineMap{
+    self.sectionTitles = @[@"全国", @"直辖市", @"省份"];
+    self.cities = [MAOfflineMap sharedOfflineMap].cities;
+    self.provinces = [MAOfflineMap sharedOfflineMap].provinces;
+    self.municipalities = [MAOfflineMap sharedOfflineMap].municipalities;
+    
+    self.downloadingItems = [NSMutableSet set];
+    self.downloadStages = [NSMutableDictionary dictionary];
+    
+    if (_expandedSections != NULL){
+        free(_expandedSections);
+        _expandedSections = NULL;
+    }
+    _expandedSections = (char *)malloc((self.sectionTitles.count + self.provinces.count) * sizeof(char));
+    memset(_expandedSections, 0, (self.sectionTitles.count + self.provinces.count) * sizeof(char));
+}
+
+
+
+
 -(NSString *)convertFileSizeWithSize:(long long)size
 {
     long kb = 1024;

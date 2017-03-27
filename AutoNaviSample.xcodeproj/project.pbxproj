@@ -42,6 +42,9 @@
 		F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */; };
 		F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */; };
 		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
+		F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283501E83CD4E00896FFD /* CarNumCell.m */; };
+		F392835B1E88AB5200896FFD /* ProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F392835A1E88AB5200896FFD /* ProgressBarView.m */; };
+		F39283621E88ADBC00896FFD /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */; };
 		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
@@ -156,6 +159,12 @@
 		F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUDExtensions.m"; sourceTree = "<group>"; };
 		F38C57071E5BD3CF001382DB /* NaviMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMoreView.h; sourceTree = "<group>"; };
 		F38C57081E5BD3CF001382DB /* NaviMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMoreView.m; sourceTree = "<group>"; };
+		F392834F1E83CD4E00896FFD /* CarNumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarNumCell.h; sourceTree = "<group>"; };
+		F39283501E83CD4E00896FFD /* CarNumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarNumCell.m; sourceTree = "<group>"; };
+		F39283591E88AB5200896FFD /* ProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarView.h; sourceTree = "<group>"; };
+		F392835A1E88AB5200896FFD /* ProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarView.m; sourceTree = "<group>"; };
+		F39283601E88ADBC00896FFD /* UIColor+RGBValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBValues.h"; sourceTree = "<group>"; };
+		F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBValues.m"; sourceTree = "<group>"; };
 		F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationCenter.h; sourceTree = "<group>"; };
 		F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationCenter.m; sourceTree = "<group>"; };
 		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -277,6 +286,8 @@
 				F33E78271E8109880078F7BB /* OptionsListCell.m */,
 				F33E78391E8243F20078F7BB /* CarInfoEditCell.h */,
 				F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */,
+				F392834F1E83CD4E00896FFD /* CarNumCell.h */,
+				F39283501E83CD4E00896FFD /* CarNumCell.m */,
 			);
 			path = cusCell;
 			sourceTree = "<group>";
@@ -448,6 +459,24 @@
 			path = NaviMoreView;
 			sourceTree = "<group>";
 		};
+		F39283581E88AB3A00896FFD /* ProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F39283591E88AB5200896FFD /* ProgressBarView.h */,
+				F392835A1E88AB5200896FFD /* ProgressBarView.m */,
+			);
+			path = ProgressBarView;
+			sourceTree = "<group>";
+		};
+		F392835F1E88ADA000896FFD /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				F39283601E88ADBC00896FFD /* UIColor+RGBValues.h */,
+				F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		F39BFD291E6FA77100F4A9B2 /* NaviMapHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +621,7 @@
 		F3D35DB01E56967C0055194D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F392835F1E88ADA000896FFD /* UIColor */,
 				F3AA4C401E7920BB00D20214 /* UIViewController */,
 				F3AA4C2E1E78DF8200D20214 /* UIImage */,
 				F3D35DBD1E56967C0055194D /* UIView */,
@@ -687,6 +717,7 @@
 		F3D35DCB1E56967C0055194D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F39283581E88AB3A00896FFD /* ProgressBarView */,
 				F369E1FD1E7BBD2600E8C138 /* UIToolViewTextField */,
 				F3894B061E6CF9A500ECB8F1 /* noticeAlertView */,
 				F34EEFC11E5A7880006DBC5B /* NaviCusView */,
@@ -953,6 +984,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
+				F39283621E88ADBC00896FFD /* UIColor+RGBValues.m in Sources */,
 				F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
 				F33E784F1E825B0F0078F7BB /* attributionView.m in Sources */,
@@ -975,6 +1007,7 @@
 				F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */,
 				F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
+				F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */,
 				F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
 				F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */,
@@ -983,6 +1016,7 @@
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
+				F392835B1E88AB5200896FFD /* ProgressBarView.m in Sources */,
 				F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */,
 				F3AA4C3C1E791F7200D20214 /* SlidebarMenu.m in Sources */,
 				F369E2201E80F97F00E8C138 /* OrderListModel.m in Sources */,

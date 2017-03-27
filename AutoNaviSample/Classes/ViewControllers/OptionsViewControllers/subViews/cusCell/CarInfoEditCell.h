@@ -14,5 +14,5 @@
 
 @property (nonatomic,strong)UILabel             *titleLabel;
 @property (nonatomic,strong)UIToolViewTextField *inputField;
-
+-(void)updatecellUIWithSize:(CGFloat)size;
 @end

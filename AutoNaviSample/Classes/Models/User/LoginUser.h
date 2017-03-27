@@ -33,11 +33,12 @@
 @property (nonatomic, assign) BOOL avoidHighway;     //避免高速
 
 @property (nonatomic, assign) BOOL avoidWeightLimit;//避开限重
-
+@property (nonatomic, strong) NSString *carAttribution; //车辆归属地
 @property (nonatomic, strong) NSString *carNum;//车牌号
 @property (nonatomic, strong) NSString *carMaxHeight;//最大高度
 @property (nonatomic, strong) NSString *carMaxWeight;//货车总重
 @property (nonatomic, strong) NSString *strategy;//路径规划方式
+
 @property (nonatomic, assign) BOOL setNorthUp;//车头向上 no 北向上 yes
 @property (nonatomic, assign) BOOL set3Dnavi;//3d导航 yes   2d导航 no
 
