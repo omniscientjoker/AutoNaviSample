@@ -45,6 +45,7 @@
 		F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283501E83CD4E00896FFD /* CarNumCell.m */; };
 		F392835B1E88AB5200896FFD /* ProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F392835A1E88AB5200896FFD /* ProgressBarView.m */; };
 		F39283621E88ADBC00896FFD /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */; };
+		F39283651E89172E00896FFD /* OfflLineMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283641E89172E00896FFD /* OfflLineMapCell.m */; };
 		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
@@ -165,6 +166,8 @@
 		F392835A1E88AB5200896FFD /* ProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarView.m; sourceTree = "<group>"; };
 		F39283601E88ADBC00896FFD /* UIColor+RGBValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBValues.h"; sourceTree = "<group>"; };
 		F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBValues.m"; sourceTree = "<group>"; };
+		F39283631E89172E00896FFD /* OfflLineMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflLineMapCell.h; sourceTree = "<group>"; };
+		F39283641E89172E00896FFD /* OfflLineMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflLineMapCell.m; sourceTree = "<group>"; };
 		F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationCenter.h; sourceTree = "<group>"; };
 		F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationCenter.m; sourceTree = "<group>"; };
 		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -282,6 +285,8 @@
 		F33E78251E8109880078F7BB /* cusCell */ = {
 			isa = PBXGroup;
 			children = (
+				F39283631E89172E00896FFD /* OfflLineMapCell.h */,
+				F39283641E89172E00896FFD /* OfflLineMapCell.m */,
 				F33E78261E8109880078F7BB /* OptionsListCell.h */,
 				F33E78271E8109880078F7BB /* OptionsListCell.m */,
 				F33E78391E8243F20078F7BB /* CarInfoEditCell.h */,
@@ -1007,6 +1012,7 @@
 				F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */,
 				F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
+				F39283651E89172E00896FFD /* OfflLineMapCell.m in Sources */,
 				F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */,
 				F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,

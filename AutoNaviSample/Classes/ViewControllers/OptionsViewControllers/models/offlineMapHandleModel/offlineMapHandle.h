@@ -12,37 +12,41 @@
 
 @protocol offlineMapHandleDelegate <NSObject>
 @optional
+- (void)getOffLineMapSourceSuccessed;
+- (void)getOffLineMapSourceFailed;
 - (void)offlineMapDowningWithModel:(OffLineItemHandelModel *)model;
 - (void)offlineMapDowningFinished;
 @end
 
 @interface offlineMapHandle : NSObject
-{
-    char    *_expandedSections;
-}
 @property (weak, readwrite, nonatomic) id<offlineMapHandleDelegate> delegate;
-
 //数据
-@property (nonatomic, strong) NSArray *cities;
-@property (nonatomic, strong) NSArray *provinces;
-@property (nonatomic, strong) NSArray *municipalities;
-@property (nonatomic, strong) NSArray *sectionTitles;
+@property (nonatomic, strong) NSArray *cities;          //市
+@property (nonatomic, strong) NSArray *provinces;       //省
+@property (nonatomic, strong) NSArray *municipalities;  //直辖市
 @property (nonatomic, strong) NSMutableSet        *downloadingItems;
 @property (nonatomic, strong) NSMutableDictionary *downloadStages;
-
-//方法
+//单例创建
 +(offlineMapHandle *)sharedInstance;
+-(void)updateDateSourcesForOffLineMap;
+//工具方法
+-(BOOL)mapFileIsExist;
 -(NSString *)convertFileSizeWithSize:(long long)size;
+
+#pragma mark offlineMap
+//获取地图更新
+- (void)setupOffLineMap;
 //获取离线地图状态
 -(NSString *)returnMapStateForItem:(MAOfflineItem *)item;
-//返回地图数据
--(NSString *)returnMapStateDetailForItem:(MAOfflineItem *)item DownItems:(NSMutableSet *)downloadingItems DownStage:(NSMutableDictionary *)downloadStages;
+//返回地图下载状态
+-(CGFloat)returnDownloadPerfencet:(MAOfflineItem *)item;
+-(NSString *)returnMapStateDetailForItem:(MAOfflineItem *)item;
 //返回cell数据
-- (MAOfflineItem *)itemForIndexPath:(NSIndexPath *)indexPath Municipalities:(NSArray *)municipalities Provinces:(NSArray *)provinces;
+- (MAOfflineItem *)itemForIndexPath:(NSIndexPath *)indexPath;
 //暂停 删除
 - (void)pauseDownloading:(MAOfflineItem *)item;
 - (void)deleteFile:(MAOfflineItem *)item;
-- (void)downloadFile:(MAOfflineItem *)item DownItems:(NSMutableSet *)downloadingItems DownStage:(NSMutableDictionary *)downloadStages atIndexPath:(NSIndexPath *)indexPath;
+- (void)downloadFile:(MAOfflineItem *)item IndexPath:(NSIndexPath *)indexPath;
 //搜索匹配
-- (NSArray *)citiesFilterWithKey:(NSString *)key Predicate:(NSPredicate *)predicate Cities:(NSArray *)cities;
+- (NSArray *)citiesFilterWithKey:(NSString *)key Predicate:(NSPredicate *)predicate;
 @end

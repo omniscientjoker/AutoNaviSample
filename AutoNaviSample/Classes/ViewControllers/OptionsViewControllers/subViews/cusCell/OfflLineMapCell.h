@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define kOffLineMapCellHeight     66
 @protocol OfflLineMapCellDelegate <NSObject>
 @optional
 - (void)pauseItem:(id)sender;
 - (void)downloadItem:(id)sender;
 - (void)startItem:(id)sender;
-- (void)cancleItem:(id)sender;
+- (void)deleteItem:(id)sender;
 @end
 
 @interface OfflLineMapCell : UITableViewCell
@@ -22,9 +23,10 @@
 @property(nonatomic,strong)UILabel  * titleLable;
 @property(nonatomic,strong)UILabel  * sizeLable;
 @property(nonatomic,strong)UILabel  * stateLable;
--(void)updatecellviewWith:(MAOfflineItem *)item;
--(void)updateProcessViewWithItem:(MAOfflineItem *)item;
-- (void)changeValue:(float)sender;
+- (void)updateCellViewForItem:(MAOfflineItem *)item;
+- (void)updateCellUiForItem:(MAOfflineItem *)item;
+- (void)changeProgressValueWithItem:(MAOfflineItem *)item;
+-(void)ProgressValueWithItem:(MAOfflineItem *)item;
 - (void)hideProgressView;
 - (void)showProgressView;
 @end
