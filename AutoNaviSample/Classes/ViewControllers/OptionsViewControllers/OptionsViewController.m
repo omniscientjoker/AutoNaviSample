@@ -106,7 +106,6 @@ static NSString *const kOptionsCellIdentifier = @"settingCellIndentifier";
             [self.navigationController pushViewController:carInfo animated:YES];
         }
     }else if(indexPath.section==1){
-        NSLog(@"%ld==%ld",indexPath.section,indexPath.row);
     }
 }
 

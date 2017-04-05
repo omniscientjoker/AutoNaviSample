@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define kOffLineMapCellHeight     66
+#define kOffLineMapCellHeight     70
 @protocol OfflLineMapCellDelegate <NSObject>
 @optional
 - (void)pauseItem:(id)sender;
@@ -26,7 +26,8 @@
 - (void)updateCellViewForItem:(MAOfflineItem *)item;
 - (void)updateCellUiForItem:(MAOfflineItem *)item;
 - (void)changeProgressValueWithItem:(MAOfflineItem *)item;
--(void)ProgressValueWithItem:(MAOfflineItem *)item;
+- (void)updateCellDateSourcessWith:(MAOfflineItem *)item;
+- (void)ProgressValueWithItem:(MAOfflineItem *)item;
 - (void)hideProgressView;
 - (void)showProgressView;
 @end

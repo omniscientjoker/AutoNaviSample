@@ -12,12 +12,13 @@
 #import "offlineMapHandle.h"
 #import "ProgressBarView.h"
 #import "OfflLineMapCell.h"
+#import "DownLoadMapViewController.h"
 
 #define kDefaultSearchkey       @"bj"
 #define kOffLineMapDownLoadCell @"kOffLineMapDownLoadCell"
 #define kSectionHeaderMargin    15.f
 #define kSectionHeaderHeight    22.f
-#define kTableCellHeight        66.f
+#define kTableCellHeight        70.f
 #define kTagDownloadButton      100000
 #define kTagPauseButton         100001
 #define kTagDeleteButton        100002
@@ -59,8 +60,7 @@
 }
 - (void)initNavigationBar
 {
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消全部"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下载管理"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(cancelAllAction)];
@@ -93,24 +93,7 @@
 {
     OfflLineMapCell * cell = [self.TableView cellForRowAtIndexPath:indexPath];
     if (cell != nil){
-        [cell updateCellUiForItem:item];
-    }
-    
-    if ([item isKindOfClass:[MAOfflineItemCommonCity class]]){
-        OfflLineMapCell * provinceCell = [self.TableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.section]];
-        if (provinceCell != nil){
-            [provinceCell updateCellUiForItem:((MAOfflineItemCommonCity *)item).province];
-        }
-        return;
-    }
-    
-    if ([item isKindOfClass:[MAOfflineProvince class]]){
-        MAOfflineProvince * province = (MAOfflineProvince *)item;
-        [province.cities enumerateObjectsUsingBlock:^(MAOfflineItemCommonCity * obj, NSUInteger idx, BOOL *  stop) {
-            OfflLineMapCell * cityCell = [self.TableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:idx+1 inSection:indexPath.section]];
-            [cityCell updateCellUiForItem:obj];
-        }];
-        return;
+        [cell updateCellDateSourcessWith:item];
     }
 }
 
@@ -160,7 +143,7 @@
         return headerView;
     }else{
         MAOfflineProvince *pro = [offlineMapHandle sharedInstance].provinces[section - self.sectionTitles.count];
-        offlineMapHeadView *headerView = [[offlineMapHeadView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.TableView.bounds), kTableCellHeight) expanded:_expandedSections[section]];
+        offlineMapHeadView *headerView = [[offlineMapHeadView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.TableView.bounds), kTableCellHeight) expanded:_expandedSections[section] isManager:NO];
         headerView.section = section;
         headerView.text = pro.name;
         headerView.delegate = self;
@@ -254,7 +237,8 @@
 
 #pragma mark - Handle Action
 - (void)cancelAllAction{
-    [[MAOfflineMap sharedOfflineMap] cancelAll];
+    DownLoadMapViewController * dm = [[DownLoadMapViewController alloc] init];
+    [self presentViewController:dm animated:YES completion:nil];
 }
 - (void)searchAction{
     NSString *key = kDefaultSearchkey;
@@ -280,6 +264,9 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if (self.TableView) {
+        [self.TableView reloadData];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

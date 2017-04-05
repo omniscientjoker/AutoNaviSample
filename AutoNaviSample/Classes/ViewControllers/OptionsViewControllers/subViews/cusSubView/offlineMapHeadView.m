@@ -10,14 +10,15 @@
 #define MAHeaderViewMargin 5.f
 
 @interface offlineMapHeadView ()<UIGestureRecognizerDelegate>
-@property (nonatomic, assign, readwrite) BOOL        expanded;
+@property (nonatomic, assign, readwrite) BOOL         expanded;
+@property (nonatomic, strong) UIButton               *selectedBtn;
 @property (nonatomic, strong) UIImageView            *expandImageView;
 @property (nonatomic, strong) UILabel                *label;
 @property (nonatomic, strong) UITapGestureRecognizer *singleTapGestureRecognizer;
 @end
 
 @implementation offlineMapHeadView
-@synthesize delegate,expanded,section,expandImageView,label,singleTapGestureRecognizer;
+@synthesize delegate, expanded, selected, section, expandImageView, selectedBtn, selectedImageView, label,singleTapGestureRecognizer;
 
 #pragma mark - Interface
 - (NSString *)text{
@@ -32,7 +33,12 @@
 - (void)singleTapGesture:(UITapGestureRecognizer *)tap{
     [self toggle];
 }
-
+- (void)clickSelectedBtn:(id)sender{
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(headerView:section:selected:)])
+    {
+        [self.delegate headerView:self section:self.section selected:self.selected];
+    }
+}
 #pragma mark - Utility
 - (void)toggle{
     self.expanded = !self.expanded;
@@ -42,6 +48,7 @@
 
 - (void)updateUI{
     self.expandImageView.highlighted = self.expanded;
+    self.selectedImageView.highlighted = self.selected;
 }
 
 
@@ -56,15 +63,31 @@
 - (void)setupExpandImageView
 {
     self.expandImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_arrow_right"]
-                                             highlightedImage:[UIImage imageNamed:@"arrow_down"]];
-    self.expandImageView.center = CGPointMake(MAHeaderViewMargin + CGRectGetWidth(self.expandImageView.bounds) / 2.f, CGRectGetMidY(self.bounds));
+                                             highlightedImage:[UIImage imageNamed:@"icon_arrow_down"]];
+    
+    self.expandImageView.center = CGPointMake(MAHeaderViewMargin*2 + CGRectGetWidth(self.selectedImageView.bounds) + CGRectGetWidth(self.expandImageView.bounds) / 2.f, CGRectGetMidY(self.bounds));
     self.expandImageView.highlighted = self.expanded;
     [self addSubview:self.expandImageView];
 }
-
+- (void)setupSelectedBtn
+{
+    self.selectedBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, MAHeaderViewMargin*2 + CGRectGetWidth(self.selectedImageView.bounds), CGRectGetHeight(self.bounds))];
+    [self.selectedBtn addTarget:self action:@selector(clickSelectedBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.selectedBtn];
+    
+}
+- (void)setupSelectedImageView
+{
+    self.selectedImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_unselected_round"]
+                                             highlightedImage:[UIImage imageNamed:@"icon_selected_round"]];
+    self.selectedImageView.center = CGPointMake(MAHeaderViewMargin + CGRectGetWidth(self.selectedImageView.bounds) / 2.f, CGRectGetMidY(self.bounds));
+    self.selectedImageView.highlighted = self.selected;
+    [self addSubview:self.selectedImageView];
+}
 - (void)setupLabel
 {
-    CGFloat x = CGRectGetMaxX(self.expandImageView.frame) + MAHeaderViewMargin;
+    CGFloat x = CGRectGetMaxX(self.expandImageView.frame) + MAHeaderViewMargin;;
+    
     CGRect theRect = CGRectMake(x,
                                 MAHeaderViewMargin,
                                 CGRectGetWidth(self.bounds) - x - MAHeaderViewMargin,
@@ -91,16 +114,22 @@
 }
 
 #pragma mark - Life Cycle
-- (id)initWithFrame:(CGRect)frame expanded:(BOOL)expand
+- (id)initWithFrame:(CGRect)frame expanded:(BOOL)expand isManager:(BOOL)manager
 {
     if (self = [super initWithFrame:frame])
     {
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.backgroundColor = [UIColor lightGrayColor];
         expanded = expand;
+        selected = NO;
         
         [self setupBackgroundMaskView];
+        if (manager) {
+            [self setupSelectedImageView];
+            [self setupSelectedBtn];
+        }
         [self setupExpandImageView];
+        
         [self setupLabel];
         [self setupTapGestureRecognizer];
     }
@@ -109,6 +138,6 @@
 }
 
 - (id)initWithFrame:(CGRect)frame{
-    return [self initWithFrame:frame expanded:NO];
+    return [self initWithFrame:frame expanded:NO isManager:NO];
 }
 @end

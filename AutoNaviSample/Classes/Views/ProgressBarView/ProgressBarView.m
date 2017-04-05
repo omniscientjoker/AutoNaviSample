@@ -43,15 +43,25 @@
     self.textAlignment = NSTextAlignmentRight;
 }
 
+-(void)dealloc{
+    if (self.timer) {
+        self.timer = nil;
+    }
+}
+
+
 - (void)setAnimate:(NSNumber *)animate {
     _animate = animate;
+    if (![animate boolValue]) {
+        self.timer = nil;
+    }
+    
     if ([animate boolValue]) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(incrementOffset) userInfo:nil repeats:YES];
     } else if (self.timer) {
         [self.timer invalidate];
     }
 }
-
 
 - (void)setProgress:(CGFloat)progress {
     self.progressToAnimateTo = progress;

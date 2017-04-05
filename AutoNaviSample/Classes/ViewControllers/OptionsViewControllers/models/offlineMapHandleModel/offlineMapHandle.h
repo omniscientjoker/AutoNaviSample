@@ -12,6 +12,7 @@
 
 @protocol offlineMapHandleDelegate <NSObject>
 @optional
+- (void)removeOffLineMapSuccessed;
 - (void)getOffLineMapSourceSuccessed;
 - (void)getOffLineMapSourceFailed;
 - (void)offlineMapDowningWithModel:(OffLineItemHandelModel *)model;
@@ -44,9 +45,14 @@
 //返回cell数据
 - (MAOfflineItem *)itemForIndexPath:(NSIndexPath *)indexPath;
 //暂停 删除
+- (void)deleteFilesWithSections:(NSArray *)items;
 - (void)pauseDownloading:(MAOfflineItem *)item;
 - (void)deleteFile:(MAOfflineItem *)item;
 - (void)downloadFile:(MAOfflineItem *)item IndexPath:(NSIndexPath *)indexPath;
+//
+-(NSArray *)returnDownLoadMunicipalities;
+-(NSArray *)returnDownLoadProvinces;
+-(NSArray *)returnDownLoadCitiesWithSession:(NSInteger)session;
 //搜索匹配
 - (NSArray *)citiesFilterWithKey:(NSString *)key Predicate:(NSPredicate *)predicate;
 @end

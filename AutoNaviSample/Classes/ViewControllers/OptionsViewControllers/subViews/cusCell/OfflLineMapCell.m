@@ -10,10 +10,10 @@
 #import "ProgressBarView.h"
 #import "offlineMapHandle.h"
 
-#define TagUIbuttonDowanLoad    100000000000
-#define TagUIbuttonDelete       100000000001
-#define TagUIbuttonPause        100000000002
-#define TagUIbuttonStart        100000000003
+#define TagUIbuttonDowanLoad    10000000
+#define TagUIbuttonDelete       10000001
+#define TagUIbuttonPause        10000002
+#define TagUIbuttonStart        10000003
 @interface OfflLineMapCell ()
 @property(nonatomic,strong)ProgressBarView * progressView;
 @end
@@ -43,8 +43,7 @@
 }
 
 #pragma mark updateUI
--(void)updateCellViewForItem:(MAOfflineItem *)item
-{
+-(void)updateCellViewForItem:(MAOfflineItem *)item{
     self.titleLable.text = item.name;
     self.sizeLable.text  = [NSString stringWithFormat:@"大小:%@", [[offlineMapHandle sharedInstance]convertFileSizeWithSize:item.size]];
     [self updateCellUiForItem:item];
@@ -52,38 +51,29 @@
 
 #pragma mark changeUI
 -(void)updateCellUiForItem:(MAOfflineItem *)item{
+    [self hideProgressView];
+    [self hideAcctionBtn];
+    [self hideStateLable];
     if (item.itemStatus == MAOfflineItemStatusInstalled) {
-        //已安装
-        [self hideProgressView];
-        [self hideAcctionBtn];
         [self showStateLableWithItem:item];
     }else if (item.itemStatus == MAOfflineItemStatusNone){
-        //未安装
-        [self hideProgressView];
-        [self hideStateLable];
         [self showAcctionBtn];
         self.acctionBtn.tag = TagUIbuttonDowanLoad;
     }else if (item.itemStatus == MAOfflineItemStatusCached){
-        //已缓存
         [self showProgressView];
         [self showAcctionBtn];
         [self showStateLableWithItem:item];
         self.stateLable.frame = CGRectMake(SCREENWIDTH-40-SCREENWIDTH/3, (kOffLineMapCellHeight-18)/2, SCREENWIDTH/3, 18);
-        
         if ([[MAOfflineMap sharedOfflineMap] isDownloadingForItem:item]) {
-            //正在下载
             [self changeProgressValueWithItem:item];
             [_acctionBtn setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
             self.acctionBtn.tag = TagUIbuttonPause;
-            
         }else{
             [self ProgressValueWithItem:item];
             [_acctionBtn setImage:[UIImage imageNamed:@"icon_startmap_img"] forState:UIControlStateNormal];
             self.acctionBtn.tag = TagUIbuttonStart;
         }
-        
     }else if (item.itemStatus == MAOfflineItemStatusExpired){
-        [self hideProgressView];
         [self showAcctionBtn];
         [self showStateLableWithItem:item];
         self.stateLable.frame = CGRectMake(SCREENWIDTH-40-SCREENWIDTH/3, (kOffLineMapCellHeight-18)/2, SCREENWIDTH/3, 18);
@@ -92,29 +82,56 @@
     }
 }
 
+-(void)updateCellDateSourcessWith:(MAOfflineItem *)item
+{
+    if ([[MAOfflineMap sharedOfflineMap] isDownloadingForItem:item]){
+        [self showProgressView];
+        [self showAcctionBtn];
+        [self showStateLableWithItem:item];
+        self.stateLable.frame = CGRectMake(SCREENWIDTH-40-SCREENWIDTH/3, (kOffLineMapCellHeight-18)/2, SCREENWIDTH/3, 18);
+        [self changeProgressValueWithItem:item];
+        [_acctionBtn setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
+        self.acctionBtn.tag = TagUIbuttonPause;
+    }else{
+        [self hideProgressView];
+        [self hideAcctionBtn];
+        [self hideStateLable];
+        [self updateCellUiForItem:item];
+    }
+}
+
 #pragma mark ClickBtn
 -(void)cliclActionBtn:(id)sender{
     UIButton * btn = (UIButton *)sender;
-    if (btn.tag == TagUIbuttonDowanLoad) {
-        [sender setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
-        btn.tag = TagUIbuttonPause;
-        if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(downloadItem:)]) {
-            [self.delegate downloadItem:sender];
+    switch (btn.tag) {
+        case TagUIbuttonStart:{
+            btn.tag = TagUIbuttonPause;
+            [sender setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
+            if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(downloadItem:)]) {
+                [self.delegate downloadItem:sender];
+            }
         }
-    }else if (btn.tag == TagUIbuttonStart){
-        btn.tag = TagUIbuttonPause;
-        [sender setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
-        if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(startItem:)]) {
-            [self.delegate startItem:sender];
+            break;
+        case TagUIbuttonPause:{
+            btn.tag = TagUIbuttonDowanLoad;
+            [sender setImage:[UIImage imageNamed:@"icon_startmap_img"] forState:UIControlStateNormal];
+            if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(pauseItem:)]) {
+                [self.delegate pauseItem:sender];
+            }
         }
-    }else if (btn.tag == TagUIbuttonPause){
-        btn.tag = TagUIbuttonDowanLoad;
-        [sender setImage:[UIImage imageNamed:@"icon_startmap_img"] forState:UIControlStateNormal];
-        if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(pauseItem:)]) {
-            [self.delegate pauseItem:sender];
+            break;
+        case TagUIbuttonDowanLoad:{
+            btn.tag = TagUIbuttonPause;
+            [sender setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
+            if ([self.delegate conformsToProtocol:@protocol(OfflLineMapCellDelegate)] && [self.delegate respondsToSelector:@selector(downloadItem:)]) {
+                [self.delegate downloadItem:sender];
+            }
         }
-    }else{
-        NSLog(@"00");
+            break;
+        default:{
+            NSLog(@"cancel");
+        }
+            break;
     }
 }
 
@@ -166,11 +183,12 @@
     if (self.progressView) {
         return;
     }
-    self.progressView = [[ProgressBarView alloc] initWithFrame:CGRectMake(10, kOffLineMapCellHeight-10, SCREENWIDTH-20, 10)];
+    self.progressView = [[ProgressBarView alloc] initWithFrame:CGRectMake(2, kOffLineMapCellHeight-12, SCREENWIDTH-4, 10)];
     self.progressView.color = [UIColor colorWithRed:0.73f green:0.10f blue:0.00f alpha:1.00f];
     self.progressView.progress = 0.40;
     self.progressView.animate = @YES;
-    self.progressView.background = [self.progressView.color colorWithAlphaComponent:0.8];
+    self.progressView.borderRadius = @0;
+    self.progressView.background = [UIColor whiteColor];
     [self.contentView addSubview:self.progressView];
 }
 -(void)changeProgressValueWithItem:(MAOfflineItem *)item{
@@ -179,7 +197,6 @@
 -(void)ProgressValueWithItem:(MAOfflineItem *)item{
     _progressView.progress = (CGFloat)item.downloadedSize/(CGFloat)item.size;
 }
-
 
 
 - (void)awakeFromNib {

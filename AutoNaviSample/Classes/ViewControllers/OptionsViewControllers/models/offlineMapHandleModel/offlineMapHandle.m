@@ -190,6 +190,20 @@ NSString const *DownloadStageInfoKey      = @"DownloadStageInfoKey";
 - (void)deleteFile:(MAOfflineItem *)item{
     [[MAOfflineMap sharedOfflineMap] deleteItem:item];
 }
+- (void)deleteFilesWithSections:(NSArray *)items{
+    for (int i = 0 ; i < items.count ; i ++) {
+        MAOfflineProvince * prv = items[i];
+        for (int k = 0 ; k < prv.cities.count; k ++) {
+            MAOfflineItem * item = prv.cities[k];
+            if (item.itemStatus == MAOfflineItemStatusInstalled) {
+                [self deleteFile:item];
+            }
+        }
+    }
+    if ([self.delegate conformsToProtocol:@protocol(offlineMapHandleDelegate)] && [self.delegate respondsToSelector:@selector(removeOffLineMapSuccessed)]) {
+        [self.delegate removeOffLineMapSuccessed];
+    }
+}
 - (void)downloadFile:(MAOfflineItem *)item IndexPath:(NSIndexPath *)indexPath
 {
     if (item == nil || item.itemStatus == MAOfflineItemStatusInstalled){
@@ -230,6 +244,47 @@ NSString const *DownloadStageInfoKey      = @"DownloadStageInfoKey";
             }
         });
     }];
+}
+
+//获取已下载的数据
+-(NSArray *)returnDownLoadMunicipalities{
+    NSMutableArray * array = [[NSMutableArray alloc] init];
+    for (int i = 0 ; i < self.municipalities.count; i++) {
+        MAOfflineItem * item = self.municipalities[i];
+        if (item.itemStatus == MAOfflineItemStatusInstalled) {
+            [array addObject:item];
+        }
+    }
+    return array;
+}
+-(NSArray *)returnDownLoadProvinces{
+    NSMutableArray * array = [[NSMutableArray alloc] init];
+    for (int i = 0 ; i < self.provinces.count; i++) {
+        NSArray * arr = [self returnDownLoadCitiesWithSession:i];
+        if (arr.count > 0) {
+            [array addObject:arr];
+        }
+    }
+    return array;
+}
+-(NSArray *)returnDownLoadCitiesWithSession:(NSInteger)session{
+    BOOL exist;
+    exist = NO;
+    NSMutableArray * array = [[NSMutableArray alloc] init];
+    MAOfflineProvince * prv = self.provinces[session];
+    [array addObject:prv];
+    for (int i = 0 ; i < prv.cities.count; i++) {
+        MAOfflineItem * item = prv.cities[i];
+        if (item.itemStatus == MAOfflineItemStatusInstalled) {
+            [array addObject:item];
+            exist = YES;
+        }
+    }
+    if (exist) {
+        return array;
+    }else{
+        return nil;
+    }
 }
 
 //搜索匹配

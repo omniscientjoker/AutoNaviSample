@@ -49,6 +49,8 @@
 		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
+		F3A591FB1E8DE28800DDC226 /* DownLoadMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */; };
+		F3A591FE1E8E028100DDC226 /* DownLoadMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */; };
 		F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */; };
 		F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C281E77F22900D20214 /* MineViewController.m */; };
 		F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C301E78DFC000D20214 /* UIImage+blur.m */; };
@@ -173,6 +175,10 @@
 		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F39BFD2D1E6FA7CF00F4A9B2 /* NaviMapHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMapHelp.h; sourceTree = "<group>"; };
 		F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMapHelp.m; sourceTree = "<group>"; };
+		F3A591F91E8DE28800DDC226 /* DownLoadMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadMapViewController.h; sourceTree = "<group>"; };
+		F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadMapViewController.m; sourceTree = "<group>"; };
+		F3A591FC1E8E028100DDC226 /* DownLoadMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadMapCell.h; sourceTree = "<group>"; };
+		F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadMapCell.m; sourceTree = "<group>"; };
 		F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
 		F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
 		F3AA4C271E77F22900D20214 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -287,6 +293,8 @@
 			children = (
 				F39283631E89172E00896FFD /* OfflLineMapCell.h */,
 				F39283641E89172E00896FFD /* OfflLineMapCell.m */,
+				F3A591FC1E8E028100DDC226 /* DownLoadMapCell.h */,
+				F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */,
 				F33E78261E8109880078F7BB /* OptionsListCell.h */,
 				F33E78271E8109880078F7BB /* OptionsListCell.m */,
 				F33E78391E8243F20078F7BB /* CarInfoEditCell.h */,
@@ -315,6 +323,8 @@
 				F33E784E1E825B0F0078F7BB /* attributionView.m */,
 				F33E78471E825AC20078F7BB /* offlineMapHeadView.h */,
 				F33E78481E825AC20078F7BB /* offlineMapHeadView.m */,
+				F3A591F91E8DE28800DDC226 /* DownLoadMapViewController.h */,
+				F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */,
 			);
 			path = cusSubView;
 			sourceTree = "<group>";
@@ -999,6 +1009,7 @@
 				F33E783B1E8243F20078F7BB /* CarInfoEditCell.m in Sources */,
 				F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
+				F3A591FB1E8DE28800DDC226 /* DownLoadMapViewController.m in Sources */,
 				F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */,
 				F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */,
 				F3AA4C4D1E79230600D20214 /* SlidebarFunctions.m in Sources */,
@@ -1006,6 +1017,7 @@
 				F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
+				F3A591FE1E8E028100DDC226 /* DownLoadMapCell.m in Sources */,
 				F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */,
 				F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
