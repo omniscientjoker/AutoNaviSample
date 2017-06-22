@@ -49,11 +49,34 @@
     [self updateCellUiForItem:item];
 }
 
+-(void)updateCellDateSourcessWith:(MAOfflineItem *)item
+{
+    if ([[MAOfflineMap sharedOfflineMap] isDownloadingForItem:item]){
+        
+        [self showProgressView];
+        [self showAcctionBtn];
+        [self showStateLableWithItem:item];
+        self.stateLable.frame = CGRectMake(SCREENWIDTH-40-SCREENWIDTH/3, (kOffLineMapCellHeight-18)/2, SCREENWIDTH/3, 18);
+        [self changeProgressValueWithItem:item];
+        [_acctionBtn setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
+        self.acctionBtn.tag = TagUIbuttonPause;
+    }else{
+        [self hideProgressView];
+        [self hideAcctionBtn];
+        [self hideStateLable];
+        [self updateCellUiForItem:item];
+    }
+}
+
+-(void)isDownLoading{
+    
+}
 #pragma mark changeUI
 -(void)updateCellUiForItem:(MAOfflineItem *)item{
     [self hideProgressView];
     [self hideAcctionBtn];
     [self hideStateLable];
+    
     if (item.itemStatus == MAOfflineItemStatusInstalled) {
         [self showStateLableWithItem:item];
     }else if (item.itemStatus == MAOfflineItemStatusNone){
@@ -82,23 +105,7 @@
     }
 }
 
--(void)updateCellDateSourcessWith:(MAOfflineItem *)item
-{
-    if ([[MAOfflineMap sharedOfflineMap] isDownloadingForItem:item]){
-        [self showProgressView];
-        [self showAcctionBtn];
-        [self showStateLableWithItem:item];
-        self.stateLable.frame = CGRectMake(SCREENWIDTH-40-SCREENWIDTH/3, (kOffLineMapCellHeight-18)/2, SCREENWIDTH/3, 18);
-        [self changeProgressValueWithItem:item];
-        [_acctionBtn setImage:[UIImage imageNamed:@"icon_pause_img"] forState:UIControlStateNormal];
-        self.acctionBtn.tag = TagUIbuttonPause;
-    }else{
-        [self hideProgressView];
-        [self hideAcctionBtn];
-        [self hideStateLable];
-        [self updateCellUiForItem:item];
-    }
-}
+
 
 #pragma mark ClickBtn
 -(void)cliclActionBtn:(id)sender{
@@ -175,6 +182,7 @@
 #pragma mark Progress
 - (void)hideProgressView{
     if (self.progressView) {
+        [self.progressView viewWillRemove];
         [self.progressView removeFromSuperview];
         self.progressView = nil;
     }
@@ -199,6 +207,9 @@
 }
 
 
+-(void)dealloc{
+    [self.progressView viewWillRemove];
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
 }

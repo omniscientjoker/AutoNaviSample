@@ -29,5 +29,5 @@
 
 - (void)overrideProgressText:(NSString *)progressText;
 - (void)overrideProgressTextColor:(UIColor *)progressTextColor;
-
+- (void)viewWillRemove;
 @end

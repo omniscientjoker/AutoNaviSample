@@ -7,36 +7,59 @@
 //
 
 #import "NaviMapHelp.h"
+#import <objc/runtime.h>
 
 @implementation NaviMapHelp
-
-static MAMapView *_mapView = nil;
+static id _instance;
+//static MAMapView *_mapView = nil;
 
 + (MAMapView *)shareMAMapView {
-    @synchronized(self) {
-        if (_mapView == nil) {
-            _mapView = [[MAMapView alloc] init];
-            _mapView.autoresizingMask =
-            UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            _mapView.rotateEnabled = YES;
-            _mapView.rotateCameraEnabled = YES;
-            _mapView.zoomEnabled = YES;
-        }
-        return _mapView;
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        MAMapView * mapView = [[MAMapView alloc] init];
+        mapView.autoresizingMask =
+        UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        mapView.rotateEnabled = YES;
+        mapView.rotateCameraEnabled = YES;
+        mapView.zoomEnabled = YES;
+        _instance = mapView;
+    });
+    return _instance;
 }
-
-+ (id)allocWithZone:(NSZone *)zone {
-    @synchronized(self) {
-        if (_mapView == nil) {
-            _mapView = [super allocWithZone:zone];
-            return _mapView;
-        }
-    }
-    return nil;
++ (instancetype)allocWithZone:(NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
 }
-
 + (id)copyWithZone:(NSZone *)zone {
-    return _mapView;
+    return _instance;
 }
+- (id)copyWithZone:(NSZone *)zone{
+    return _instance;
+}
++ (id)mutableCopyWithZone:(struct _NSZone *)zone{
+    return _instance;
+}
+- (id)mutableCopyWithZone:(NSZone *)zone{
+    return _instance;
+}
+//@end
+//
+//
+//@implementation MAMapView (solideView)
+//+ (void)init{
+//    Method allocWithZone = class_getInstanceMethod(self, @selector(allocWithZone:));
+//    Method allocWithNewZone = class_getInstanceMethod(self, @selector(allocWithNewZone:));
+//    method_exchangeImplementations(allocWithZone, allocWithNewZone);
+//}
+//+ (MAMapView *)allocWithNewZone:(NSZone *)zone {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        _mapView = [super allocWithZone:zone];
+//    });
+//    return _mapView;
+//}
 @end
+

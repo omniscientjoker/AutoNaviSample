@@ -53,6 +53,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    needReloadWhenDisappear = NO;
     [offlineMapHandle sharedInstance].delegate = self;
     [[offlineMapHandle sharedInstance] setupOffLineMap];
     [self initNavigationBar];
@@ -270,7 +271,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    [super viewWillDisappear:animated];
     if (self.needReloadWhenDisappear){
         [self.mapView reloadMap];
         self.needReloadWhenDisappear = NO;

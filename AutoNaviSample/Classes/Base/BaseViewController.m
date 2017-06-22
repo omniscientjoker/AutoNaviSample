@@ -221,14 +221,11 @@
 
 #pragma mark - MBProgressHUDDelegate
 - (void)hudWasHidden:(MBProgressHUD *)hud{
-    
     [self.hudContentView removeFromSuperview];
     [hud removeFromSuperview];
-    hud = nil;
 }
 
 - (void)dealloc{
-    NSLog(@"释放 %s",object_getClassName(self));
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [HUD removeFromSuperview];
     HUD.delegate = nil;

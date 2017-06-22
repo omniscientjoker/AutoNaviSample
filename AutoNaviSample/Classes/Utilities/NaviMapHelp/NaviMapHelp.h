@@ -6,10 +6,11 @@
 //  Copyright © 2017年 joker. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <MAMapKit/MAMapKit.h>
 
 @interface NaviMapHelp : MAMapView
+
 + (MAMapView *)shareMAMapView;
-+ (id)allocWithZone:(NSZone *)zone;
-+ (id)copyWithZone:(NSZone *)zone;
+
 @end

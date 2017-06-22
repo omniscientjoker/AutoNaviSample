@@ -42,14 +42,17 @@
     self.backgroundColor = [UIColor clearColor];
     self.textAlignment = NSTextAlignmentRight;
 }
-
--(void)dealloc{
+-(void)viewWillRemove{
     if (self.timer) {
         self.timer = nil;
     }
 }
+//- (BOOL)willDealloc {
+//    return NO;
+//}
 
 
+#pragma mark - ui
 - (void)setAnimate:(NSNumber *)animate {
     _animate = animate;
     if (![animate boolValue]) {
@@ -343,4 +346,5 @@
     self.progressTextColorOverride = progressTextColor;
     [self setNeedsDisplay];
 }
+
 @end

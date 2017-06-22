@@ -140,7 +140,7 @@
             number = arr.count;
         }
     }else{
-        NSString *string = [NSString stringWithFormat:@"%ld",section];
+        NSString *string = [NSString stringWithFormat:@"%ld",(long)section];
         if ([expandedSections containsObject:string]){
             NSArray * cityArr  = provinces[section-sectionTitles.count];
             number = cityArr.count - 1;
@@ -168,7 +168,7 @@
         return headerView;
     }else{
         NSArray *pro = provinces[section - sectionTitles.count];
-        NSString *string = [NSString stringWithFormat:@"%ld",section];
+        NSString *string = [NSString stringWithFormat:@"%ld",(long)section];
         BOOL espanded;
         if ([expandedSections containsObject:string]){
             espanded = YES;
@@ -254,7 +254,7 @@
 }
 
 - (void)headerView:(offlineMapHandle *)headerView section:(NSInteger)section expanded:(BOOL)expanded{
-    NSString *string = [NSString stringWithFormat:@"%ld",section];
+    NSString *string = [NSString stringWithFormat:@"%ld",(long)section];
     if (expanded == YES) {
         [expandedSections addObject:string];
     }else{
