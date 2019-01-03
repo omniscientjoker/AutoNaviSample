@@ -8,11 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		658BFD7618B23B703D376BE4 /* libPods-AutoNaviSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */; };
+		F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78271E8109880078F7BB /* OptionsListCell.m */; };
+		F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E782D1E810B8D0078F7BB /* carInfoViewController.m */; };
+		F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78341E8113940078F7BB /* offlineMapHandle.m */; };
+		F33E78381E8119550078F7BB /* OffLineItemHandelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */; };
+		F33E783B1E8243F20078F7BB /* CarInfoEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */; };
+		F33E78451E8250970078F7BB /* RoutePreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */; };
+		F33E784B1E825AC20078F7BB /* offlineMapHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E78481E825AC20078F7BB /* offlineMapHeadView.m */; };
+		F33E784C1E825AC20078F7BB /* offlineMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E784A1E825AC20078F7BB /* offlineMapViewController.m */; };
+		F33E784F1E825B0F0078F7BB /* attributionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33E784E1E825B0F0078F7BB /* attributionView.m */; };
 		F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */; };
 		F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC31E5A78B3006DBC5B /* PreferenceView.m */; };
 		F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFC71E5A79FD006DBC5B /* RouteCollectionViewCell.m */; };
 		F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */; };
 		F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F34EEFCE1E5A8136006DBC5B /* LoginUser.m */; };
+		F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1EA1E7BA96600E8C138 /* OrderViewController.m */; };
+		F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */; };
+		F369E1F61E7BB4D500E8C138 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1F51E7BB4D500E8C138 /* LoginViewController.m */; };
+		F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1FB1E7BB63600E8C138 /* UIView+additions.m */; };
+		F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */; };
+		F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2031E7BC6F000E8C138 /* LoginView.m */; };
+		F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2061E7BC70A00E8C138 /* VerifyView.m */; };
+		F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */; };
+		F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E2161E80F62700E8C138 /* OrderListCell.m */; };
+		F369E21D1E80F91B00E8C138 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E21C1E80F91B00E8C138 /* BaseModel.m */; };
+		F369E2201E80F97F00E8C138 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F369E21F1E80F97F00E8C138 /* OrderListModel.m */; };
 		F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081B1E56C83A0057A57A /* AmapViewController.m */; };
 		F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378081E1E56D1D10057A57A /* AmapNaviViewController.m */; };
 		F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F37AF4401E727E9E00161008 /* NaviSpeechHelp.m */; };
@@ -22,10 +42,23 @@
 		F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B081E6CF9E200ECB8F1 /* arriveAlertView.m */; };
 		F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */; };
 		F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C57081E5BD3CF001382DB /* NaviMoreView.m */; };
+		F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283501E83CD4E00896FFD /* CarNumCell.m */; };
+		F392835B1E88AB5200896FFD /* ProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F392835A1E88AB5200896FFD /* ProgressBarView.m */; };
+		F39283621E88ADBC00896FFD /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */; };
+		F39283651E89172E00896FFD /* OfflLineMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F39283641E89172E00896FFD /* OfflLineMapCell.m */; };
 		F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */; };
 		F39BFD281E6E859F00F4A9B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BFD271E6E859F00F4A9B2 /* MapKit.framework */; };
 		F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */; };
+		F3A591FB1E8DE28800DDC226 /* DownLoadMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */; };
+		F3A591FE1E8E028100DDC226 /* DownLoadMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */; };
 		F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */; };
+		F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C281E77F22900D20214 /* MineViewController.m */; };
+		F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C301E78DFC000D20214 /* UIImage+blur.m */; };
+		F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C331E78E21900D20214 /* UIView+instrument.m */; };
+		F3AA4C381E79144A00D20214 /* SlidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C371E79144A00D20214 /* SlidebarViewController.m */; };
+		F3AA4C3C1E791F7200D20214 /* SlidebarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C3B1E791F7200D20214 /* SlidebarMenu.m */; };
+		F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C451E7920EF00D20214 /* UIViewController+SlidebarMenu.m */; };
+		F3AA4C4D1E79230600D20214 /* SlidebarFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AA4C4C1E79230600D20214 /* SlidebarFunctions.m */; };
 		F3B9387C1E6E7A1D0014A80E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */; };
 		F3D35D941E5695850055194D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D931E5695850055194D /* main.m */; };
 		F3D35D971E5695850055194D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D35D961E5695850055194D /* AppDelegate.m */; };
@@ -58,6 +91,24 @@
 		7A7E29ECF72D6F9A4B2E9F11 /* Pods-AutoNaviSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.release.xcconfig"; sourceTree = "<group>"; };
 		895E8BFDD71A0A1F03568DFE /* Pods-AutoNaviSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoNaviSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoNaviSample/Pods-AutoNaviSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFBA8A288EFEA96FADCDE0 /* libPods-AutoNaviSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoNaviSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33E78261E8109880078F7BB /* OptionsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsListCell.h; sourceTree = "<group>"; };
+		F33E78271E8109880078F7BB /* OptionsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsListCell.m; sourceTree = "<group>"; };
+		F33E782C1E810B8D0078F7BB /* carInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carInfoViewController.h; sourceTree = "<group>"; };
+		F33E782D1E810B8D0078F7BB /* carInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carInfoViewController.m; sourceTree = "<group>"; };
+		F33E78331E8113940078F7BB /* offlineMapHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHandle.h; sourceTree = "<group>"; };
+		F33E78341E8113940078F7BB /* offlineMapHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHandle.m; sourceTree = "<group>"; };
+		F33E78361E8119550078F7BB /* OffLineItemHandelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffLineItemHandelModel.h; sourceTree = "<group>"; };
+		F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffLineItemHandelModel.m; sourceTree = "<group>"; };
+		F33E78391E8243F20078F7BB /* CarInfoEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoEditCell.h; sourceTree = "<group>"; };
+		F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoEditCell.m; sourceTree = "<group>"; };
+		F33E78431E8250970078F7BB /* RoutePreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePreferencesViewController.h; sourceTree = "<group>"; };
+		F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePreferencesViewController.m; sourceTree = "<group>"; };
+		F33E78471E825AC20078F7BB /* offlineMapHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapHeadView.h; sourceTree = "<group>"; };
+		F33E78481E825AC20078F7BB /* offlineMapHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapHeadView.m; sourceTree = "<group>"; };
+		F33E78491E825AC20078F7BB /* offlineMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offlineMapViewController.h; sourceTree = "<group>"; };
+		F33E784A1E825AC20078F7BB /* offlineMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offlineMapViewController.m; sourceTree = "<group>"; };
+		F33E784D1E825B0F0078F7BB /* attributionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attributionView.h; sourceTree = "<group>"; };
+		F33E784E1E825B0F0078F7BB /* attributionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attributionView.m; sourceTree = "<group>"; };
 		F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNaviViewController.h; sourceTree = "<group>"; };
 		F3424A001E5C1F88000DEEF5 /* BaseNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNaviViewController.m; sourceTree = "<group>"; };
 		F34EEFC21E5A78B3006DBC5B /* PreferenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceView.h; sourceTree = "<group>"; };
@@ -68,6 +119,29 @@
 		F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableOverlay.m; sourceTree = "<group>"; };
 		F34EEFCD1E5A8136006DBC5B /* LoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUser.h; sourceTree = "<group>"; };
 		F34EEFCE1E5A8136006DBC5B /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
+		F369E1E91E7BA96600E8C138 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		F369E1EA1E7BA96600E8C138 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		F369E1ED1E7BA9F900E8C138 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		F369E1F41E7BB4D500E8C138 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F369E1F51E7BB4D500E8C138 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F369E1FA1E7BB63600E8C138 /* UIView+additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+additions.h"; sourceTree = "<group>"; };
+		F369E1FB1E7BB63600E8C138 /* UIView+additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+additions.m"; sourceTree = "<group>"; };
+		F369E1FE1E7BBD4500E8C138 /* UIToolViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIToolViewTextField.h; sourceTree = "<group>"; };
+		F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIToolViewTextField.m; sourceTree = "<group>"; };
+		F369E2021E7BC6F000E8C138 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		F369E2031E7BC6F000E8C138 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		F369E2051E7BC70A00E8C138 /* VerifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyView.h; sourceTree = "<group>"; };
+		F369E2061E7BC70A00E8C138 /* VerifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyView.m; sourceTree = "<group>"; };
+		F369E2091E7BCA8B00E8C138 /* LoginHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHandle.h; sourceTree = "<group>"; };
+		F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHandle.m; sourceTree = "<group>"; };
+		F369E20F1E7F795700E8C138 /* BlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockDefine.h; sourceTree = "<group>"; };
+		F369E2151E80F62700E8C138 /* OrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		F369E2161E80F62700E8C138 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		F369E21B1E80F91B00E8C138 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		F369E21C1E80F91B00E8C138 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		F369E21E1E80F97F00E8C138 /* OrderListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		F369E21F1E80F97F00E8C138 /* OrderListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		F378081A1E56C83A0057A57A /* AmapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapViewController.h; sourceTree = "<group>"; };
 		F378081B1E56C83A0057A57A /* AmapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmapViewController.m; sourceTree = "<group>"; };
 		F378081D1E56D1D10057A57A /* AmapNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmapNaviViewController.h; sourceTree = "<group>"; };
@@ -88,13 +162,39 @@
 		F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUDExtensions.m"; sourceTree = "<group>"; };
 		F38C57071E5BD3CF001382DB /* NaviMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMoreView.h; sourceTree = "<group>"; };
 		F38C57081E5BD3CF001382DB /* NaviMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMoreView.m; sourceTree = "<group>"; };
+		F392834F1E83CD4E00896FFD /* CarNumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarNumCell.h; sourceTree = "<group>"; };
+		F39283501E83CD4E00896FFD /* CarNumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarNumCell.m; sourceTree = "<group>"; };
+		F39283591E88AB5200896FFD /* ProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarView.h; sourceTree = "<group>"; };
+		F392835A1E88AB5200896FFD /* ProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarView.m; sourceTree = "<group>"; };
+		F39283601E88ADBC00896FFD /* UIColor+RGBValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBValues.h"; sourceTree = "<group>"; };
+		F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBValues.m"; sourceTree = "<group>"; };
+		F39283631E89172E00896FFD /* OfflLineMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflLineMapCell.h; sourceTree = "<group>"; };
+		F39283641E89172E00896FFD /* OfflLineMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflLineMapCell.m; sourceTree = "<group>"; };
 		F39BFD241E6E813A00F4A9B2 /* notificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationCenter.h; sourceTree = "<group>"; };
 		F39BFD251E6E813A00F4A9B2 /* notificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationCenter.m; sourceTree = "<group>"; };
 		F39BFD271E6E859F00F4A9B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F39BFD2D1E6FA7CF00F4A9B2 /* NaviMapHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviMapHelp.h; sourceTree = "<group>"; };
 		F39BFD2E1E6FA7CF00F4A9B2 /* NaviMapHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviMapHelp.m; sourceTree = "<group>"; };
+		F3A591F91E8DE28800DDC226 /* DownLoadMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadMapViewController.h; sourceTree = "<group>"; };
+		F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadMapViewController.m; sourceTree = "<group>"; };
+		F3A591FC1E8E028100DDC226 /* DownLoadMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadMapCell.h; sourceTree = "<group>"; };
+		F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadMapCell.m; sourceTree = "<group>"; };
 		F3A67DA41E712346003F81F4 /* NaviPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviPointAnnotation.h; sourceTree = "<group>"; };
 		F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviPointAnnotation.m; sourceTree = "<group>"; };
+		F3AA4C271E77F22900D20214 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		F3AA4C281E77F22900D20214 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		F3AA4C2F1E78DFC000D20214 /* UIImage+blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+blur.h"; sourceTree = "<group>"; };
+		F3AA4C301E78DFC000D20214 /* UIImage+blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+blur.m"; sourceTree = "<group>"; };
+		F3AA4C321E78E21900D20214 /* UIView+instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+instrument.h"; sourceTree = "<group>"; };
+		F3AA4C331E78E21900D20214 /* UIView+instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+instrument.m"; sourceTree = "<group>"; };
+		F3AA4C361E79144A00D20214 /* SlidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidebarViewController.h; sourceTree = "<group>"; };
+		F3AA4C371E79144A00D20214 /* SlidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidebarViewController.m; sourceTree = "<group>"; };
+		F3AA4C3A1E791F7200D20214 /* SlidebarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidebarMenu.h; sourceTree = "<group>"; };
+		F3AA4C3B1E791F7200D20214 /* SlidebarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidebarMenu.m; sourceTree = "<group>"; };
+		F3AA4C441E7920EF00D20214 /* UIViewController+SlidebarMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SlidebarMenu.h"; sourceTree = "<group>"; };
+		F3AA4C451E7920EF00D20214 /* UIViewController+SlidebarMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SlidebarMenu.m"; sourceTree = "<group>"; };
+		F3AA4C4B1E79230600D20214 /* SlidebarFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidebarFunctions.h; sourceTree = "<group>"; };
+		F3AA4C4C1E79230600D20214 /* SlidebarFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidebarFunctions.m; sourceTree = "<group>"; };
 		F3B9387B1E6E7A1D0014A80E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F3D35D8F1E5695850055194D /* AutoNaviSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoNaviSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D35D931E5695850055194D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,6 +265,70 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F33E78201E8109270078F7BB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78321E81135D0078F7BB /* offlineMapHandleModel */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F33E78211E8109270078F7BB /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78491E825AC20078F7BB /* offlineMapViewController.h */,
+				F33E784A1E825AC20078F7BB /* offlineMapViewController.m */,
+				F33E782C1E810B8D0078F7BB /* carInfoViewController.h */,
+				F33E782D1E810B8D0078F7BB /* carInfoViewController.m */,
+				F33E78431E8250970078F7BB /* RoutePreferencesViewController.h */,
+				F33E78441E8250970078F7BB /* RoutePreferencesViewController.m */,
+				F33E78461E825AC20078F7BB /* cusSubView */,
+				F33E78251E8109880078F7BB /* cusCell */,
+			);
+			path = subViews;
+			sourceTree = "<group>";
+		};
+		F33E78251E8109880078F7BB /* cusCell */ = {
+			isa = PBXGroup;
+			children = (
+				F39283631E89172E00896FFD /* OfflLineMapCell.h */,
+				F39283641E89172E00896FFD /* OfflLineMapCell.m */,
+				F3A591FC1E8E028100DDC226 /* DownLoadMapCell.h */,
+				F3A591FD1E8E028100DDC226 /* DownLoadMapCell.m */,
+				F33E78261E8109880078F7BB /* OptionsListCell.h */,
+				F33E78271E8109880078F7BB /* OptionsListCell.m */,
+				F33E78391E8243F20078F7BB /* CarInfoEditCell.h */,
+				F33E783A1E8243F20078F7BB /* CarInfoEditCell.m */,
+				F392834F1E83CD4E00896FFD /* CarNumCell.h */,
+				F39283501E83CD4E00896FFD /* CarNumCell.m */,
+			);
+			path = cusCell;
+			sourceTree = "<group>";
+		};
+		F33E78321E81135D0078F7BB /* offlineMapHandleModel */ = {
+			isa = PBXGroup;
+			children = (
+				F33E78331E8113940078F7BB /* offlineMapHandle.h */,
+				F33E78341E8113940078F7BB /* offlineMapHandle.m */,
+				F33E78361E8119550078F7BB /* OffLineItemHandelModel.h */,
+				F33E78371E8119550078F7BB /* OffLineItemHandelModel.m */,
+			);
+			path = offlineMapHandleModel;
+			sourceTree = "<group>";
+		};
+		F33E78461E825AC20078F7BB /* cusSubView */ = {
+			isa = PBXGroup;
+			children = (
+				F33E784D1E825B0F0078F7BB /* attributionView.h */,
+				F33E784E1E825B0F0078F7BB /* attributionView.m */,
+				F33E78471E825AC20078F7BB /* offlineMapHeadView.h */,
+				F33E78481E825AC20078F7BB /* offlineMapHeadView.m */,
+				F3A591F91E8DE28800DDC226 /* DownLoadMapViewController.h */,
+				F3A591FA1E8DE28800DDC226 /* DownLoadMapViewController.m */,
+			);
+			path = cusSubView;
+			sourceTree = "<group>";
+		};
 		F34EEFC11E5A7880006DBC5B /* NaviCusView */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +356,86 @@
 				F34EEFCB1E5A7CEF006DBC5B /* SelectableOverlay.m */,
 			);
 			path = SelectableOverlay;
+			sourceTree = "<group>";
+		};
+		F369E1E81E7BA94900E8C138 /* OrderViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1E91E7BA96600E8C138 /* OrderViewController.h */,
+				F369E1EA1E7BA96600E8C138 /* OrderViewController.m */,
+				F369E2101E80F57500E8C138 /* models */,
+				F369E2111E80F57500E8C138 /* subViews */,
+			);
+			path = OrderViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1EC1E7BA9D800E8C138 /* OptionsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1ED1E7BA9F900E8C138 /* OptionsViewController.h */,
+				F369E1EE1E7BA9F900E8C138 /* OptionsViewController.m */,
+				F33E78201E8109270078F7BB /* models */,
+				F33E78211E8109270078F7BB /* subViews */,
+			);
+			path = OptionsViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1F01E7BB2FF00E8C138 /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1F41E7BB4D500E8C138 /* LoginViewController.h */,
+				F369E1F51E7BB4D500E8C138 /* LoginViewController.m */,
+				F369E2081E7BCA6E00E8C138 /* model */,
+				F369E2011E7BC6A000E8C138 /* subViews */,
+			);
+			path = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		F369E1FD1E7BBD2600E8C138 /* UIToolViewTextField */ = {
+			isa = PBXGroup;
+			children = (
+				F369E1FE1E7BBD4500E8C138 /* UIToolViewTextField.h */,
+				F369E1FF1E7BBD4500E8C138 /* UIToolViewTextField.m */,
+			);
+			path = UIToolViewTextField;
+			sourceTree = "<group>";
+		};
+		F369E2011E7BC6A000E8C138 /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2021E7BC6F000E8C138 /* LoginView.h */,
+				F369E2031E7BC6F000E8C138 /* LoginView.m */,
+				F369E2051E7BC70A00E8C138 /* VerifyView.h */,
+				F369E2061E7BC70A00E8C138 /* VerifyView.m */,
+			);
+			path = subViews;
+			sourceTree = "<group>";
+		};
+		F369E2081E7BCA6E00E8C138 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2091E7BCA8B00E8C138 /* LoginHandle.h */,
+				F369E20A1E7BCA8B00E8C138 /* LoginHandle.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F369E2101E80F57500E8C138 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F369E21E1E80F97F00E8C138 /* OrderListModel.h */,
+				F369E21F1E80F97F00E8C138 /* OrderListModel.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F369E2111E80F57500E8C138 /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				F369E2151E80F62700E8C138 /* OrderListCell.h */,
+				F369E2161E80F62700E8C138 /* OrderListCell.m */,
+			);
+			path = subViews;
 			sourceTree = "<group>";
 		};
 		F37C58AC1E5FC0010098B80E /* AutoNaviSampleTests */ = {
@@ -230,6 +474,24 @@
 			path = NaviMoreView;
 			sourceTree = "<group>";
 		};
+		F39283581E88AB3A00896FFD /* ProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F39283591E88AB5200896FFD /* ProgressBarView.h */,
+				F392835A1E88AB5200896FFD /* ProgressBarView.m */,
+			);
+			path = ProgressBarView;
+			sourceTree = "<group>";
+		};
+		F392835F1E88ADA000896FFD /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				F39283601E88ADBC00896FFD /* UIColor+RGBValues.h */,
+				F39283611E88ADBC00896FFD /* UIColor+RGBValues.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		F39BFD291E6FA77100F4A9B2 /* NaviMapHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +503,53 @@
 				F3A67DA51E712346003F81F4 /* NaviPointAnnotation.m */,
 			);
 			path = NaviMapHelp;
+			sourceTree = "<group>";
+		};
+		F3AA4C261E77F22900D20214 /* MineViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C271E77F22900D20214 /* MineViewController.h */,
+				F3AA4C281E77F22900D20214 /* MineViewController.m */,
+			);
+			path = MineViewControllers;
+			sourceTree = "<group>";
+		};
+		F3AA4C2E1E78DF8200D20214 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C2F1E78DFC000D20214 /* UIImage+blur.h */,
+				F3AA4C301E78DFC000D20214 /* UIImage+blur.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		F3AA4C351E79143500D20214 /* SlidebarViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C361E79144A00D20214 /* SlidebarViewController.h */,
+				F3AA4C371E79144A00D20214 /* SlidebarViewController.m */,
+			);
+			path = SlidebarViewControllers;
+			sourceTree = "<group>";
+		};
+		F3AA4C391E791F5300D20214 /* SlidebarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C3A1E791F7200D20214 /* SlidebarMenu.h */,
+				F3AA4C3B1E791F7200D20214 /* SlidebarMenu.m */,
+				F3AA4C4B1E79230600D20214 /* SlidebarFunctions.h */,
+				F3AA4C4C1E79230600D20214 /* SlidebarFunctions.m */,
+			);
+			path = SlidebarMenu;
+			sourceTree = "<group>";
+		};
+		F3AA4C401E7920BB00D20214 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4C441E7920EF00D20214 /* UIViewController+SlidebarMenu.h */,
+				F3AA4C451E7920EF00D20214 /* UIViewController+SlidebarMenu.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		F3B9387D1E6E80C70014A80E /* notificationCenter */ = {
@@ -312,10 +621,10 @@
 		F3D35DA91E56967C0055194D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F3D35DAA1E56967C0055194D /* BaesTableViewCell.h */,
-				F3D35DAB1E56967C0055194D /* BaesTableViewCell.m */,
 				F3D35DAC1E56967C0055194D /* BaseTableView.h */,
 				F3D35DAD1E56967C0055194D /* BaseTableView.m */,
+				F3D35DAA1E56967C0055194D /* BaesTableViewCell.h */,
+				F3D35DAB1E56967C0055194D /* BaesTableViewCell.m */,
 				F3D35DAE1E56967C0055194D /* BaseViewController.h */,
 				F3D35DAF1E56967C0055194D /* BaseViewController.m */,
 				F34249FF1E5C1F88000DEEF5 /* BaseNaviViewController.h */,
@@ -327,6 +636,9 @@
 		F3D35DB01E56967C0055194D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F392835F1E88ADA000896FFD /* UIColor */,
+				F3AA4C401E7920BB00D20214 /* UIViewController */,
+				F3AA4C2E1E78DF8200D20214 /* UIImage */,
 				F3D35DBD1E56967C0055194D /* UIView */,
 			);
 			path = Categories;
@@ -337,6 +649,10 @@
 			children = (
 				F3894B0A1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.h */,
 				F3894B0B1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m */,
+				F3AA4C321E78E21900D20214 /* UIView+instrument.h */,
+				F3AA4C331E78E21900D20214 /* UIView+instrument.m */,
+				F369E1FA1E7BB63600E8C138 /* UIView+additions.h */,
+				F369E1FB1E7BB63600E8C138 /* UIView+additions.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -355,6 +671,7 @@
 			children = (
 				F3D35DC21E56967C0055194D /* constants.h */,
 				F3D35DD61E56C3200055194D /* constanscode.h */,
+				F369E20F1E7F795700E8C138 /* BlockDefine.h */,
 				F3D35DC31E56967C0055194D /* noticeConstant.h */,
 			);
 			path = Constant;
@@ -370,6 +687,8 @@
 		F3D35DC51E56967C0055194D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F369E21B1E80F91B00E8C138 /* BaseModel.h */,
+				F369E21C1E80F91B00E8C138 /* BaseModel.m */,
 				F3D35DC61E56967C0055194D /* User */,
 			);
 			path = Models;
@@ -389,6 +708,7 @@
 		F3D35DC91E56967C0055194D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F3AA4C391E791F5300D20214 /* SlidebarMenu */,
 				F39BFD291E6FA77100F4A9B2 /* NaviMapHelp */,
 				F3B9387D1E6E80C70014A80E /* notificationCenter */,
 				F34EEFC91E5A7CD5006DBC5B /* SelectableOverlay */,
@@ -399,7 +719,12 @@
 		F3D35DCA1E56967C0055194D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3AA4C351E79143500D20214 /* SlidebarViewControllers */,
+				F369E1F01E7BB2FF00E8C138 /* LoginViewControllers */,
+				F369E1E81E7BA94900E8C138 /* OrderViewControllers */,
 				F3D35DD71E56C5CC0055194D /* MapViewControllers */,
+				F369E1EC1E7BA9D800E8C138 /* OptionsViewControllers */,
+				F3AA4C261E77F22900D20214 /* MineViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -407,6 +732,8 @@
 		F3D35DCB1E56967C0055194D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F39283581E88AB3A00896FFD /* ProgressBarView */,
+				F369E1FD1E7BBD2600E8C138 /* UIToolViewTextField */,
 				F3894B061E6CF9A500ECB8F1 /* noticeAlertView */,
 				F34EEFC11E5A7880006DBC5B /* NaviCusView */,
 			);
@@ -526,7 +853,7 @@
 		F3D35D871E5695840055194D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = joker;
 				TargetAttributes = {
 					F37C58AA1E5FC0010098B80E = {
@@ -615,7 +942,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4BADE8A0926DA8BAFC0C1DC1 /* [CP] Embed Pods Frameworks */ = {
@@ -672,27 +999,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37AF4411E727E9E00161008 /* NaviSpeechHelp.m in Sources */,
+				F39283621E88ADBC00896FFD /* UIColor+RGBValues.m in Sources */,
+				F369E1EB1E7BA96600E8C138 /* OrderViewController.m in Sources */,
 				F3894B0C1E6CFC1C00ECB8F1 /* UIView+HUDExtensions.m in Sources */,
+				F33E784F1E825B0F0078F7BB /* attributionView.m in Sources */,
 				F3D35DD01E56967C0055194D /* BaseUser.m in Sources */,
 				F34EEFC41E5A78B3006DBC5B /* PreferenceView.m in Sources */,
+				F33E784C1E825AC20078F7BB /* offlineMapViewController.m in Sources */,
+				F33E783B1E8243F20078F7BB /* CarInfoEditCell.m in Sources */,
+				F33E782E1E810B8D0078F7BB /* carInfoViewController.m in Sources */,
 				F34EEFCF1E5A8136006DBC5B /* LoginUser.m in Sources */,
+				F3A591FB1E8DE28800DDC226 /* DownLoadMapViewController.m in Sources */,
+				F3AA4C341E78E21900D20214 /* UIView+instrument.m in Sources */,
+				F369E2071E7BC70A00E8C138 /* VerifyView.m in Sources */,
+				F3AA4C4D1E79230600D20214 /* SlidebarFunctions.m in Sources */,
+				F369E1F61E7BB4D500E8C138 /* LoginViewController.m in Sources */,
+				F369E2001E7BBD4500E8C138 /* UIToolViewTextField.m in Sources */,
 				F3D35DCD1E56967C0055194D /* BaseTableView.m in Sources */,
 				F3894B051E6CF24B00ECB8F1 /* AmapRouteNaviViewController.m in Sources */,
+				F3A591FE1E8E028100DDC226 /* DownLoadMapCell.m in Sources */,
+				F33E78281E8109880078F7BB /* OptionsListCell.m in Sources */,
 				F39BFD2F1E6FA7CF00F4A9B2 /* NaviMapHelp.m in Sources */,
 				F3D35DCE1E56967C0055194D /* BaseViewController.m in Sources */,
+				F369E20B1E7BCA8B00E8C138 /* LoginHandle.m in Sources */,
+				F3AA4C291E77F22900D20214 /* MineViewController.m in Sources */,
 				F3894B091E6CF9E200ECB8F1 /* arriveAlertView.m in Sources */,
+				F39283651E89172E00896FFD /* OfflLineMapCell.m in Sources */,
+				F39283511E83CD4E00896FFD /* CarNumCell.m in Sources */,
+				F369E2171E80F62700E8C138 /* OrderListCell.m in Sources */,
 				F34EEFCC1E5A7CEF006DBC5B /* SelectableOverlay.m in Sources */,
+				F3AA4C461E7920EF00D20214 /* UIViewController+SlidebarMenu.m in Sources */,
+				F369E1EF1E7BA9F900E8C138 /* OptionsViewController.m in Sources */,
 				F3D35DCF1E56967C0055194D /* common.m in Sources */,
 				F3A67DA61E712346003F81F4 /* NaviPointAnnotation.m in Sources */,
 				F378081F1E56D1D10057A57A /* AmapNaviViewController.m in Sources */,
 				F39BFD261E6E813A00F4A9B2 /* notificationCenter.m in Sources */,
+				F392835B1E88AB5200896FFD /* ProgressBarView.m in Sources */,
+				F369E2041E7BC6F000E8C138 /* LoginView.m in Sources */,
+				F3AA4C3C1E791F7200D20214 /* SlidebarMenu.m in Sources */,
+				F369E2201E80F97F00E8C138 /* OrderListModel.m in Sources */,
 				F3D35D971E5695850055194D /* AppDelegate.m in Sources */,
 				F34EEFC81E5A79FD006DBC5B /* RouteCollectionViewCell.m in Sources */,
 				F378081C1E56C83A0057A57A /* AmapViewController.m in Sources */,
 				F3424A011E5C1F88000DEEF5 /* BaseNaviViewController.m in Sources */,
+				F33E78451E8250970078F7BB /* RoutePreferencesViewController.m in Sources */,
 				F3D35D941E5695850055194D /* main.m in Sources */,
+				F369E21D1E80F91B00E8C138 /* BaseModel.m in Sources */,
+				F369E1FC1E7BB63600E8C138 /* UIView+additions.m in Sources */,
+				F3AA4C311E78DFC000D20214 /* UIImage+blur.m in Sources */,
+				F33E784B1E825AC20078F7BB /* offlineMapHeadView.m in Sources */,
+				F33E78351E8113940078F7BB /* offlineMapHandle.m in Sources */,
 				F3D35DCC1E56967C0055194D /* BaesTableViewCell.m in Sources */,
 				F38C57091E5BD3CF001382DB /* NaviMoreView.m in Sources */,
+				F33E78381E8119550078F7BB /* OffLineItemHandelModel.m in Sources */,
+				F3AA4C381E79144A00D20214 /* SlidebarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +1131,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -779,7 +1141,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -818,7 +1184,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -826,7 +1194,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

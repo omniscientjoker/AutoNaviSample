@@ -133,7 +133,7 @@ static const NSInteger kHUDPopLoadingViewTag    = 1412301511;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     hud.tag = kHUDPopLoadingViewTag;
     hud.removeFromSuperViewOnHide = YES;
-    hud.mode = MBProgressHUDModeCustomView;
+    hud.mode = MBProgressHUDModeText;
     hud.label.text = text;
     hud.customView = [HUDCustomLoadingView loadingView];
     return hud;

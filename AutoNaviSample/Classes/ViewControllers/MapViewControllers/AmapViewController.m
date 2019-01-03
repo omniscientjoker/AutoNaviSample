@@ -13,12 +13,18 @@
 #import "MBProgressHUD.h"
 #import "notificationCenter.h"
 #import "AmapRouteNaviViewController.h"
+#import "LoginUser.h"
+
+
 @interface AmapViewController ()<MAMapViewDelegate,AMapGeoFenceManagerDelegate,AMapLocationManagerDelegate,MBProgressHUDDelegate>
 {
+    BOOL  mapBennDrag;
     BOOL  showCurrentLocation;
+    CLLocationCoordinate2D  tagPoint;
 }
 @property (nonatomic,strong)MBProgressHUD         *HUD;
 @property (nonatomic,strong)MAMapView             *mapView;
+@property (nonatomic,strong)MAAnnotationView      *userLocationAnnotationView;
 @property (nonatomic,strong)MACircle              *geoFenceCircle;
 @property (nonatomic,strong)AMapLocationManager   *locationManager;
 @property (nonatomic,strong)AMapGeoFenceManager   *geoFenceManager;
@@ -33,13 +39,23 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    showCurrentLocation = YES;
+    [LoginUser sharedInstance].setSlidebarIndex = 1;
+    [LoginUser sharedInstance].uId = @"000";
+    if (mapBennDrag == YES) {
+        showCurrentLocation = NO;
+    }else{
+        showCurrentLocation = YES;
+    }
+
     self.title = @"地图";
 //    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
 //    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
 //    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
 }
+
+
 -(void)setButton{
+    
     UIButton * locationBtn = [[UIButton alloc] initWithFrame:CGRectMake(26, SCREENHEIGHT-90, 24, 24)];
     [locationBtn setImage:[UIImage imageNamed:@"icon_location"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(setlocationBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -65,7 +81,7 @@
     if (self.mapView == nil){
         _mapView = [NaviMapHelp shareMAMapView];
         
-        _mapView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT-40);
+        _mapView.frame = CGRectMake(0, SCREENDEFAULTHEIGHT, SCREENWIDTH, SCREENRESULTHEIGHT);
         
         [self.mapView setDelegate:self];
         
@@ -94,10 +110,18 @@
     if(updatingLocation){
         self.nowPoint = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
         if (showCurrentLocation == YES) {
+            if (updatingLocation && self.userLocationAnnotationView != nil)
+            {
+                [UIView animateWithDuration:0.1 animations:^{
+                    double degree = userLocation.heading.trueHeading - self.mapView.rotationDegree;
+                    self.userLocationAnnotationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
+                }];
+            }
             [_mapView setCenterCoordinate:self.nowPoint animated:YES];
         }
         [self initgeoFence];
     }
+    
 }
 
 #pragma mark - 获取定位信息
@@ -113,6 +137,7 @@
     __weak __typeof(&*self) weakSelf = self;
     [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         showCurrentLocation = YES;
+        mapBennDrag = NO;
         if (error){
             if (error.code == AMapLocationErrorLocateFailed){
                 return;
@@ -163,6 +188,14 @@
 
 
 #pragma mark - MAMapView Delegate
+- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view didChangeDragState:(MAAnnotationViewDragState)newState
+   fromOldState:(MAAnnotationViewDragState)oldState
+{
+    if (oldState == MAAnnotationViewDragStateStarting) {
+        showCurrentLocation = NO;
+        mapBennDrag = YES;
+    }
+}
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
     if ([annotation isKindOfClass:[MAPointAnnotation class]])
     {
@@ -178,6 +211,22 @@
         annotationView.pinColor = MAPinAnnotationColorPurple;
         return annotationView;
     }
+    if ([annotation isKindOfClass:[MAUserLocation class]])
+    {
+        static NSString *userLocationStyleReuseIndetifier = @"userLocationStyleReuseIndetifier";
+        MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userLocationStyleReuseIndetifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
+                                                             reuseIdentifier:userLocationStyleReuseIndetifier];
+        }
+        
+        annotationView.image = [UIImage imageNamed:@"icon_uselocation_arrow"];
+        
+        self.userLocationAnnotationView = annotationView;
+        
+        return annotationView;
+    }
     return nil;
 }
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay
@@ -189,6 +238,14 @@
         circleRenderer.strokeColor  = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.8];
         circleRenderer.fillColor    = [UIColor colorWithRed:1.0 green:0.8 blue:0.0 alpha:0.8];
         return circleRenderer;
+    }
+    if (overlay == mapView.userLocationAccuracyCircle)
+    {
+        MACircleRenderer *accuracyCircleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
+        accuracyCircleRenderer.lineWidth    = 2.f;
+        accuracyCircleRenderer.strokeColor  = [UIColor lightGrayColor];
+        accuracyCircleRenderer.fillColor    = [UIColor colorWithRed:1 green:0 blue:0 alpha:.3];
+        return accuracyCircleRenderer;
     }
     
     return nil;
@@ -205,12 +262,14 @@
 {
     [_mapView setZoomLevel:15.5 animated:YES];
     showCurrentLocation = YES;
+    mapBennDrag = NO;
     [self setlocation];
 }
 -(void)setdestinationBtn:(UIButton *)btn
 {
     [_mapView setZoomLevel:15.5 animated:YES];
     showCurrentLocation = NO;
+    mapBennDrag = YES;
     [_mapView setCenterCoordinate:self.destinationPoint.coordinate animated:YES];
     
 }
@@ -218,6 +277,7 @@
 //页面周期
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     [self initMapView];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView removeAnnotations:self.mapView.annotations];

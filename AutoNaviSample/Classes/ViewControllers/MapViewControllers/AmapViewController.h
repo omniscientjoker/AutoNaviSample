@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AmapViewController : UIViewController
+#import "BaseNaviViewController.h"
+@interface AmapViewController : BaseNaviViewController
 
 @end

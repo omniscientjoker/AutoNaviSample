@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "SlidebarMenu.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,SideMenuDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
++ (AppDelegate *)sharedInstance;
 @end
 

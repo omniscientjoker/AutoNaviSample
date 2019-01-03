@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseNaviViewController : UIViewController
-
 @end

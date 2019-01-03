@@ -7,15 +7,19 @@
 //
 
 #import "AppDelegate.h"
-#import "AmapViewController.h"
+
+#import "LoginViewController.h"
+#import "SlidebarViewController.h"
 #import <UserNotifications/UserNotifications.h>
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
 @implementation AppDelegate
-
-
++ (AppDelegate *)sharedInstance
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -38,7 +42,19 @@
         }];
     }
     
-    self.window.rootViewController  = [[UINavigationController alloc] initWithRootViewController:[[AmapViewController alloc] init]];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+    SlidebarViewController *leftMenuViewController = [[SlidebarViewController alloc] init];
+    SlidebarMenu *sideMenuViewController = [[SlidebarMenu alloc] initWithContentViewController:navigationController leftMenuViewController:leftMenuViewController];
+    sideMenuViewController.menuPreferredStatusBarStyle = 1;
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    
+    self.window.rootViewController = sideMenuViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

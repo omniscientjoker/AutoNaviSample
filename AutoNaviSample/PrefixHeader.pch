@@ -13,6 +13,8 @@
 #import "constanscode.h"
 #import "noticeConstant.h"
 
+#import "UIView+additions.h"
+
 #import "Masonry.h"
 #import "AFNetworking.h"
 #import <MAMapKit/MAMapKit.h>
